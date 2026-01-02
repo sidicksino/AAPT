@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, useRoutes, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from './components/PageTransition';
 import Navbar from './components/Navbar';
@@ -15,18 +15,22 @@ import Contact from './pages/Contact';
 const AnimatedRoutes = () => {
   const location = useLocation();
   
+  const element = useRoutes([
+    { path: "/", element: <PageTransition><Home /></PageTransition> },
+    { path: "/about", element: <PageTransition><About /></PageTransition> },
+    { path: "/actions", element: <PageTransition><Actions /></PageTransition> },
+    { path: "/donate", element: <PageTransition><Donate /></PageTransition> },
+    { path: "/news", element: <PageTransition><News /></PageTransition> },
+    { path: "/gallery", element: <PageTransition><Gallery /></PageTransition> },
+    { path: "/contact", element: <PageTransition><Contact /></PageTransition> },
+    { path: "*", element: <Navigate to="/" replace /> }
+  ]);
+  
+  if (!element) return null;
+
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/actions" element={<PageTransition><Actions /></PageTransition>} />
-        <Route path="/donate" element={<PageTransition><Donate /></PageTransition>} />
-        <Route path="/news" element={<PageTransition><News /></PageTransition>} />
-        <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      {React.cloneElement(element, { key: location.pathname })}
     </AnimatePresence>
   );
 };
