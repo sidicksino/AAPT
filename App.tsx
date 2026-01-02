@@ -29,7 +29,7 @@ const AnimatedRoutes = () => {
   if (!element) return null;
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
       {React.cloneElement(element, { key: location.pathname })}
     </AnimatePresence>
   );
