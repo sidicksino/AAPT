@@ -43,7 +43,7 @@ const Home: React.FC = () => {
              transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
              className="w-full h-full bg-cover bg-center"
              style={{
-               backgroundImage: `linear-gradient(rgba(13, 27, 18, 0.6) 0%, rgba(13, 27, 18, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBq5QHgTMlaQmOpbw3ovaatjIatzrtLzAPRBspQFHcGbKpohjbScoiD5LlaZaG-_SPw8-5MO2FXIByRIyhxVnzSrfcOzXRIjJX4EVd7UxNUl0_EtgSsC1CJiadiJqziQ8kYFfuArDHgr9X4F8A2sFOQ3uLMLe5el1S_rpBIkoMmw0feeH9ps8JsV7JcFFhLqRC6JAzLDXYejKZDq-hbIAXxyH6Nt2BWZO1PlB0l8Xnb6i1xxpxAoBtiN7MCahiL1CHnG0DQlCwOMPs")`
+               backgroundImage: `linear-gradient(rgba(13, 27, 18, 0.6) 0%, rgba(13, 27, 18, 0.7) 100%), url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop")`
              }}
            />
         </div>
@@ -128,10 +128,10 @@ const Home: React.FC = () => {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
             {[
-              { val: 5, label: "Années d'action", suffix: "+" },
-              { val: 1000, label: "Femmes & Jeunes aidés", suffix: "+" },
-              { val: 50, label: "Bénévoles engagés", suffix: "+" },
-              { val: 3, label: "Pays impactés", suffix: "" }
+              { val: 2, label: "Années d'action", suffix: " +" },
+              { val: 500, label: "Femmes & Jeunes aidés", suffix: "+" },
+              { val: 30, label: "Bénévoles engagés", suffix: "+" },
+              { val: 1, label: "Pays impacté", suffix: "" }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-4 border-b md:border-b-0 md:border-r last:border-0 border-gray-100">
                 <p className="text-4xl md:text-5xl font-black text-primary">
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
             {[
               { icon: <Heart className="size-8"/>, title: "Droits des Femmes", desc: "Lutte active contre les violences basées sur le genre et promotion de l'autonomisation des femmes tchadiennes.", color: "bg-pink-50 text-pink-500" },
               { icon: <GraduationCap className="size-8"/>, title: "Jeunesse & Formation", desc: "Organisation de formations et d'échanges avec des partenaires comme le 'Centre Horizon' pour l'avenir de la jeunesse.", color: "bg-blue-50 text-blue-500" },
-              { icon: <Globe className="size-8"/>, title: "Solidarité Panafricaine", desc: "Publication d'actualités éducatives et initiatives impliquant la jeunesse de plusieurs pays africains.", color: "bg-green-50 text-green-500" }
+              { icon: <Globe className="size-8"/>, title: "Solidarité", desc: "Actions humanitaires concrètes : distributions de vivres, campagnes de santé et soutien aux orphelins.", color: "bg-green-50 text-green-500" }
             ].map((mission, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
                 <div className="group relative flex h-full flex-col gap-6 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl hover:border-primary/20">
@@ -201,30 +201,31 @@ const Home: React.FC = () => {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { 
-                title: "Formation au Centre Horizon", 
-                date: "Octobre 2023", 
-                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCdJZEQzy91lVdYhiaVDyc2MbCjxmJcc3ZjHuzCQnm498gr_1Ahd8W85EYgbl5yfblQn_8c2sHJhXhMbb4w-HXxj48qNCN_egy-Ej_ePAYv9XP0UfJtkK92XwTpw2Dcep8eiBw2k7I7HgGVKT2ULpyWQ0S4jB-ZT_vlFJpanVMAIBRouNz6Xn7M6abXmyfIv3RqgW2W6dtk5MMPw77RblWze2WeDEGIievucTDp1OBqBpdh0NLOPuET0-qiMknKpCV7BPRAg9IMuk",
-                desc: "Atelier d'échange et de leadership pour 50 jeunes leaders en partenariat avec le Centre Horizon."
+                title: "1 An au service de l'action humanitaire", 
+                date: "Mars 2024", 
+                img: "/assets/images/facebook/anniversary.png",
+                desc: "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions et en actions concrètes."
               },
               { 
-                title: "Sensibilisation contre la violence", 
-                date: "Septembre 2023", 
-                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDlO4tAFx4MvbXX49EXXjmKDrdvycJtY74K8QX240gQRCZunofrZ_KG0ac97DtXASPYWssUIEtr77Xgd4Muc5LJq0C2KgNOI2XgLcZE8_Pb-Qx4eDETcYkRXVEgUnmYjiGayXqzqEiGq8RU9CuRuyQ31iyYmvLbPzvY3Xl5Kf9jVoJmvJyWdQEngbviRKVRc7hhwWhdJCtkfV46c5mDYg_JaKt_OWvvBqlsBU21a2mxOJrpUDPmhzwU6KBlJzXFkuFvjXPkwRD1H_Y",
-                desc: "Campagne de quartier pour promouvoir l'égalité et mettre fin aux violences faites aux femmes."
+                title: "Partage du Dîner Communautaire", 
+                date: "Février 2024", 
+                img: "/assets/images/facebook/dinner.png",
+                desc: "Retour en images sur notre grand dîner de charité. Plus de 200 repas distribués dans une ambiance de fraternité."
               },
               { 
-                title: "Soutien aux orphelins", 
-                date: "Août 2023", 
-                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6h8lq4hHiG6AKWvJ9UdRTJTKRfSq4KAVXiqOPqFLD2-ucc1_4zEUl8eXZ7cTjCZY1wQNlIB0_CSFVdcGojbNjcRr_WtbXlSHc3Rujuh5YwE9gAfTVy9kZXf_gK171UEpbWVWlvU-qMOOYRVv47sDiOWQUIcKSMsCk7KE0lZkJWkl7C58hB8hg25zsYHfLXD9nOf5rL_Naaba3QFSemPY0604V2GUNetvnZAYdCQrgYHroFVHqR4b6vJ5e8TSMnR1JOW1F98yaAjI",
-                desc: "Distribution de vivres et accompagnement psychosocial pour les enfants défavorisés de N'Djamena."
+                title: "Assainissement Centre de Santé", 
+                date: "Novembre 2023", 
+                img: "/assets/images/facebook/sanitation.png",
+                desc: "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection au centre de santé SOS N'Djari."
               }
             ].map((news, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.15}>
                 <article className="group h-full flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
                   <div className="relative overflow-hidden aspect-video w-full">
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-                      style={{ backgroundImage: `url("${news.img}")` }}
+                    <img 
+                      src={news.img}
+                      alt={news.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>

@@ -10,9 +10,9 @@ const Donate: React.FC = () => {
             {/* Hero & Donation Form Section */}
             <section className="relative w-full py-12 lg:py-24 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#0d1b12]">
                 {/* Background Image with Overlay */}
-                 <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 z-0 overflow-hidden">
                     <img 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcJbvtAI1jYG9JGt_Y8jm4MOp5-ufQSFjX1KtuK6ZHN778j1LglUf01qYbaFTP69SnWNL44T_UzDy62dQfcsO9W7tCYJI1ywo-VjjxbTDkbe4AIfpEPQQ7tbS06bHwILw957ieKGYlRbVZra1h3hFRSivEiNQ6nu9t7iz_1yzP1uDBnt4WDLN8ksXRR599qVcPtxdjQzUlChWkqAhwFWe9rn9AD3HTgiCKLyKM9U8mkgQbmH8STkezMZtcTm0sRZDvh0mKkf7G5N0" 
+                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
                         alt="Background" 
                         className="w-full h-full object-cover opacity-40"
                     />
