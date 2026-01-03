@@ -109,6 +109,87 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="flex justify-center py-24 px-4 sm:px-10 lg:px-40 bg-[#f8fcf9] dark:bg-[#0d1b12]">
+        <div className="w-full max-w-[1200px]">
+          <div className="flex flex-col gap-16">
+            <div className="text-center space-y-4">
+              <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-primary">
+                Notre Force
+              </span>
+              <h2 className="text-4xl font-display font-bold text-[#0d1b12] dark:text-white">
+                Notre Équipe
+              </h2>
+              <p className="text-text-muted dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                Des passionnés engagés pour bâtir un avenir meilleur au Tchad.
+              </p>
+            </div>
+
+            {/* President Tier */}
+            <div className="flex justify-center -mb-8 relative z-10 text-center">
+              <div className="flex flex-col relative group max-w-md w-full">
+                <div className="absolute top-0 left-0 w-full h-full bg-blue-50/50 dark:bg-white/5 rounded-2xl -z-10 translate-y-20 pb-20"></div>
+                <div className="px-6 flex flex-col items-center">
+                  <div className="w-48 h-48 rounded-full border-8 border-white dark:border-[#0d1b12] shadow-xl overflow-hidden mb-6 bg-gray-200">
+                    <img 
+                      src="/assets/images/facebook/presi.jpeg" 
+                      alt="Abakar Saleh Mahamat" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="pt-2 pb-12">
+                    <span className="text-primary font-bold tracking-uppercase uppercase mb-2 block">Président</span>
+                    <h3 className="text-3xl font-display font-bold text-[#0d1b12] dark:text-white mb-3">Abakar Saleh Mahamat</h3>
+                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                      Visionnaire et engagé, il guide l'AAPT avec la conviction que chaque action compte pour un Tchad uni et solidaire.
+                    </p>
+                    <div className="flex justify-center gap-4 text-gray-400">
+                      <div className="w-10 h-10 rounded-full bg-white dark:bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        <Users size={20} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Board Members Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 pt-12 border-t border-gray-100 dark:border-white/5">
+              {[
+                { name: "Mahamat Zene Korom", role: "Secrétaire Général", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+                { name: "Maria Bechir Hassaballah", role: "Secrétaire Générale Adjointe", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop" },
+                { name: "Albachar Alba Mahamat Adam", role: "Assistant du SG", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop" },
+                { name: "Abakar Saleh Hassan", role: "Trésorier Général", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2574&auto=format&fit=crop" },
+                { name: "Talbey Ali Mahamat", role: "Trésorière Générale Adjointe", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2561&auto=format&fit=crop" },
+                { name: "Mahamat Ousman Mahamat", role: "Chargé Relations Extérieures", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop" },
+              ].map((member, idx) => (
+                <div key={idx} className="flex flex-col relative group">
+                  <div className="absolute top-0 left-0 w-full h-full bg-[#f8fcf9] dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl -z-10 translate-y-20 pb-20 transition-colors group-hover:border-primary/20"></div>
+                  <div className="px-6 flex flex-col items-center text-center">
+                    <div className="w-32 h-32 rounded-full border-4 border-white dark:border-[#0d1b12] shadow-lg overflow-hidden mb-6 bg-gray-200">
+                      <img 
+                        src={member.img} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="pt-2 pb-8">
+                      <span className="text-primary font-bold text-xs tracking-uppercase uppercase mb-2 block">{member.role}</span>
+                      <h3 className="text-xl font-display font-bold text-[#0d1b12] dark:text-white mb-2">{member.name}</h3>
+                      <div className="flex justify-center gap-4 text-gray-400 mt-4">
+                        <div className="w-8 h-8 rounded-full bg-white dark:bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                          <Users size={14} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* History */}
       <section className="flex justify-center py-16 px-4 sm:px-10 lg:px-40 bg-white">
         <div className="w-full max-w-[960px]">
