@@ -79,7 +79,7 @@ const About: React.FC = () => {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-xl transform -rotate-2"></div>
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcJbvtAI1jYG9JGt_Y8jm4MOp5-ufQSFjX1KtuK6ZHN778j1LglUf01qYbaFTP69SnWNL44T_UzDy62dQfcsO9W7tCYJI1ywo-VjjxbTDkbe4AIfpEPQQ7tbS06bHwILw957ieKGYlRbVZra1h3hFRSivEiNQ6nu9t7iz_1yzP1uDBnt4WDLN8ksXRR599qVcPtxdjQzUlChWkqAhwFWe9rn9AD3HTgiCKLyKM9U8mkgQbmH8STkezMZtcTm0sRZDvh0mKkf7G5N0" 
+                src="/assets/images/facebook/presi1.jpeg" 
                 alt="AAPT Team"
                 className="relative rounded-xl shadow-lg w-full h-auto object-cover aspect-[4/3] border-4 border-white"
               />
@@ -156,12 +156,14 @@ const About: React.FC = () => {
             {/* Board Members Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 pt-12 border-t border-gray-100 dark:border-white/5">
               {[
-                { name: "Mahamat Zene Korom", role: "Secrétaire Général", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
-                { name: "Maria Bechir Hassaballah", role: "Secrétaire Générale Adjointe", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop" },
-                { name: "Albachar Alba Mahamat Adam", role: "Assistant du SG", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop" },
-                { name: "Abakar Saleh Hassan", role: "Trésorier Général", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2574&auto=format&fit=crop" },
-                { name: "Talbey Ali Mahamat", role: "Trésorière Générale Adjointe", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2561&auto=format&fit=crop" },
-                { name: "Mahamat Ousman Mahamat", role: "Chargé Relations Extérieures", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop" },
+                { name: "Ali Kali Mahamat", role: "Vice-président", img: "/assets/images/facebook/VP.jpeg" },
+                { name: "Achta Saleh Atche", role: "2ème Vice-présidente", img: "/assets/images/facebook/2VP.jpeg" },
+                { name: "Idriss Bichara Hamid", role: "Secrétaire Général", img: "/assets/images/facebook/SG.jpeg" },
+                { name: "Maria Bechir Hassaballah", role: "Secrétaire Générale Adjointe", img: "/assets/images/facebook/SGA.jpeg" },
+                { name: "Fatime Chahad Ibrahim", role: "Chargé de Communication", img: "/assets/images/facebook/fatime.jpeg" },
+                { name: "Abakar Hassan Saleh", role: "Trésorier Général", img: "/assets/images/facebook/TS.jpeg" },
+                { name: "Talbey Ali Mahamat", role: "Trésorière Générale Adjointe", img: "/assets/images/facebook/TGA.jpeg" },
+                { name: "Mahamat Ousman Mahamat", role: "Chargé Relations Extérieures", img: "/assets/images/facebook/mahamat.jpeg" },
               ].map((member, idx) => (
                 <div key={idx} className="flex flex-col relative group">
                   <div className="absolute top-0 left-0 w-full h-full bg-[#f8fcf9] dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl -z-10 translate-y-20 pb-20 transition-colors group-hover:border-primary/20"></div>
