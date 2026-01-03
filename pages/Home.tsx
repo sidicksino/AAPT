@@ -135,7 +135,7 @@ const Home: React.FC = () => {
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-4 border-b md:border-b-0 md:border-r last:border-0 border-gray-100">
                 <p className="text-4xl md:text-5xl font-black text-primary">
-                  <Counter value={stat.val} suffix={stat.suffix} duration={1} />
+                  <Counter value={stat.val} suffix={stat.suffix} duration={2} />
                 </p>
                 <p className="text-sm font-semibold uppercase tracking-wider text-text-muted mt-2">{stat.label}</p>
               </div>
