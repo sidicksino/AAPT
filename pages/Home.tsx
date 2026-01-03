@@ -66,8 +66,8 @@ const Home: React.FC = () => {
               variants={itemVariants} 
               className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl drop-shadow-sm"
             >
-              Ensemble pour l'égalité, la jeunesse et un Tchad <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-hover relative inline-block">
-                solidaire
+              Association Actions Pour Tous <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-hover relative inline-block">
+                Tchad
                 <motion.svg
                   viewBox="0 0 200 9"
                   className="absolute -bottom-2 left-0 w-full"
