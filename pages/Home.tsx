@@ -43,8 +43,7 @@ const Home: React.FC = () => {
              transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
              className="w-full h-full bg-cover bg-center"
              style={{
-               backgroundImage: `linear-gradient(rgba(13, 27, 18, 0.6) 0%, rgba(13, 27, 18, 0.7) 100%), 
-               url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop")`
+               backgroundImage: `url("/assets/images/facebook/teams.jpeg")`
              }}
            />
         </div>
