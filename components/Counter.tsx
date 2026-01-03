@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import { useInView, useMotionValue, animate } from 'framer-motion';
 
 interface CounterProps {
   value: number;
@@ -16,26 +16,21 @@ const Counter: React.FC<CounterProps> = ({
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 50,
-    stiffness: 100,
-  });
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(value);
+      animate(motionValue, value, { duration });
     }
-  }, [isInView, value, motionValue]);
+  }, [isInView, value, duration, motionValue]);
 
   useEffect(() => {
-    springValue.on("change", (latest) => {
+    return motionValue.on("change", (latest) => {
       if (ref.current) {
         ref.current.textContent = Math.floor(latest).toString() + suffix;
       }
     });
-    return () => springValue.clearListeners(); 
-  }, [springValue, suffix]);
+  }, [motionValue, suffix]);
 
   return <span ref={ref} className={className}>0{suffix}</span>;
 };
