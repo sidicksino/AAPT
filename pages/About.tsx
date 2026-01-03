@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Scale, Users, Heart } from 'lucide-react';
+import Image from '../components/Image';
 
 const About: React.FC = () => {
   return (
@@ -78,7 +79,7 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-xl transform -rotate-2"></div>
-              <img 
+              <Image 
                 src="/assets/images/facebook/presi1.jpeg" 
                 alt="AAPT Team"
                 className="relative rounded-xl shadow-lg w-full h-auto object-cover aspect-[4/3] border-4 border-white"
@@ -131,7 +132,7 @@ const About: React.FC = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-blue-50/50 dark:bg-white/5 rounded-2xl -z-10 translate-y-20 pb-20"></div>
                 <div className="px-6 flex flex-col items-center">
                   <div className="w-48 h-48 rounded-full border-8 border-white dark:border-[#0d1b12] shadow-xl overflow-hidden mb-6 bg-gray-200">
-                    <img 
+                    <Image 
                       src="/assets/images/facebook/presi.jpeg" 
                       alt="Abakar Saleh Mahamat" 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -169,7 +170,7 @@ const About: React.FC = () => {
                   <div className="absolute top-0 left-0 w-full h-full bg-[#f8fcf9] dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl -z-10 translate-y-20 pb-20 transition-colors group-hover:border-primary/20"></div>
                   <div className="px-6 flex flex-col items-center text-center">
                     <div className="w-32 h-32 rounded-full border-4 border-white dark:border-[#0d1b12] shadow-lg overflow-hidden mb-6 bg-gray-200">
-                      <img 
+                      <Image 
                         src={member.img} 
                         alt={member.name} 
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

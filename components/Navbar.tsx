@@ -104,14 +104,15 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
+        {/* Mobile Nav */}
+      <AnimatePresence mode="sync">
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden border-b border-gray-100 bg-white"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="md:hidden overflow-hidden border-b border-gray-100 bg-white shadow-lg"
           >
             <div className="flex flex-col gap-2 p-4">
               {navItems.map((item, idx) => (
