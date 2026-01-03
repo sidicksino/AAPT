@@ -10,38 +10,38 @@ const articles = [
     category: "ÉVÉNEMENT",
     date: "Mars 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop", 
+    image: "/assets/images/facebook/anniversary.png",
     excerpt: "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions, en solidarité et en actions concrètes pour le Tchad.",
     linkText: "Voir le bilan"
   },
   {
     id: 2,
     title: "Moments Forts : Partage du Dîner Communautaire",
-    category: "COHÉSION SOCIALE",
+    category: "SOLIDARITÉ",
     date: "Février 2024",
-    type: "article",
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Organisation d'un grand repas de rupture de jeûne et de partage. Un moment unique de convivialité pour renforcer les liens fraternels et le vivre-ensemble.",
-    linkText: "Voir les photos"
+    type: "video",
+    image: "/assets/images/facebook/dinner.png",
+    excerpt: "Retour en images sur notre grand dîner de charité. Plus de 200 repas distribués dans une ambiance de fraternité et de partage.",
+    linkText: "Voir la vidéo"
   },
   {
     id: 3,
     title: "Assainissement au Centre de Santé SOS N'Djari",
     category: "SANTÉ",
-    date: "17 Nov 2023",
+    date: "Novembre 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1584620526017-91593eb423cb?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection du Centre de Santé SOS du quartier N'Djari. La santé commence par l'hygiène.",
-    linkText: "Lire le rapport"
+    image: "/assets/images/facebook/sanitation.png",
+    excerpt: "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection au centre de santé, garantissant un environnement sain pour les patients.",
+    linkText: "Lire l'article"
   },
   {
     id: 4,
     title: "Campagne de Sensibilisation pour la Paix",
-    category: "SOCIÉTÉ",
+    category: "COHÉSION SOCIALE",
     date: "Octobre 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "L'AAPT s'engage pour la promotion de la paix et de la cohabitation pacifique à travers des ateliers d'échange avec la jeunesse.",
+    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop",
+    excerpt: "Une série d'ateliers et de rencontres pour promouvoir le dialogue et la cohésion sociale dans les quartiers de N'Djamena.",
     linkText: "En savoir plus"
   },
   {
@@ -50,18 +50,18 @@ const articles = [
     category: "SOLIDARITÉ",
     date: "Septembre 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Distribution de kits alimentaires et de produits de première nécessité aux enfants vulnérables de N'Djamena.",
-    linkText: "Découvrir"
+    image: "/assets/images/facebook/dinner.png",
+    excerpt: "Distribution de kits alimentaires et de fournitures scolaires pour soutenir la rentrée des orphelins parrainés par l'association.",
+    linkText: "Voir les actions"
   },
   {
     id: 6,
     title: "Rapport d'Activités - Lancement",
-    category: "RAPPORT",
+    category: "SOCIÉTÉ",
     date: "Juin 2023",
-    type: "report",
-    image: null,
-    excerpt: "Retour sur les premiers mois d'existence de l'association et la définition de nos axes stratégiques pour le développement communautaire.",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
     linkText: "Télécharger le PDF"
   }
 ];
