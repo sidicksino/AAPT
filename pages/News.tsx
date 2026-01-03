@@ -1,67 +1,67 @@
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, ChevronDown, Mail, FileText, Download } from 'lucide-react';
 
-const categories = ["Tout", "Actualités", "Formations", "Événements"];
+const categories = ["Tout", "ÉDUCATION", "SANTÉ", "FORMATION", "SOLIDARITÉ"];
 
 const articles = [
   {
     id: 1,
-    title: "Lutte contre les violences faites aux femmes au Tchad",
-    category: "ÉGALITÉ & DROITS",
-    date: "08 Mars 2024",
+    title: "Campagne 'Rentrée pour Tous' : 500 kits scolaires distribués",
+    category: "ÉDUCATION",
+    date: "15 Sept 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop", 
-    excerpt: "L'AAPT renforce son engagement pour mettre fin aux violences basées sur le genre. Une série de conférences et d'ateliers a été organisée à N'Djamena.",
-    linkText: "Lire la suite"
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop", 
+    excerpt: "Pour cette rentrée scolaire, l'AAPT s'est mobilisée pour offrir des fournitures essentielles aux enfants des zones rurales. Cahiers, stylos et sacs ont été distribués pour encourager la scolarisation.",
+    linkText: "Lire le rapport"
   },
   {
     id: 2,
-    title: "Partenariat avec le \"Centre Horizon\"",
-    category: "JEUNESSE & FORMATION",
-    date: "25 Fév 2024",
+    title: "Santé Communautaire : Sensibilisation contre le Paludisme",
+    category: "SANTÉ",
+    date: "20 Août 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
-    excerpt: "Lancement de nouvelles sessions de formation et d'échanges pour la jeunesse tchadienne. Un programme ambitieux pour l'avenir professionnel.",
-    linkText: "Lire la suite"
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Nos équipes ont mené une vaste campagne de prévention, distribuant des moustiquaires imprégnées et informant les familles sur les gestes qui sauvent.",
+    linkText: "Voir les photos"
   },
   {
     id: 3,
-    title: "Échanges Jeunesse Afrique : Un dialogue éducatif",
-    category: "INTERNATIONAL",
-    date: "15 Fév 2024",
+    title: "Autonomisation des Femmes : Fin de la formation couture",
+    category: "FORMATION",
+    date: "10 Juil 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Des jeunes de plusieurs pays africains se réunissent pour partager des actualités éducatives et bâtir des ponts culturels durables.",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop",
+    excerpt: "Félicitations aux 30 femmes de la promotion 2024 qui ont reçu leur certificat et une machine à coudre pour lancer leur activité génératrice de revenus.",
     linkText: "Découvrir"
   },
   {
     id: 4,
-    title: "Mission Humanitaire : L'eau pour la vie",
+    title: "Mission d'Urgence : Accès à l'eau potable à Gassi",
     category: "SOLIDARITÉ",
-    date: "20 Jan 2024",
+    date: "05 Juin 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1541976844346-718b7d280358?q=80&w=1974&auto=format&fit=crop",
-    excerpt: "Sous la supervision de nos équipes, de nouveaux points d'eau potable sont inaugurés pour améliorer les conditions sanitaires des villages reculés.",
+    image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=2080&auto=format&fit=crop",
+    excerpt: "Inauguration d'un nouveau forage solaire permettant à plus de 200 familles d'accéder à une eau propre et sûre, réduisant ainsi les maladies hydriques.",
     linkText: "Lire la suite"
   },
   {
     id: 5,
-    title: "Visite de terrain avec Abakar Saleh Mahamat",
-    category: "SUR LE TERRAIN",
-    date: "10 Jan 2024",
+    title: "Conférence Jeunesse & Leadership à N'Djamena",
+    category: "ÉVÉNEMENT",
+    date: "15 Mai 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Notre leader Abakar Saleh Mahamat rencontre les bénéficiaires de nos programmes de santé pour évaluer l'impact réel de nos actions.",
-    linkText: "Lire la suite"
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Plus de 100 jeunes leaders se sont réunis pour débattre de l'engagement citoyen et du rôle de la jeunesse dans le développement durable du Tchad.",
+    linkText: "Lire le compte-rendu"
   },
   {
     id: 6,
-    title: "Rapport d'activité AAPT 2023",
+    title: "Rapport Annuel d'Activités 2023",
     category: "RAPPORT",
-    date: "05 Jan 2024",
+    date: "15 Jan 2024",
     type: "report",
     image: null,
-    excerpt: "Consultez le bilan de nos actions humanitaires, nos avancées sur l'égalité des genres et l'impact de nos programmes éducatifs durant l'année écoulée.",
+    excerpt: "Transparence et impact : découvrez le bilan complet de nos interventions, nos états financiers et les perspectives pour l'année à venir.",
     linkText: "Télécharger le PDF"
   }
 ];
@@ -72,10 +72,8 @@ const News: React.FC = () => {
     const filteredArticles = activeCategory === "Tout" 
         ? articles 
         : articles.filter(a => {
-            if (activeCategory === "Actualités") return a.category !== "RAPPORT"; // Mapping simplified for demo
-            if (activeCategory === "Formations") return a.category.includes("FORMATION");
-            if (activeCategory === "Événements") return a.category === "INTERNATIONAL" || a.category === "SOLIDARITÉ";
-            return true;
+            if (activeCategory === "Tout") return true;
+            return a.category.includes(activeCategory);
         });
 
     return (

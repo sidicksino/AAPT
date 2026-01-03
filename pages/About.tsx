@@ -169,6 +169,23 @@ const About: React.FC = () => {
                   L'association étend ses activités aux zones rurales environnantes, touchant désormais des milliers de bénéficiaires.
                 </p>
               </div>
+
+               {/* Timeline Item 4 - 2024 */}
+               <div className="flex flex-col items-center gap-1 pb-3">
+                <div className="w-[2px] bg-[#cfe7d7] h-4"></div>
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
+                  <div className="size-3 rounded-full bg-primary"></div>
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col pt-1">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-lg font-bold">Innovation Numérique</p>
+                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2024</span>
+                </div>
+                <p className="text-text-muted text-base">
+                  Lancement du programme d'inclusion numérique pour équiper les écoles rurales et former les jeunes aux outils technologiques.
+                </p>
+              </div>
             </div>
           </div>
         </div>
