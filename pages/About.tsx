@@ -14,10 +14,10 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4 max-w-[800px] z-10">
               <h1 className="text-white text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Agir pour un avenir meilleur au Tchad
+                Promouvoir le Vivre-Ensemble et la Solidarité
               </h1>
               <h2 className="text-gray-200 text-base font-normal leading-relaxed sm:text-lg">
-                Association Actions Pour Tous — Améliorer les conditions de vie des couches défavorisées à travers la solidarité et l'action humanitaire.
+                Association Actions Pour Tous — Une année d'engagement pour la cohésion sociale, l'entraide et le développement communautaire au Tchad.
               </h2>
             </div>
             <div className="flex gap-4 z-10 pt-4">
@@ -127,33 +127,15 @@ const About: React.FC = () => {
               </div>
               <div className="flex flex-1 flex-col pb-8 pt-2">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Fondation à N'Djamena</p>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2015</span>
+                  <p className="text-lg font-bold">Création Officielle</p>
+                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2023</span>
                 </div>
                 <p className="text-text-muted text-base">
-                  Création officielle de l'association par un groupe de tchadiens visionnaires désireux d'apporter le changement.
+                  Lancement de l'Association Actions Pour Tous (AAPT) à N'Djamena avec pour mission principale de promouvoir la cohésion sociale et le vivre-ensemble.
                 </p>
               </div>
 
                {/* Timeline Item 2 */}
-               <div className="flex flex-col items-center gap-1">
-                <div className="w-[2px] bg-[#cfe7d7] h-4"></div>
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
-                  <div className="size-3 rounded-full bg-primary"></div>
-                </div>
-                <div className="w-[2px] bg-[#cfe7d7] h-full grow min-h-[40px]"></div>
-              </div>
-              <div className="flex flex-1 flex-col pb-8 pt-1">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Lancement des pôles Jeunesse</p>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2017</span>
-                </div>
-                <p className="text-text-muted text-base">
-                  Début des collaborations avec des centres éducatifs et lancement des premiers programmes de formation.
-                </p>
-              </div>
-
-               {/* Timeline Item 3 */}
                <div className="flex flex-col items-center gap-1 pb-3">
                 <div className="w-[2px] bg-[#cfe7d7] h-4"></div>
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
@@ -162,28 +144,11 @@ const About: React.FC = () => {
               </div>
               <div className="flex flex-1 flex-col pt-1">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Expansion régionale</p>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2020</span>
-                </div>
-                <p className="text-text-muted text-base">
-                  L'association étend ses activités aux zones rurales environnantes, touchant désormais des milliers de bénéficiaires.
-                </p>
-              </div>
-
-               {/* Timeline Item 4 - 2024 */}
-               <div className="flex flex-col items-center gap-1 pb-3">
-                <div className="w-[2px] bg-[#cfe7d7] h-4"></div>
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
-                  <div className="size-3 rounded-full bg-primary"></div>
-                </div>
-              </div>
-              <div className="flex flex-1 flex-col pt-1">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Innovation Numérique</p>
+                  <p className="text-lg font-bold">Actions de Terrain</p>
                   <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2024</span>
                 </div>
                 <p className="text-text-muted text-base">
-                  Lancement du programme d'inclusion numérique pour équiper les écoles rurales et former les jeunes aux outils technologiques.
+                  Multiplication des initiatives : dîners communautaires pour la fraternité, campagnes d'assainissement (SOS N'Djari) et aide aux personnes vulnérables.
                 </p>
               </div>
             </div>

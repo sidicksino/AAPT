@@ -1,67 +1,67 @@
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, ChevronDown, Mail, FileText, Download } from 'lucide-react';
 
-const categories = ["Tout", "ÉDUCATION", "SANTÉ", "FORMATION", "SOLIDARITÉ"];
+const categories = ["Tout", "COHÉSION SOCIALE", "SANTÉ", "SOCIÉTÉ", "SOLIDARITÉ", "ÉVÉNEMENT"];
 
 const articles = [
   {
     id: 1,
-    title: "Campagne 'Rentrée pour Tous' : 500 kits scolaires distribués",
-    category: "ÉDUCATION",
-    date: "15 Sept 2024",
+    title: "1 An au service de l'action humanitaire",
+    category: "ÉVÉNEMENT",
+    date: "Mars 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop", 
-    excerpt: "Pour cette rentrée scolaire, l'AAPT s'est mobilisée pour offrir des fournitures essentielles aux enfants des zones rurales. Cahiers, stylos et sacs ont été distribués pour encourager la scolarisation.",
-    linkText: "Lire le rapport"
+    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop", 
+    excerpt: "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions, en solidarité et en actions concrètes pour le Tchad.",
+    linkText: "Voir le bilan"
   },
   {
     id: 2,
-    title: "Santé Communautaire : Sensibilisation contre le Paludisme",
-    category: "SANTÉ",
-    date: "20 Août 2024",
+    title: "Moments Forts : Partage du Dîner Communautaire",
+    category: "COHÉSION SOCIALE",
+    date: "Février 2024",
     type: "article",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Nos équipes ont mené une vaste campagne de prévention, distribuant des moustiquaires imprégnées et informant les familles sur les gestes qui sauvent.",
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Organisation d'un grand repas de rupture de jeûne et de partage. Un moment unique de convivialité pour renforcer les liens fraternels et le vivre-ensemble.",
     linkText: "Voir les photos"
   },
   {
     id: 3,
-    title: "Autonomisation des Femmes : Fin de la formation couture",
-    category: "FORMATION",
-    date: "10 Juil 2024",
+    title: "Assainissement au Centre de Santé SOS N'Djari",
+    category: "SANTÉ",
+    date: "17 Nov 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop",
-    excerpt: "Félicitations aux 30 femmes de la promotion 2024 qui ont reçu leur certificat et une machine à coudre pour lancer leur activité génératrice de revenus.",
-    linkText: "Découvrir"
+    image: "https://images.unsplash.com/photo-1584620526017-91593eb423cb?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection du Centre de Santé SOS du quartier N'Djari. La santé commence par l'hygiène.",
+    linkText: "Lire le rapport"
   },
   {
     id: 4,
-    title: "Mission d'Urgence : Accès à l'eau potable à Gassi",
-    category: "SOLIDARITÉ",
-    date: "05 Juin 2024",
+    title: "Campagne de Sensibilisation pour la Paix",
+    category: "SOCIÉTÉ",
+    date: "Octobre 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=2080&auto=format&fit=crop",
-    excerpt: "Inauguration d'un nouveau forage solaire permettant à plus de 200 familles d'accéder à une eau propre et sûre, réduisant ainsi les maladies hydriques.",
-    linkText: "Lire la suite"
+    image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "L'AAPT s'engage pour la promotion de la paix et de la cohabitation pacifique à travers des ateliers d'échange avec la jeunesse.",
+    linkText: "En savoir plus"
   },
   {
     id: 5,
-    title: "Conférence Jeunesse & Leadership à N'Djamena",
-    category: "ÉVÉNEMENT",
-    date: "15 Mai 2024",
+    title: "Soutien aux orphelins : Distribution de vivres",
+    category: "SOLIDARITÉ",
+    date: "Septembre 2023",
     type: "article",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Plus de 100 jeunes leaders se sont réunis pour débattre de l'engagement citoyen et du rôle de la jeunesse dans le développement durable du Tchad.",
-    linkText: "Lire le compte-rendu"
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Distribution de kits alimentaires et de produits de première nécessité aux enfants vulnérables de N'Djamena.",
+    linkText: "Découvrir"
   },
   {
     id: 6,
-    title: "Rapport Annuel d'Activités 2023",
+    title: "Rapport d'Activités - Lancement",
     category: "RAPPORT",
-    date: "15 Jan 2024",
+    date: "Juin 2023",
     type: "report",
     image: null,
-    excerpt: "Transparence et impact : découvrez le bilan complet de nos interventions, nos états financiers et les perspectives pour l'année à venir.",
+    excerpt: "Retour sur les premiers mois d'existence de l'association et la définition de nos axes stratégiques pour le développement communautaire.",
     linkText: "Télécharger le PDF"
   }
 ];

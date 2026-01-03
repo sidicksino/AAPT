@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Email</h3>
-                    <p className="text-gray-500">contact@aapt-tchad.org</p>
+                    <p className="text-gray-500">associationactionspourtous@gmail.com</p>
                   </div>
                 </div>
               </div>
