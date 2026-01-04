@@ -193,7 +193,7 @@ const About: React.FC = () => {
               ].map((member, idx) => (
                 <div key={idx} className="flex flex-col relative group">
                   <div className="absolute top-0 left-0 w-full h-full bg-[#f8fcf9] dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl -z-10 translate-y-20 pb-20 transition-colors group-hover:border-primary/20"></div>
-                  <div className="px-6 flex flex-col items-center text-center">
+                  <div className="px-2 flex flex-col items-center text-center">
                     <div className="w-32 h-32 rounded-full border-4 border-white dark:border-[#0d1b12] shadow-lg overflow-hidden mb-6 bg-gray-200">
                       <Image 
                         src={member.img} 
@@ -204,7 +204,7 @@ const About: React.FC = () => {
                     <div className="pt-2 pb-8">
                       <span className="text-primary font-bold text-xs tracking-uppercase uppercase mb-2 block">{member.role}</span>
                       <h3 className="text-xl font-display font-bold text-[#0d1b12] dark:text-white mb-2">{member.name}</h3>
-                      <div className="flex justify-center gap-4 text-gray-400 mt-4">
+                      <div className="flex justify-center gap-4 text-gray-400 mt-0">
                         <div className="w-8 h-8 rounded-full bg-white dark:bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
                           <Users size={14} />
                         </div>
