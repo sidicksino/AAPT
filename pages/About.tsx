@@ -118,7 +118,7 @@ const About: React.FC = () => {
             
             <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
                 {["Enfants orphelins", "Femmes veuves", "Personnes vivant avec un handicap", "Personnes aveugles", "Malades hospitalisés", "Femmes en situation de précarité", "Communautés sinistrées", "Personnes défavorisées"].map((item, idx) => (
-                    <span key={idx} className="px-8 py-4 bg-white rounded-full text-lg font-bold text-[#0d1b12] border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/30 hover:text-primary hover:scale-105 transition-all duration-300 cursor-default">
+                    <span key={idx} className="px-8 py-4 bg-white rounded-full text-lg font-bold hover:text-[#0d1b12] border hover:border-gray-100 shadow-sm hover:shadow-lg border-primary/30 text-primary hover:scale-105 transition-all duration-300 cursor-default">
                         {item}
                     </span>
                 ))}
