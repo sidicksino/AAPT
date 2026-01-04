@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, ArrowRight, ChevronDown, Mail, FileText, Download } from 'lucide-react';
+import { Calendar, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Mail, FileText, Download } from 'lucide-react';
 
 const categories = ["Tout", "COHÉSION SOCIALE", "SANTÉ", "SOCIÉTÉ", "SOLIDARITÉ", "ÉVÉNEMENT"];
 
@@ -63,11 +63,93 @@ const articles = [
     image: "/assets/images/facebook/anniversary.png",
     excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
     linkText: "Télécharger le PDF"
-  }
+  },
+  {
+    id: 7,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 8,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 9,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 10,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 11,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 12,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 13,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
+  {
+    id: 14,
+    title: "Rapport d'Activités - Lancement",
+    category: "SOCIÉTÉ",
+    date: "Juin 2023",
+    type: "document",
+    image: "/assets/images/facebook/anniversary.png",
+    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+    linkText: "Télécharger le PDF"
+  },
 ];
 
 const News: React.FC = () => {
     const [activeCategory, setActiveCategory] = useState("Tout");
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
 
     const filteredArticles = activeCategory === "Tout" 
         ? articles 
@@ -75,6 +157,12 @@ const News: React.FC = () => {
             if (activeCategory === "Tout") return true;
             return a.category.includes(activeCategory);
         });
+
+    const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
+    const paginatedArticles = filteredArticles.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
 
     return (
         <div className="flex-grow bg-[#F8F9FA]">
@@ -132,7 +220,7 @@ const News: React.FC = () => {
             {/* Articles Grid */}
             <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredArticles.map(article => (
+                    {paginatedArticles.map(article => (
                         <article key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-gray-100/50 hover:-translate-y-1">
                             {article.type === 'report' ? (
                                 <div className="aspect-[16/10] bg-[#F3F8F5] flex items-center justify-center relative group-hover:bg-[#E6F4EA] transition-colors">
@@ -180,10 +268,38 @@ const News: React.FC = () => {
                     ))}
                 </div>
                 
-                {filteredArticles.length > 0 && (
-                     <div className="mt-16 flex justify-center">
-                        <button className="px-10 py-3 bg-white border border-gray-200 text-text-main font-bold rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm">
-                            Charger plus
+                {filteredArticles.length > itemsPerPage && (
+                     <div className="mt-16 flex justify-center items-center gap-4">
+                        <button 
+                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                            disabled={currentPage === 1}
+                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12]"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+
+                        <div className="flex items-center gap-2">
+                            {Array.from({ length: totalPages }).map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setCurrentPage(i + 1)}
+                                    className={`w-10 h-10 rounded-full font-bold flex items-center justify-center transition-all ${
+                                        currentPage === i + 1
+                                            ? "bg-[#4ADE80] text-white shadow-md scale-110" 
+                                            : "text-gray-500 hover:bg-gray-100 hover:text-[#0d1b12]"
+                                    }`}
+                                >
+                                    {i + 1}
+                                </button>
+                            ))}
+                        </div>
+
+                        <button 
+                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                            disabled={currentPage === totalPages}
+                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12]"
+                        >
+                            <ChevronRight size={24} />
                         </button>
                     </div>
                 )}
