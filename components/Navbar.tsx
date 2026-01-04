@@ -24,8 +24,9 @@ const Navbar: React.FC = () => {
         <motion.div 
           className="flex items-center gap-3 cursor-pointer" 
           onClick={() => navigate('/')}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05, rotate: -2 }}
           whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <div className="flex items-center justify-center size-10 rounded-full bg-primary/20 text-primary">
             <HeartHandshake size={24} />
@@ -41,7 +42,7 @@ const Navbar: React.FC = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `relative text-sm font-medium transition-colors hover:text-primary ${
+                  `relative text-sm font-medium transition-all duration-300 hover:text-primary hover:scale-105 ${
                     isActive ? 'text-primary font-bold' : 'text-gray-600'
                   }`
                 }
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
                     {isActive && (
                       <motion.div
                         layoutId="navbar-underline"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full shadow-[0_0_8px_rgba(57,224,121,0.5)]"
                       />
                     )}
                   </>
@@ -62,8 +63,9 @@ const Navbar: React.FC = () => {
           </div>
           <motion.button 
             onClick={() => navigate('/donate')}
-            whileHover={{ scale: 1.05, backgroundColor: "#0fd451" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#0fd451", boxShadow: "0px 5px 15px rgba(57, 224, 121, 0.4)" }}
             whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             className="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-[#0d1b12] shadow-sm transition-colors"
           >
             Faire un don

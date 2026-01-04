@@ -24,14 +24,14 @@ const Footer: React.FC = () => {
               <span className="text-xs opacity-70 block mt-2">Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024</span>
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] transition-all">
-                <Facebook size={20} />
+              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
+                <Facebook size={20} className="group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] transition-all">
-                <Twitter size={20} />
+              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
+                <Twitter size={20} className="group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] transition-all">
-                <Instagram size={20} />
+              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
+                <Instagram size={20} className="group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
@@ -40,11 +40,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">Navigation</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2">Accueil</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2">À propos de nous</Link></li>
-              <li><Link to="/actions" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2">Nos Actions</Link></li>
-              <li><Link to="/news" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2">Actualités</Link></li>
-              <li><Link to="/donate" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2">Faire un don</Link></li>
+              <li><Link to="/" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Accueil</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">À propos de nous</Link></li>
+              <li><Link to="/actions" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Nos Actions</Link></li>
+              <li><Link to="/news" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Actualités</Link></li>
+              <li><Link to="/donate" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Faire un don</Link></li>
             </ul>
           </div>
 

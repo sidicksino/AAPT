@@ -161,16 +161,16 @@ const Home: React.FC = () => {
               { icon: <Globe className="size-8"/>, title: "Solidarité", desc: "Actions humanitaires concrètes : distributions de vivres, campagnes de santé et soutien aux orphelins.", color: "bg-green-50 text-green-500" }
             ].map((mission, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
-                <div className="group relative flex h-full flex-col gap-6 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl hover:border-primary/20">
-                  <div className={`flex size-16 items-center justify-center rounded-2xl ${mission.color} transition-transform group-hover:scale-110 duration-300`}>
+                <div className="group relative flex h-full flex-col gap-6 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:border-primary/30">
+                  <div className={`flex size-16 items-center justify-center rounded-2xl ${mission.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
                     {mission.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors">{mission.title}</h3>
+                    <h3 className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors duration-300">{mission.title}</h3>
                     <p className="mt-4 text-base leading-relaxed text-text-muted">{mission.desc}</p>
                   </div>
                   <div className="mt-auto pt-4">
-                    <span className="inline-flex items-center text-sm font-bold text-text-main group-hover:translate-x-2 transition-transform cursor-pointer">
+                    <span className="inline-flex items-center text-sm font-bold text-text-main group-hover:translate-x-2 transition-transform duration-300 cursor-pointer">
                       En savoir plus <ArrowRight size={16} className="ml-2 text-primary" />
                     </span>
                   </div>
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
               }
             ].map((news, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.15}>
-                <article className="group h-full flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-2">
+                <article className="group h-full flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 border border-transparent hover:border-primary/10">
                   <div className="relative overflow-hidden aspect-video w-full">
                     <img 
                       src={news.img}
