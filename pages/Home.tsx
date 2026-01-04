@@ -193,7 +193,7 @@ const Home: React.FC = () => {
               <h2 className="text-4xl font-black text-text-main mt-2">Dernières Actions</h2>
             </div>
             <button onClick={() => navigate('/news')} className="group flex items-center gap-2 text-base font-bold text-text-main hover:text-primary transition-colors bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md">
-              Voir toute la galerie
+              Voir toutes les actualités
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </AnimatedSection>
@@ -297,7 +297,7 @@ const Home: React.FC = () => {
               <button onClick={() => navigate('/donate')} className="h-14 w-full rounded-full bg-primary px-10 text-lg font-bold text-[#0d1b12] shadow-lg hover:bg-primary-hover hover:scale-105 transition-all sm:w-auto">
                 Faire un don maintenant
               </button>
-              <button className="flex h-14 w-full items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-transparent px-10 text-lg font-bold text-white hover:bg-white/10 hover:border-white/40 transition-all sm:w-auto">
+              <button onClick={() => navigate('/contact')} className="flex h-14 w-full items-center justify-center gap-2 rounded-full border-2 border-white/20 bg-transparent px-10 text-lg font-bold text-white hover:bg-white/10 hover:border-white/40 transition-all sm:w-auto">
                 <Mail size={20} />
                 S'inscrire à la newsletter
               </button>

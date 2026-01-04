@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { ArrowRight, Users, GraduationCap, Heart, CheckCircle } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 const Actions: React.FC = () => {
+  const navigate = useNavigate();
+
   const [activeFilter, setActiveFilter] = useState("Tout");
 
   const cards = [
     { tag: "Aide Humanitaire", title: "Aide humanitaire et sociale", img: "/assets/images/facebook/aide.jpeg", desc: "Distribution de kits alimentaires, vêtements, produits d’hygiène, soutien matériel aux familles et individus vulnérables." },
     { tag: "Éducation", title: "Éducation et appui à la jeunesse", img: "/assets/images/facebook/formation.jpeg", desc: "Distribution de fournitures scolaires, sensibilisation dans les écoles, accompagnement d’enfants vulnérables à l’éducation." },
     { tag: "Santé", title: "Santé et nutrition", img: "/assets/images/facebook/sante.jpeg", desc: "Campagnes de sensibilisation, soutien aux hôpitaux, nutrition infantile, hygiène communautaire." },
-    { tag: "Formation", title: "Formation", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6nexX6Zzm2iY0fLJ7UADf3zBrgxCZvQSYCAvuJEieE-RUFcPTx-2yacXm6qYiaCN3-2uvYs_c6JRn8PhvstCsi0xLlgAC06qFDyhdvJjn5pXkpqgBiHJULtG0qHbC-LuFVYXeF7ObFUjY4JPjEimniU7CgjGcqg_tIQ5CfGy4FhfAbWFor1wMh9p6vtoomEeTBhPrWgXS5-F4zc-Gl36gK_J5mAsI0ZCHuHrwlCqiCERm8-BI-_rg959Pz1ZyeHQ0EX28cxl9o2Y", desc: "Ateliers de renforcement de capacités pour jeunes, femmes et communautés locales." },
+    { tag: "Formation", title: "Formation", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6nexX6Zzm2iY0fLJ7UADf3zBrgxCZvQSYCAvuJEieE-RUFcPTx-2yacXm6qYiaCN3-2uvYs_c6JRn8PhvstCsi0xLlgAC06qFDyhdvJjn5pXkpqgBiHJULtG0qHbC-LuFVYXeF7ObFUjY4JPjEimniU7CgjGcqg_tIQ5CfGy5FhfAbWFor1wMh9p6vtoomEeTBhPrWgXS5-F4zc-Gl36gK_J5mAsI0ZCHuHrwlCqiCERm8-BI-_rg959Pz1ZyeHQ0EX28cxl9o2Y", desc: "Ateliers de renforcement de capacités pour jeunes, femmes et communautés locales." },
     { tag: "Sensibilisation", title: "Sensibilisation et mobilisation", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDw77O667VvJ3_t5r2q7o_Dk64zE4qGv-vXyLg_wXg7PzT5n9xW-hGq3vE9tK4j2B8rL1s5yN6mQ9c4z3b8v7x-9_0l6k2m5n8p4q7r3s9t2v1wX6y5z8A4b7C9d0e1f2g3h4i5j6k7l8m9n0o", desc: "Organisation de conférences, débats, journées d’engagement communautaire." },
     { tag: "Environnement", title: "Environnement et dév. communautaire", img: "/assets/images/facebook/eau.jpeg", desc: "Reboisement, assainissement, actions de salubrité et de préservation de l’environnement." }
   ];
@@ -38,7 +42,7 @@ const Actions: React.FC = () => {
               </h2>
             </div>
             <div className="flex flex-wrap gap-4 justify-center z-10 mt-2">
-              <button className="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-[#0d1b12] text-base font-bold transition-transform hover:scale-105">
+              <button onClick={() => navigate('/donate')} className="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-[#0d1b12] text-base font-bold transition-transform hover:scale-105">
                 <span>Soutenir nos projets</span>
               </button>
             </div>
