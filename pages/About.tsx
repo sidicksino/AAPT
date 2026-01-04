@@ -18,7 +18,7 @@ const About: React.FC = () => {
                 Paix, Solidarité, Développement
               </h1>
               <h2 className="text-gray-200 text-base font-normal leading-relaxed sm:text-lg">
-                Association Actions Pour Tous — Une année d'engagement pour la cohésion sociale, l'entraide et le développement communautaire au Tchad.
+                Organisation à but non lucratif, laïque et apolitique. Fondée en 2023, l’Association Actions Pour Tous œuvre pour la solidarité humaine, la justice sociale et le développement durable.
               </h2>
             </div>
             <div className="flex gap-4 z-10 pt-4">
@@ -53,7 +53,7 @@ const About: React.FC = () => {
                 <div className="flex flex-col gap-3">
                   <h3 className="text-xl font-bold leading-tight">Notre Mission</h3>
                   <p className="text-text-muted leading-relaxed">
-                    Nous œuvrons pour améliorer la vie des défavorisés grâce à la solidarité et à des actions humanitaires directes. Notre priorité est de répondre aux besoins essentiels des populations vulnérables.
+                    Contribuer activement à l’amélioration des conditions de vie des personnes vulnérables à travers des actions concrètes dans les domaines de la solidarité sociale, de la santé, de l’éducation, de la formation, de la protection de l’enfance et du développement communautaire.
                   </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const About: React.FC = () => {
                 <div className="flex flex-col gap-3">
                   <h3 className="text-xl font-bold leading-tight">Notre Vision</h3>
                   <p className="text-text-muted leading-relaxed">
-                    Un Tchad solidaire où l'égalité est reine et la violence bannie. Nous visons une société sans violence, particulièrement à l'égard des femmes, et ouverte sur la jeunesse africaine.
+                    Construire une société tchadienne plus juste, inclusive et solidaire où chaque personne, en particulier les plus défavorisées, peut vivre dignement, accéder à l’éducation, à la santé et participer activement au développement de sa communauté.
                   </p>
                 </div>
               </div>
@@ -73,43 +73,40 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Fields of Action */}
-      <section className="flex justify-center py-16 px-4 sm:px-10 lg:px-40">
-        <div className="w-full max-w-[960px]">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative">
-              <div className="absolute -inset-4 bg-primary/10 rounded-xl transform -rotate-2"></div>
-              <Image 
-                src="/assets/images/facebook/presi1.jpeg" 
-                alt="AAPT Team"
-                className="relative rounded-xl shadow-lg w-full h-auto object-cover aspect-[4/3] border-4 border-white"
-              />
-            </div>
-            <div className="order-1 md:order-2 flex flex-col gap-6">
-              <h2 className="text-3xl font-bold leading-tight">Nos Champs d'Action</h2>
-              <p className="text-text-muted text-lg">
-                Sous l'impulsion de leaders engagés comme <strong>Abakar Saleh Mahamat</strong>, l'AAPT mobilise la communauté pour un impact durable.
-              </p>
-              <ul className="flex flex-col gap-4 mt-2">
-                {[
-                  { icon: <Users size={20} />, title: "Égalité et Protection des Femmes", text: "Promouvoir l'égalité et lutter activement contre toutes les formes de violence faites aux femmes au Tchad." },
-                  { icon: <Target size={20} />, title: "Jeunesse et Éducation", text: "Organiser des formations, des échanges (ex: Centre Horizon) et diffuser des actualités éducatives pour la jeunesse." },
-                  { icon: <Heart size={20} />, title: "Solidarité et Entraide", text: "Améliorer concrètement le quotidien des plus démunis par des actions humanitaires ciblées." }
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="mt-1 text-primary">{item.icon}</div>
-                    <div>
-                      <h4 className="font-bold text-lg">{item.title}</h4>
-                      <p className="text-sm text-text-muted">{item.text}</p>
+
+
+      {/* Values Section */}
+      <section className="flex justify-center py-12 px-4 sm:px-10 lg:px-40 bg-[#f8fcf9]">
+        <div className="w-full max-w-[1200px] text-center">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl mb-12">Nos Valeurs</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                {["Solidarité", "Respect de la dignité humaine", "Engagement citoyen", "Égalité des chances", "Paix et cohésion sociale", "Transparence et responsabilité"].map((val, idx) => (
+                    <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-primary/10 flex items-center justify-center">
+                        <p className="font-bold text-lg text-[#0d1b12]">{val}</p>
                     </div>
-                  </li>
                 ))}
-              </ul>
             </div>
-          </div>
         </div>
       </section>
 
+      {/* Beneficiaries Section */}
+      <section className="flex justify-center py-12 px-4 sm:px-10 lg:px-40 bg-white">
+        <div className="w-full max-w-[1200px]">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl mb-8 text-center">Nos Bénéficiaires Prioritaires</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+                {["Enfants orphelins", "Femmes veuves", "Personnes vivant avec un handicap", "Personnes aveugles", "Malades hospitalisés", "Femmes en situation de précarité", "Communautés sinistrées", "Personnes défavorisées en général"].map((item, idx) => (
+                    <span key={idx} className="px-6 py-3 bg-gray-100 rounded-full text-text-main font-medium border border-gray-200">{item}</span>
+                ))}
+            </div>
+             <div className="mt-12 text-center">
+                <blockquote className="text-2xl font-bold text-primary italic">
+                    "Agir ensemble pour que personne ne soit oublié."
+                </blockquote>
+            </div>
+        </div>
+      </section>
+
+      {/* Fields of Action (Keeping image but updating text if needed or removing if covered by Actions page, keeping simply as "Impact" section or removing to avoid duplication with new detailed sections. I will keep the Team section after this.) */}
       {/* Team Section */}
       <section className="flex justify-center py-24 px-4 sm:px-10 lg:px-40 bg-[#f8fcf9] dark:bg-[#0d1b12]">
         <div className="w-full max-w-[1200px]">
@@ -212,7 +209,7 @@ const About: React.FC = () => {
               <div className="flex flex-1 flex-col pb-8 pt-2">
                 <div className="flex items-center justify-between mb-1">
                   <p className="text-lg font-bold">Création Officielle</p>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">Février 2024</span>
+                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2023</span>
                 </div>
                 <p className="text-text-muted text-base">
                   Lancement de l'Association Actions Pour Tous (AAPT) à N'Djamena avec pour mission principale de promouvoir la cohésion sociale et le vivre-ensemble.

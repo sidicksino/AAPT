@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Basée à Ndjari/ECRB, l'AAPT œuvre pour la Paix, Solidarité, Développement.
+              Paix, Solidarité, Développement
               <br/>
               <span className="text-xs opacity-70 block mt-2">Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024</span>
             </p>
@@ -54,7 +54,10 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="text-primary mt-1 shrink-0" size={18} />
-                <span className="text-gray-300 text-sm">Ndjari/ECRB, N'Djamena, Tchad</span>
+                <div>
+                  <h3 className="font-bold text-white text-lg mb-1">Siège National</h3>
+                  <p className="text-gray-300 leading-relaxed text-sm">Quartier N’djari / ECRB,<br/>N'Djamena, Tchad</p>
+                </div>
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="text-primary shrink-0" size={18} />

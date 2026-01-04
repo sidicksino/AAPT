@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PlayCircle, Image as ImageIcon, X, ZoomIn, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
+import { useNavigate } from 'react-router-dom';
 
 type MediaType = 'image' | 'video';
 
@@ -92,6 +93,7 @@ const galleryItems: GalleryItem[] = [
 const categories = ["Tout", "Sur le terrain", "Éducation", "Santé", "Événements"];
 
 const Gallery: React.FC = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("Tout");
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
@@ -226,7 +228,9 @@ const Gallery: React.FC = () => {
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
             Chaque action menée est rendue possible grâce à la générosité de nos donateurs. Rejoignez-nous pour continuer à écrire cette histoire.
           </p>
+
           <motion.button 
+            onClick={() => navigate('/donate')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-primary text-[#0d1b12] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all text-lg"

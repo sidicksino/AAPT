@@ -254,8 +254,17 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Partners Section */}
+      <section className="py-16 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-black text-center mb-12 text-[#0d1b12]">Nos Partenaires</h2>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                {["CEFPAMS", "CHODEP", "AMINA Security Informatique", "MALIKA TCHAD", "UNICEF", "ATEFE", "ADI STARTUP", "ONG Konoum Toullo", "SOFT", "BALADI INFOS", "ALWIHDA INFOS", "ALWATAN MÉDIAS", "ONG ASHAD"].map((partner, idx) => (
+                    <span key={idx} className="text-xl font-bold text-gray-400 hover:text-primary transition-colors cursor-default">{partner}</span>
+                ))}
+            </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="relative overflow-hidden bg-warm-green py-24 sm:py-32">

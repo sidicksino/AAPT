@@ -5,22 +5,19 @@ const Actions: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("Tout");
 
   const cards = [
-    { tag: "Formation", title: "Jeunesse & Centre Horizon", img: "/assets/images/facebook/formation.jpeg", desc: "Organisation de formations et d'échanges éducatifs pour la jeunesse, notamment en partenariat avec le Centre Horizon." },
-    { tag: "Droits des Femmes", title: "Égalité & Non-Violence", img: "/assets/images/facebook/femme.jpeg", desc: "Promotion active de l'égalité des genres et actions concrètes pour mettre fin aux violences faites aux femmes au Tchad." },
-    { tag: "Aide Sociale", title: "Soutien aux Défavorisés", img: "/assets/images/facebook/aide.jpeg", desc: "Missions humanitaires visant à améliorer le quotidien des personnes défavorisées par la solidarité et l'entraide." },
-    { tag: "Santé", title: "Campagnes de Santé", img: "/assets/images/facebook/sante.jpeg", desc: "Consultations médicales et prévention des maladies dans les zones rurales isolées pour garantir la santé pour tous." },
-    { tag: "Eau & Hygiène", title: "Accès à l'Eau", img: "/assets/images/facebook/eau.jpeg", desc: "Construction de puits et forages pour garantir un accès durable à l'eau potable dans les villages reculés." },
-    { tag: "International", title: "Échanges Africains", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6nexX6Zzm2iY0fLJ7UADf3zBrgxCZvQSYCAvuJEieE-RUFcPTx-2yacXm6qYiaCN3-2uvYs_c6JRn8PhvstCsi0xLlgAC06qFDyhdvJjn5pXkpqgBiHJULtG0qHbC-LuFVYXeF7ObFUjY4JPjEimniU7CgjGcqg_tIQ5CfGy4FhfAbWFor1wMh9p6vtoomEeTBhPrWgXS5-F4zc-Gl36gK_J5mAsI0ZCHuHrwlCqiCERm8-BI-_rg959Pz1ZyeHQ0EX28cxl9o2Y", desc: "Publication d'actualités éducatives et programmes impliquant la jeunesse de plusieurs pays africains." }
+    { tag: "Aide Humanitaire", title: "Aide humanitaire et sociale", img: "/assets/images/facebook/aide.jpeg", desc: "Distribution de kits alimentaires, vêtements, produits d’hygiène, soutien matériel aux familles et individus vulnérables." },
+    { tag: "Éducation", title: "Éducation et appui à la jeunesse", img: "/assets/images/facebook/formation.jpeg", desc: "Distribution de fournitures scolaires, sensibilisation dans les écoles, accompagnement d’enfants vulnérables à l’éducation." },
+    { tag: "Santé", title: "Santé et nutrition", img: "/assets/images/facebook/sante.jpeg", desc: "Campagnes de sensibilisation, soutien aux hôpitaux, nutrition infantile, hygiène communautaire." },
+    { tag: "Formation", title: "Formation", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6nexX6Zzm2iY0fLJ7UADf3zBrgxCZvQSYCAvuJEieE-RUFcPTx-2yacXm6qYiaCN3-2uvYs_c6JRn8PhvstCsi0xLlgAC06qFDyhdvJjn5pXkpqgBiHJULtG0qHbC-LuFVYXeF7ObFUjY4JPjEimniU7CgjGcqg_tIQ5CfGy4FhfAbWFor1wMh9p6vtoomEeTBhPrWgXS5-F4zc-Gl36gK_J5mAsI0ZCHuHrwlCqiCERm8-BI-_rg959Pz1ZyeHQ0EX28cxl9o2Y", desc: "Ateliers de renforcement de capacités pour jeunes, femmes et communautés locales." },
+    { tag: "Sensibilisation", title: "Sensibilisation et mobilisation", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDw77O667VvJ3_t5r2q7o_Dk64zE4qGv-vXyLg_wXg7PzT5n9xW-hGq3vE9tK4j2B8rL1s5yN6mQ9c4z3b8v7x-9_0l6k2m5n8p4q7r3s9t2v1wX6y5z8A4b7C9d0e1f2g3h4i5j6k7l8m9n0o", desc: "Organisation de conférences, débats, journées d’engagement communautaire." },
+    { tag: "Environnement", title: "Environnement et dév. communautaire", img: "/assets/images/facebook/eau.jpeg", desc: "Reboisement, assainissement, actions de salubrité et de préservation de l’environnement." }
   ];
 
   const filteredCards = activeFilter === "Tout" 
     ? cards 
-    : cards.filter(card => {
-        if (activeFilter === "Jeunesse & Formation") return card.tag === "Formation";
-        return card.tag === activeFilter;
-      });
+    : cards.filter(card => card.tag === activeFilter);
 
-  const filters = ["Tout", "Jeunesse & Formation", "Droits des Femmes", "Aide Sociale", "Santé"];
+  const filters = ["Tout", "Aide Humanitaire", "Éducation", "Santé", "Formation", "Sensibilisation", "Environnement"];
 
   return (
     <div className="flex flex-col flex-1">
@@ -34,7 +31,7 @@ const Actions: React.FC = () => {
           >
             <div className="flex flex-col gap-4 text-center max-w-3xl z-10">
               <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
-                Nos Actions Humanitaires
+                Nos Domaines d'Intervention
               </h1>
               <h2 className="text-gray-200 text-base sm:text-lg font-normal leading-relaxed max-w-2xl mx-auto">
                 Au cœur de N'Djamena et au-delà, l'AAPT œuvre pour Paix, Solidarité, Développement et l'amélioration des conditions de vie des plus démunis.
@@ -113,6 +110,30 @@ const Actions: React.FC = () => {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Realized Activities List */}
+      <section className="w-full px-4 sm:px-10 py-12 bg-gray-50 dark:bg-white/5 flex justify-center">
+        <div className="w-full max-w-4xl">
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#0d1b12] dark:text-white">Activités Réalisées</h2>
+            <div className="bg-white dark:bg-[#0d1b12] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-white/10">
+                <ul className="space-y-4">
+                    {[
+                        "Dons de kits alimentaires à des familles et femmes concasseuses",
+                        "Visites dans des orphelinats avec distribution de kits alimentaires, vestimentaires et de jeux",
+                        "Appui aux hôpitaux : couches, savons, produits pour nouveau-nés",
+                        "Distribution de kits scolaires aux élèves du primaire et secondaire",
+                        "Reboisement et actions de salubrité dans des espaces publics",
+                        "Assistance aux personnes sinistrées par les inondations"
+                    ].map((activity, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
+                            <span className="text-lg text-text-main dark:text-gray-300">{activity}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
       </section>
     </div>
