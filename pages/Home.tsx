@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Users, GraduationCap, Globe, Calendar, Heart, Mail } from 'lucide-react';
+import { ArrowRight, GraduationCap, Globe, Calendar, Heart, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
