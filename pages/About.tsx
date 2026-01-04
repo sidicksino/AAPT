@@ -180,7 +180,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Board Members Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 pt-12 border-t border-gray-100 dark:border-white/5">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 sm:gap-x-8 sm:gap-y-20 pt-12 border-t border-gray-100 dark:border-white/5">
               {[
                 { name: "Ali Kali Mahamat", role: "Vice-président", img: "/assets/images/facebook/VP.jpeg" },
                 { name: "Achta Saleh Atche", role: "2ème Vice-présidente", img: "/assets/images/facebook/2VP.jpeg" },
