@@ -3,26 +3,26 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
 const testimonials = [
-  {
+    {
     id: 1,
+    name: "Khadja Daniella",
+    role: "Partenaire",
+    content: "La transparence et l'efficacité de l'AAPT sont remarquables. C'est un partenaire de confiance pour le développement communautaire au Tchad.",
+    image: "/assets/images/facebook/partenair.jpeg"
+  },
+  {
+    id: 2,
     name: "Amina Y.",
     role: "Bénéficiaire",
     content: "Grâce à l'AAPT, j'ai pu suivre une formation en couture et lancer ma petite entreprise. Aujourd'hui, je suis autonome et je peux soutenir ma famille.",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2148&auto=format&fit=crop"
   },
   {
-    id: 2,
+    id: 3,
     name: "Moussa K.",
     role: "Bénévole",
     content: "Être bénévole à l'AAPT m'a permis de voir directement l'impact de nos actions. Le sourire des enfants lors des distributions est ma plus belle récompense.",
     image: "https://images.unsplash.com/photo-1549488497-29532d56a02f?q=80&w=2069&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    name: "Khadja Daniella",
-    role: "Partenaire",
-    content: "La transparence et l'efficacité de l'AAPT sont remarquables. C'est un partenaire de confiance pour le développement communautaire au Tchad.",
-    image: "/assets/images/facebook/partenair.jpeg"
   }
 ];
 
