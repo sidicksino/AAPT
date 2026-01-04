@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, User, Facebook, Twitter, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, User, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -24,14 +24,19 @@ const Footer: React.FC = () => {
               <span className="text-xs opacity-70 block mt-2">Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024</span>
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
+              <a href="https://www.facebook.com/profile.php?id=61556211401837" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
                 <Facebook size={20} className="group-hover:scale-110 transition-transform" />
               </a>
               <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
-                <Twitter size={20} className="group-hover:scale-110 transition-transform" />
+                <Linkedin size={20} className="group-hover:scale-110 transition-transform" />
               </a>
               <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
                 <Instagram size={20} className="group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5 group-hover:scale-110 transition-transform">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
               </a>
             </div>
           </div>

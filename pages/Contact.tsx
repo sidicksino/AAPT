@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
             <div>
               <h2 className="text-2xl font-bold text-[#0d1b12] mb-6">Suivez-nous</h2>
               <div className="flex flex-wrap gap-4">
-                <a href="#" className="flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white rounded-full font-bold hover:opacity-90 transition-opacity">
+                <a href="https://www.facebook.com/profile.php?id=61556211401837" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white rounded-full font-bold hover:opacity-90 transition-opacity">
                   <Facebook size={20} />
                   Page Facebook
                 </a>

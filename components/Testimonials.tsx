@@ -19,10 +19,10 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Sarah T.",
+    name: "Khadja Daniella",
     role: "Partenaire",
     content: "La transparence et l'efficacité de l'AAPT sont remarquables. C'est un partenaire de confiance pour le développement communautaire au Tchad.",
-    image: "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?q=80&w=2070&auto=format&fit=crop"
+    image: "/assets/images/facebook/partenair.jpeg"
   }
 ];
 
