@@ -37,7 +37,7 @@ const Actions: React.FC = () => {
                 Nos Actions Humanitaires
               </h1>
               <h2 className="text-gray-200 text-base sm:text-lg font-normal leading-relaxed max-w-2xl mx-auto">
-                Au cœur de N'Djamena et au-delà, l'AAPT œuvre pour l'égalité, l'éducation des jeunes et l'amélioration des conditions de vie des plus démunis.
+                Au cœur de N'Djamena et au-delà, l'AAPT œuvre pour Paix, Solidarité, Développement et l'amélioration des conditions de vie des plus démunis.
               </h2>
             </div>
             <div className="flex flex-wrap gap-4 justify-center z-10 mt-2">

@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Siège Social</h3>
-                    <p className="text-gray-500 leading-relaxed">Quartier Moursal,<br/>N'Djamena, Tchad</p>
+                    <p className="text-gray-500 leading-relaxed">Ndjari/ECRB,<br/>N'Djamena, Tchad</p>
                   </div>
                 </div>
 
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Téléphone</h3>
-                    <p className="text-gray-500 font-medium">+235 66 09 89 31</p>
+                    <p className="text-gray-500 font-medium">+235 66 09 89 31 / +235 60 03 79 53</p>
                   </div>
                 </div>
 
@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
             </div>
             <h3 className="text-2xl font-bold text-[#0d1b12] mb-2">Trouvez-nous</h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Notre bureau est situé au cœur du quartier Moursal, accessible facilement depuis l'avenue principale.
+              Notre bureau est situé à Ndjari/ECRB, accessible pour tous.
             </p>
             <a 
               href="https://maps.google.com" 

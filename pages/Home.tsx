@@ -59,7 +59,7 @@ const Home: React.FC = () => {
               variants={itemVariants}
               className="inline-block rounded-full bg-primary/20 px-6 py-2 text-sm font-bold text-primary backdrop-blur-md border border-primary/30 shadow-[0_0_15px_rgba(57,224,121,0.3)]"
             >
-              Basé à N'Djamena, Tchad
+              Pays / Ndjamena / Tchad
             </motion.span>
             
             <motion.h1 
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
               variants={itemVariants} 
               className="mx-auto max-w-3xl text-xl font-medium text-gray-200 sm:text-2xl leading-relaxed"
             >
-              L'Association Actions Pour Tous lutte contre la violence faite aux femmes, favorise l'éducation des jeunes et bâtit des ponts de solidarité à travers l'Afrique.
+              Association Humanitaire à But Non Lucratif.
             </motion.p>
             
             <motion.div 

@@ -15,7 +15,7 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4 max-w-[800px] z-10">
               <h1 className="text-white text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Promouvoir le Vivre-Ensemble et la Solidarité
+                Paix, Solidarité, Développement
               </h1>
               <h2 className="text-gray-200 text-base font-normal leading-relaxed sm:text-lg">
                 Association Actions Pour Tous — Une année d'engagement pour la cohésion sociale, l'entraide et le développement communautaire au Tchad.
@@ -212,7 +212,7 @@ const About: React.FC = () => {
               <div className="flex flex-1 flex-col pb-8 pt-2">
                 <div className="flex items-center justify-between mb-1">
                   <p className="text-lg font-bold">Création Officielle</p>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2023</span>
+                  <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">Février 2024</span>
                 </div>
                 <p className="text-text-muted text-base">
                   Lancement de l'Association Actions Pour Tous (AAPT) à N'Djamena avec pour mission principale de promouvoir la cohésion sociale et le vivre-ensemble.

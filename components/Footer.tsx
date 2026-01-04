@@ -19,7 +19,9 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Basée à N'Djamena, l'AAPT œuvre pour l'égalité, la jeunesse et la solidarité. Ensemble, construisons un avenir meilleur pour tous les Tchadiens.
+              Basée à Ndjari/ECRB, l'AAPT œuvre pour la Paix, Solidarité, Développement.
+              <br/>
+              <span className="text-xs opacity-70 block mt-2">Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024</span>
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] transition-all">
@@ -52,11 +54,14 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="text-primary mt-1 shrink-0" size={18} />
-                <span className="text-gray-300 text-sm">Quartier Moursal, N'Djamena, Tchad</span>
+                <span className="text-gray-300 text-sm">Ndjari/ECRB, N'Djamena, Tchad</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="text-primary shrink-0" size={18} />
-                <a href="tel:+23566098931" className="text-gray-300 text-sm hover:text-white transition-colors font-medium">+235 66 09 89 31</a>
+                <div className="flex flex-col">
+                  <a href="tel:+23566098931" className="text-gray-300 text-sm hover:text-white transition-colors font-medium">+235 66 09 89 31</a>
+                  <a href="tel:+23560037953" className="text-gray-300 text-sm hover:text-white transition-colors font-medium">+235 60 03 79 53</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="text-primary shrink-0" size={18} />
