@@ -114,25 +114,31 @@ const Actions: React.FC = () => {
       </section>
 
       {/* Realized Activities List */}
-      <section className="w-full px-4 sm:px-10 py-12 bg-gray-50 dark:bg-white/5 flex justify-center">
-        <div className="w-full max-w-4xl">
-            <h2 className="text-3xl font-bold mb-8 text-center text-[#0d1b12] dark:text-white">Activités Réalisées</h2>
-            <div className="bg-white dark:bg-[#0d1b12] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-white/10">
-                <ul className="space-y-4">
-                    {[
-                        "Dons de kits alimentaires à des familles et femmes concasseuses",
-                        "Visites dans des orphelinats avec distribution de kits alimentaires, vestimentaires et de jeux",
-                        "Appui aux hôpitaux : couches, savons, produits pour nouveau-nés",
-                        "Distribution de kits scolaires aux élèves du primaire et secondaire",
-                        "Reboisement et actions de salubrité dans des espaces publics",
-                        "Assistance aux personnes sinistrées par les inondations"
-                    ].map((activity, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                            <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
-                            <span className="text-lg text-text-main dark:text-gray-300">{activity}</span>
-                        </li>
-                    ))}
-                </ul>
+      <section className="relative w-full px-4 sm:px-10 py-24 bg-gray-50 dark:bg-[#050a07] flex justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="relative w-full max-w-5xl">
+            <div className="text-center mb-16">
+                <span className="font-bold text-primary tracking-wider uppercase text-sm">Impact Direct</span>
+                <h2 className="text-4xl font-black mt-2 text-[#0d1b12] dark:text-white">Activités Réalisées</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                    "Dons de kits alimentaires aux familles vulnérables",
+                    "Visites et dons aux orphelinats (vivres, jeux)",
+                    "Appui matériel aux hôpitaux (néonatalité)",
+                    "Distribution de kits scolaires (primaire/secondaire)",
+                    "Campagnes de reboisement et salubrité",
+                    "Assistance d'urgence aux sinistrés (inondations)"
+                ].map((activity, idx) => (
+                    <div key={idx} className="flex items-center gap-4 p-6 bg-white dark:bg-[#0d1b12] rounded-2xl border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+                        <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors shrink-0">
+                            <CheckCircle size={22} strokeWidth={2.5} />
+                        </div>
+                        <span className="text-lg font-bold text-[#0d1b12] dark:text-gray-200 group-hover:text-primary transition-colors">{activity}</span>
+                    </div>
+                ))}
             </div>
         </div>
       </section>

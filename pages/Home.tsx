@@ -254,15 +254,28 @@ const Home: React.FC = () => {
         </div>
       </section>
       <Testimonials />
-      {/* Partners Section */}
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-black text-center mb-12 text-[#0d1b12]">Nos Partenaires</h2>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {["CEFPAMS", "CHODEP", "AMINA Security Informatique", "MALIKA TCHAD", "UNICEF", "ATEFE", "ADI STARTUP", "ONG Konoum Toullo", "SOFT", "BALADI INFOS", "ALWIHDA INFOS", "ALWATAN MÉDIAS", "ONG ASHAD"].map((partner, idx) => (
-                    <span key={idx} className="text-xl font-bold text-gray-400 hover:text-primary transition-colors cursor-default">{partner}</span>
+      {/* Partners Section Marquee */}
+      <section className="py-20 bg-white overflow-hidden border-b border-gray-100">
+        <div className="text-center mb-12">
+            <span className="text-sm font-bold text-primary tracking-widest uppercase">Confiance</span>
+            <h2 className="text-3xl font-black text-[#0d1b12] mt-2">Ils nous soutiennent</h2>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden group">
+            <div className="animate-marquee whitespace-nowrap flex items-center gap-16 py-4">
+                {[...Array(2)].map((_, i) => (
+                    <React.Fragment key={i}>
+                        {["CEFPAMS", "CHODEP", "AMINA Security", "MALIKA TCHAD", "UNICEF", "ATEFE", "ADI STARTUP", "ONG Konoum Toullo", "SOFT", "BALADI INFOS", "ALWIHDA INFOS", "ALWATAN MÉDIAS", "ONG ASHAD"].map((partner, idx) => (
+                            <span key={`${i}-${idx}`} className="text-2xl font-black text-gray-300 hover:text-primary transition-colors cursor-pointer mx-4 uppercase tracking-tight">
+                                {partner}
+                            </span>
+                        ))}
+                    </React.Fragment>
                 ))}
             </div>
+            {/* Gradient Masks */}
+            <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10" />
         </div>
       </section>
 

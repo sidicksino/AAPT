@@ -76,13 +76,30 @@ const About: React.FC = () => {
 
 
       {/* Values Section */}
-      <section className="flex justify-center py-12 px-4 sm:px-10 lg:px-40 bg-[#f8fcf9]">
-        <div className="w-full max-w-[1200px] text-center">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl mb-12">Nos Valeurs</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {["Solidarité", "Respect de la dignité humaine", "Engagement citoyen", "Égalité des chances", "Paix et cohésion sociale", "Transparence et responsabilité"].map((val, idx) => (
-                    <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-primary/10 flex items-center justify-center">
-                        <p className="font-bold text-lg text-[#0d1b12]">{val}</p>
+      <section className="relative overflow-hidden py-24 sm:py-32 bg-[#f8fcf9]">
+        <div className="absolute inset-0 bg-[radial-gradient(#39E079_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.05]" />
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+                <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-primary mb-4">
+                  Notre ADN
+                </span>
+                <h2 className="text-4xl font-black text-[#0d1b12] dark:text-white sm:text-5xl">Nos Valeurs Fondamentales</h2>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+                {[
+                    { title: "Solidarité", desc: "Le cœur de notre action." },
+                    { title: "Dignité", desc: "Respect inconditionnel." },
+                    { title: "Engagement", desc: "Action citoyenne." },
+                    { title: "Égalité", desc: "Chances pour tous." },
+                    { title: "Paix", desc: "Cohésion sociale." },
+                    { title: "Transparence", desc: "Responsabilité totale." }
+                ].map((val, idx) => (
+                    <div key={idx} className="group relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
+                        <h3 className="text-xl font-bold text-[#0d1b12] mb-2 relative z-10 group-hover:text-primary transition-colors">{val.title}</h3>
+                        <p className="text-text-muted text-sm relative z-10">{val.desc}</p>
                     </div>
                 ))}
             </div>
@@ -90,18 +107,29 @@ const About: React.FC = () => {
       </section>
 
       {/* Beneficiaries Section */}
-      <section className="flex justify-center py-12 px-4 sm:px-10 lg:px-40 bg-white">
-        <div className="w-full max-w-[1200px]">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl mb-8 text-center">Nos Bénéficiaires Prioritaires</h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-                {["Enfants orphelins", "Femmes veuves", "Personnes vivant avec un handicap", "Personnes aveugles", "Malades hospitalisés", "Femmes en situation de précarité", "Communautés sinistrées", "Personnes défavorisées en général"].map((item, idx) => (
-                    <span key={idx} className="px-6 py-3 bg-gray-100 rounded-full text-text-main font-medium border border-gray-200">{item}</span>
+      <section className="py-24 sm:py-32 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
+            <div className="absolute top-20 left-10 size-64 bg-primary/5 rounded-full blur-3xl mix-blend-multiply animate-blob" />
+            <div className="absolute bottom-20 right-10 size-64 bg-blue-100 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-2000" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-black text-center mb-16 text-[#0d1b12]">Nos Bénéficiaires Prioritaires</h2>
+            
+            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+                {["Enfants orphelins", "Femmes veuves", "Personnes vivant avec un handicap", "Personnes aveugles", "Malades hospitalisés", "Femmes en situation de précarité", "Communautés sinistrées", "Personnes défavorisées"].map((item, idx) => (
+                    <span key={idx} className="px-8 py-4 bg-white rounded-full text-lg font-bold text-[#0d1b12] border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/30 hover:text-primary hover:scale-105 transition-all duration-300 cursor-default">
+                        {item}
+                    </span>
                 ))}
             </div>
-             <div className="mt-12 text-center">
-                <blockquote className="text-2xl font-bold text-primary italic">
-                    "Agir ensemble pour que personne ne soit oublié."
+
+            <div className="mt-24 relative max-w-4xl mx-auto text-center">
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-9xl text-primary/10 font-serif">"</div>
+                <blockquote className="text-3xl md:text-4xl font-black text-[#0d1b12] leading-tight relative z-10">
+                    Agir ensemble pour que <span className="text-primary italic">personne</span> ne soit oublié.
                 </blockquote>
+                <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
             </div>
         </div>
       </section>
