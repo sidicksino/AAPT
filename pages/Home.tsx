@@ -68,8 +68,8 @@ const Home: React.FC = () => {
               variants={itemVariants} 
               className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl drop-shadow-sm"
             >
-              Association Actions Pour Tous <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-hover relative inline-block">
-                Tchad
+              {t('hero.org_name')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-hover relative inline-block">
+                {t('hero.country')}
                 <motion.svg
                   viewBox="0 0 200 9"
                   className="absolute -bottom-2 left-0 w-full"

@@ -450,6 +450,8 @@
     },
     "hero": {
         "location": "Pays / Ndjamena / Tchad",
+        "org_name": "Association Actions Pour Tous",
+        "country": "Tchad",
         "subtitle": "Association Humanitaire à But Non Lucratif.",
         "cta_engage": "S'engager",
         "cta_learn_more": "En savoir plus"

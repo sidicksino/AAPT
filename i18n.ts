@@ -24,7 +24,7 @@ i18n
 
         // keySeparator: false, // we do not use keys in form messages.welcome
         backend: {
-            loadPath: '/locales/{{lng}}/translation.json',
+            loadPath: '/locales/{{lng}}/translation.json?v=' + new Date().getTime(),
         },
     });
 
