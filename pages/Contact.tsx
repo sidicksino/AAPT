@@ -1,15 +1,18 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Send } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex-grow bg-[#F8F9FA]">
       {/* Header Section */}
       <section className="bg-white border-b border-gray-100 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-black text-[#0d1b12] mb-6">Contactez l'AAPT</h1>
+          <h1 className="text-4xl sm:text-5xl font-black text-[#0d1b12] mb-6">{t('contact.hero.title')}</h1>
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl font-light leading-relaxed">
-            Nous sommes à votre écoute pour toute question, partenariat ou besoin d'assistance. Ensemble, agissons pour tous.
+            {t('contact.hero.desc')}
           </p>
         </div>
       </section>
@@ -21,7 +24,7 @@ const Contact: React.FC = () => {
           {/* Left Column: Contact Info */}
           <div className="lg:col-span-5 space-y-12">
             <div>
-              <h2 className="text-2xl font-bold text-[#0d1b12] mb-8">Nos Coordonnées</h2>
+              <h2 className="text-2xl font-bold text-[#0d1b12] mb-8">{t('contact.info.title')}</h2>
               <div className="space-y-6">
                 {/* Address Card */}
                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-start gap-5 hover:border-primary/50 transition-colors group">
@@ -29,8 +32,8 @@ const Contact: React.FC = () => {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Siège Social</h3>
-                    <p className="text-gray-500 leading-relaxed">Ndjari/ECRB,<br/>N'Djamena, Tchad</p>
+                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">{t('contact.info.address.title')}</h3>
+                    <p className="text-gray-500 leading-relaxed whitespace-pre-line">{t('contact.info.address.value')}</p>
                   </div>
                 </div>
 
@@ -40,7 +43,7 @@ const Contact: React.FC = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Téléphone</h3>
+                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">{t('contact.info.phone.title')}</h3>
                     <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
                              <a href="tel:+23566098931" className="text-gray-500 font-medium hover:text-primary transition-colors">+235 66 09 89 31</a>
@@ -61,7 +64,7 @@ const Contact: React.FC = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">Email</h3>
+                    <h3 className="font-bold text-[#0d1b12] text-lg mb-1">{t('contact.info.email.title')}</h3>
                     <p className="text-gray-500">associationactionspourtous@gmail.com</p>
                   </div>
                 </div>
@@ -70,11 +73,11 @@ const Contact: React.FC = () => {
 
             {/* Socials */}
             <div>
-              <h2 className="text-2xl font-bold text-[#0d1b12] mb-6">Suivez-nous</h2>
+              <h2 className="text-2xl font-bold text-[#0d1b12] mb-6">{t('contact.socials.title')}</h2>
               <div className="flex flex-wrap gap-4">
                 <a href="https://www.facebook.com/profile.php?id=61556211401837" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white rounded-full font-bold hover:opacity-90 transition-opacity">
                   <Facebook size={20} />
-                  Page Facebook
+                  {t('contact.socials.facebook')}
                 </a>
                 <a href="#" className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:opacity-80 transition-opacity">
                    {/* Simulating X logo with generic close/X icon or text, using Twitter icon as fallback if specific SVG not available, or just styled text */}
@@ -93,37 +96,37 @@ const Contact: React.FC = () => {
           {/* Right Column: Form */}
           <div className="lg:col-span-7">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sm:p-10">
-              <h2 className="text-3xl font-bold text-[#0d1b12] mb-2">Envoyez-nous un message</h2>
-              <p className="text-gray-500 mb-8">Remplissez le formulaire ci-dessous et notre équipe vous répondra dans les plus brefs délais.</p>
+              <h2 className="text-3xl font-bold text-[#0d1b12] mb-2">{t('contact.form.title')}</h2>
+              <p className="text-gray-500 mb-8">{t('contact.form.desc')}</p>
 
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0d1b12]">Votre nom</label>
+                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.name')}</label>
                     <input 
                       type="text" 
-                      placeholder="Nom complet" 
+                      placeholder={t('contact.form.name_placeholder')} 
                       className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0d1b12]">Votre email</label>
+                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.email')}</label>
                     <input 
                       type="email" 
-                      placeholder="exemple@email.com" 
+                      placeholder={t('contact.form.email_placeholder')} 
                       className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0d1b12]">Sujet</label>
+                  <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.subject.label')}</label>
                   <div className="relative">
                     <select className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none text-gray-600">
-                      <option>Demande d'information</option>
-                      <option>Devenir bénévole</option>
-                      <option>Partenariat</option>
-                      <option>Presse</option>
+                      <option>{t('contact.form.subject.options.info')}</option>
+                      <option>{t('contact.form.subject.options.volunteer')}</option>
+                      <option>{t('contact.form.subject.options.partnership')}</option>
+                      <option>{t('contact.form.subject.options.press')}</option>
                     </select>
                     <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
                       <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
@@ -132,17 +135,17 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0d1b12]">Message</label>
+                  <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.message')}</label>
                   <textarea 
                     rows={6}
-                    placeholder="Comment pouvons-nous vous aider ?"
+                    placeholder={t('contact.form.message_placeholder')}
                     className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400 resize-none"
                   ></textarea>
                 </div>
 
                 <button className="w-full sm:w-auto px-8 py-4 bg-primary text-[#0d1b12] font-bold rounded-lg hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
                   <Send size={18} />
-                  Envoyer le message
+                  {t('contact.form.submit')}
                 </button>
               </form>
             </div>
@@ -169,9 +172,9 @@ const Contact: React.FC = () => {
             <div className="w-16 h-16 bg-[#E6F4EA] rounded-full flex items-center justify-center mx-auto mb-4 text-primary animate-bounce-subtle">
               <MapPin size={32} />
             </div>
-            <h3 className="text-2xl font-bold text-[#0d1b12] mb-2">Trouvez-nous</h3>
+            <h3 className="text-2xl font-bold text-[#0d1b12] mb-2">{t('contact.map.title')}</h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Notre bureau est situé à Ndjari/ECRB, accessible pour tous.
+              {t('contact.map.desc')}
             </p>
             <a 
               href="https://maps.google.com" 
@@ -179,7 +182,7 @@ const Contact: React.FC = () => {
               rel="noreferrer"
               className="block w-full py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all"
             >
-              Ouvrir dans Google Maps
+              {t('contact.map.open')}
             </a>
           </div>
         </div>

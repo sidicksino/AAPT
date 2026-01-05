@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, HeartHandshake } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NavItem } from '../types';
-
-const navItems: NavItem[] = [
-  { label: 'Accueil', path: '/' },
-  { label: 'À propos', path: '/about' },
-  { label: 'Nos actions', path: '/actions' },
-  { label: 'Actualités', path: '/news' },
-  { label: 'Galerie', path: '/gallery' },
-  { label: 'Contact', path: '/contact' },
-];
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const navItems = [
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.about'), path: '/about' },
+    { label: t('nav.actions'), path: '/actions' },
+    { label: t('nav.news'), path: '/news' },
+    { label: t('nav.gallery'), path: '/gallery' },
+    { label: t('nav.contact'), path: '/contact' },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[#e7f3eb] bg-[#f8fcf9]/95 backdrop-blur-md transition-all">
@@ -35,8 +37,8 @@ const Navbar: React.FC = () => {
         </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex flex-1 justify-end items-center gap-8">
-          <div className="flex items-center gap-6 lg:gap-9">
+        <div className="hidden md:flex flex-1 justify-end items-center gap-6">
+          <div className="flex items-center gap-6 lg:gap-8 mr-4">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -61,19 +63,25 @@ const Navbar: React.FC = () => {
               </NavLink>
             ))}
           </div>
-          <motion.button 
-            onClick={() => navigate('/donate')}
-            whileHover={{ scale: 1.05, backgroundColor: "#0fd451", boxShadow: "0px 5px 15px rgba(57, 224, 121, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-[#0d1b12] shadow-sm transition-colors"
-          >
-            Faire un don
-          </motion.button>
+
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            
+            <motion.button 
+              onClick={() => navigate('/donate')}
+              whileHover={{ scale: 1.05, backgroundColor: "#0fd451", boxShadow: "0px 5px 15px rgba(57, 224, 121, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-[#0d1b12] shadow-sm transition-colors"
+            >
+              {t('nav.donate')}
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center gap-4">
+          <LanguageSwitcher />
           <motion.button 
             onClick={() => setIsOpen(!isOpen)}
             className="text-[#0d1b12] p-2"
@@ -147,7 +155,7 @@ const Navbar: React.FC = () => {
                 }}
                 className="mt-2 w-full h-12 flex items-center justify-center rounded-lg bg-primary text-[#0d1b12] font-bold active:scale-95 transition-transform"
               >
-                Faire un don
+                {t('nav.donate')}
               </motion.button>
             </div>
           </motion.div>

@@ -1,0 +1,538 @@
+{
+    "actions": {
+        "hero": {
+            "title": "Nos Domaines d'Intervention",
+            "desc": "Au cœur de N'Djamena et au-delà, l'AAPT œuvre pour Paix, Solidarité, Développement et l'amélioration des conditions de vie des plus démunis.",
+            "cta": "Soutenir nos projets"
+        },
+        "stats": {
+            "families": {
+                "val": "500+",
+                "label": "Familles Aidées",
+                "sub": "Familles Aidées"
+            },
+            "youth": {
+                "val": "Jeunesse",
+                "label": "Formations & Centre Horizon",
+                "sub": "Formations & Centre Horizon"
+            },
+            "equality": {
+                "val": "Égalité",
+                "label": "Promotion des Droits des Femmes",
+                "sub": "Promotion des Droits des Femmes"
+            }
+        },
+        "card_cta": "En savoir plus",
+        "categories": {
+            "all": "Tout",
+            "humanitarian": "Aide Humanitaire",
+            "education": "Éducation",
+            "health": "Santé",
+            "training": "Formation",
+            "awareness": "Sensibilisation",
+            "environment": "Environnement"
+        },
+        "cards": {
+            "humanitarian": {
+                "title": "Aide humanitaire et sociale",
+                "desc": "Distribution de kits alimentaires, vêtements, produits d’hygiène, soutien matériel aux familles et individus vulnérables."
+            },
+            "education": {
+                "title": "Éducation et appui à la jeunesse",
+                "desc": "Distribution de fournitures scolaires, sensibilisation dans les écoles, accompagnement d’enfants vulnérables à l’éducation."
+            },
+            "health": {
+                "title": "Santé et nutrition",
+                "desc": "Campagnes de sensibilisation, soutien aux hôpitaux, nutrition infantile, hygiène communautaire."
+            },
+            "training": {
+                "title": "Formation",
+                "desc": "Ateliers de renforcement de capacités pour jeunes, femmes et communautés locales."
+            },
+            "awareness": {
+                "title": "Sensibilisation et mobilisation",
+                "desc": "Organisation de conférences, débats, journées d’engagement communautaire."
+            },
+            "environment": {
+                "title": "Environnement et dév. communautaire",
+                "desc": "Reboisement, assainissement, actions de salubrité et de préservation de l’environnement."
+            }
+        },
+        "activities": {
+            "label": "Impact Direct",
+            "title": "Activités Réalisées",
+            "items": [
+                "Dons de kits alimentaires aux familles vulnérables",
+                "Visites et dons aux orphelinats (vivres, jeux)",
+                "Appui matériel aux hôpitaux (néonatalité)",
+                "Distribution de kits scolaires (primaire/secondaire)",
+                "Campagnes de reboisement et salubrité",
+                "Assistance d'urgence aux sinistrés (inondations)"
+            ]
+        }
+    },
+    "news": {
+        "hero": {
+            "title": "Actualités & Événements",
+            "desc": "Découvrez nos actions pour l'égalité, nos formations pour la jeunesse et nos initiatives solidaires au Tchad et en Afrique."
+        },
+        "filter": {
+            "sort_by": "Trier par :",
+            "newest": "Plus récent"
+        },
+        "categories": {
+            "all": "Tout",
+            "event": "ÉVÉNEMENT",
+            "solidarity": "SOLIDARITÉ",
+            "health": "SANTÉ",
+            "social_cohesion": "COHÉSION SOCIALE",
+            "society": "SOCIÉTÉ"
+        },
+        "links": {
+            "report": "Voir le bilan",
+            "video": "Voir la vidéo",
+            "article": "Lire l'article",
+            "more": "En savoir plus",
+            "actions": "Voir les actions",
+            "download": "Télécharger le PDF"
+        },
+        "newsletter": {
+            "title": "Restez informé de nos actions",
+            "desc": "Inscrivez-vous à notre newsletter pour recevoir les dernières nouvelles sur nos projets humanitaires et les événements à venir directement dans votre boîte mail.",
+            "placeholder": "Votre adresse email",
+            "subscribe": "S'inscrire",
+            "privacy": "Nous respectons votre vie privée. Désabonnement à tout moment."
+        },
+        "articles": [
+            {
+                "id": 1,
+                "title": "1 An au service de l'action humanitaire",
+                "category": "event",
+                "date": "Mars 2024",
+                "type": "article",
+                "excerpt": "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions, en solidarité et en actions concrètes pour le Tchad.",
+                "linkKey": "report"
+            },
+            {
+                "id": 2,
+                "title": "Moments Forts : Partage du Dîner Communautaire",
+                "category": "solidarity",
+                "date": "Février 2024",
+                "type": "video",
+                "excerpt": "Retour en images sur notre grand dîner de charité. Plus de 200 repas distribués dans une ambiance de fraternité et de partage.",
+                "linkKey": "video"
+            },
+            {
+                "id": 3,
+                "title": "Assainissement au Centre de Santé SOS N'Djari",
+                "category": "health",
+                "date": "Novembre 2023",
+                "type": "article",
+                "excerpt": "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection au centre de santé, garantissant un environnement sain pour les patients.",
+                "linkKey": "article"
+            },
+            {
+                "id": 4,
+                "title": "Campagne de Sensibilisation pour la Paix",
+                "category": "social_cohesion",
+                "date": "Octobre 2023",
+                "type": "article",
+                "excerpt": "Une série d'ateliers et de rencontres pour promouvoir le dialogue et la cohésion sociale dans les quartiers de N'Djamena.",
+                "linkKey": "more"
+            },
+            {
+                "id": 5,
+                "title": "Soutien aux orphelins : Distribution de vivres",
+                "category": "solidarity",
+                "date": "Septembre 2023",
+                "type": "article",
+                "excerpt": "Distribution de kits alimentaires et de fournitures scolaires pour soutenir la rentrée des orphelins parrainés par l'association.",
+                "linkKey": "actions"
+            },
+            {
+                "id": 6,
+                "title": "Rapport d'Activités - Lancement",
+                "category": "society",
+                "date": "Juin 2023",
+                "type": "document",
+                "excerpt": "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+                "linkKey": "download"
+            }
+        ]
+    },
+    "testimonials": {
+        "title": "Témoignages",
+        "subtitle": "Ils partagent leur expérience et leur espoir.",
+        "items": [
+            {
+                "name": "Khadja Daniella",
+                "role": "Partenaire",
+                "content": "La transparence et l'efficacité de l'AAPT sont remarquables. C'est un partenaire de confiance pour le développement communautaire au Tchad."
+            },
+            {
+                "name": "Amina Y.",
+                "role": "Bénéficiaire",
+                "content": "Grâce à l'AAPT, j'ai pu suivre une formation en couture et lancer ma petite entreprise. Aujourd'hui, je suis autonome et je peux soutenir ma famille."
+            },
+            {
+                "name": "Moussa K.",
+                "role": "Bénévole",
+                "content": "Être bénévole à l'AAPT m'a permis de voir directement l'impact de nos actions. Le sourire des enfants lors des distributions est ma plus belle récompense."
+            }
+        ]
+    },
+    "contact": {
+        "hero": {
+            "title": "Contactez l'AAPT",
+            "desc": "Nous sommes à votre écoute pour toute question, partenariat ou besoin d'assistance. Ensemble, agissons pour tous."
+        },
+        "info": {
+            "title": "Nos Coordonnées",
+            "address": {
+                "title": "Siège Social",
+                "value": "Ndjari/ECRB,\nN'Djamena, Tchad"
+            },
+            "phone": {
+                "title": "Téléphone"
+            },
+            "email": {
+                "title": "Email"
+            }
+        },
+        "socials": {
+            "title": "Suivez-nous",
+            "facebook": "Page Facebook"
+        },
+        "form": {
+            "title": "Envoyez-nous un message",
+            "desc": "Remplissez le formulaire ci-dessous et notre équipe vous répondra dans les plus brefs délais.",
+            "name": "Votre nom",
+            "name_placeholder": "Nom complet",
+            "email": "Votre email",
+            "email_placeholder": "exemple@email.com",
+            "subject": {
+                "label": "Sujet",
+                "options": {
+                    "info": "Demande d'information",
+                    "volunteer": "Devenir bénévole",
+                    "partnership": "Partenariat",
+                    "press": "Presse"
+                }
+            },
+            "message": "Message",
+            "message_placeholder": "Comment pouvons-nous vous aider ?",
+            "submit": "Envoyer le message"
+        },
+        "map": {
+            "title": "Trouvez-nous",
+            "desc": "Notre bureau est situé à Ndjari/ECRB, accessible pour tous.",
+            "open": "Ouvrir dans Google Maps"
+        }
+    },
+    "donate": {
+        "hero": {
+            "badge": "Faire un don",
+            "title": "Votre générosité est <0>leur avenir.</0>",
+            "desc": "Chaque don compte. En soutenant l'AAPT, vous participez directement à la scolarisation des enfants, aux soins médicaux des familles et à l'autonomisation des femmes au Tchad.",
+            "checks": [
+                "Paiement 100% sécurisé",
+                "Déductible des impôts",
+                "Rapport d'impact semestriel",
+                "Transparence financière"
+            ]
+        },
+        "form": {
+            "title": "Je soutiens l'AAPT",
+            "subtitle": "Choisissez le montant de votre impact",
+            "frequency": {
+                "unique": "Don unique",
+                "monthly": "Mensuel"
+            },
+            "other": "Autre",
+            "methods": {
+                "mobile": "Mobile Money",
+                "card": "Carte Bancaire"
+            },
+            "submit": "Faire un don de {{amount}} FCFA",
+            "security": "Transaction cryptée et sécurisée"
+        },
+        "impact": {
+            "title": "À quoi servira votre don ?",
+            "desc": "Nous veillons à ce que chaque franc versé soit utilisé de manière optimale pour nos projets sur le terrain.",
+            "cards": [
+                {
+                    "amount": "5.000 FCFA",
+                    "title": "Kit Scolaire Complet",
+                    "desc": "Fournit un sac, des cahiers, des stylos et des manuels à un enfant pour toute l'année scolaire."
+                },
+                {
+                    "amount": "15.000 FCFA",
+                    "title": "Soins Médicaux",
+                    "desc": "Couvre les frais de consultation et les médicaments de base pour une mère et son enfant."
+                },
+                {
+                    "amount": "50.000 FCFA",
+                    "title": "Formation Jeunesse",
+                    "desc": "Finance un module de formation professionnelle complet au Centre Horizon pour un jeune."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Rejoignez le mouvement",
+            "desc": "Chaque geste compte. Que ce soit par un don, du bénévolat ou simplement en partageant notre message, vous aidez le Tchad à avancer.",
+            "donate": "Faire un don maintenant",
+            "newsletter": "S'inscrire à la newsletter"
+        }
+    },
+    "gallery": {
+        "hero": {
+            "badge": "Notre Médiathèque",
+            "title": "Immersion au cœur de nos actions",
+            "desc": "Explorez en images et en vidéos l'impact de nos projets sur le terrain. Des sourires, de l'espoir et du changement concret."
+        },
+        "filters": {
+            "all": "Tout",
+            "field": "Sur le terrain",
+            "education": "Éducation",
+            "health": "Santé",
+            "events": "Événements"
+        },
+        "empty": "Aucun élément trouvé dans cette catégorie.",
+        "cta": {
+            "title": "Ces images témoignent de votre impact",
+            "desc": "Chaque action menée est rendue possible grâce à la générosité de nos donateurs. Rejoignez-nous pour continuer à écrire cette histoire.",
+            "button": "Faire un don maintenant"
+        },
+        "items": {
+            "1": {
+                "category": "field",
+                "title": "Distribution de vivres",
+                "location": "Quartier N'Djari"
+            },
+            "2": {
+                "category": "education",
+                "title": "Classe en plein air",
+                "location": "Zone Rurale"
+            },
+            "3": {
+                "category": "health",
+                "title": "Consultation pédiatrique",
+                "location": "Dispensaire Mobile"
+            },
+            "4": {
+                "category": "field",
+                "title": "Rencontre communautaire",
+                "location": "Village de Gassi"
+            },
+            "5": {
+                "category": "education",
+                "title": "Formation des jeunes filles",
+                "location": "Centre Horizon"
+            },
+            "6": {
+                "category": "events",
+                "title": "Conférence annuelle 2023",
+                "location": "N'Djamena"
+            },
+            "7": {
+                "category": "health",
+                "title": "Campagne de vaccination",
+                "location": "Nord Tchad"
+            },
+            "8": {
+                "category": "field",
+                "title": "Accès à l'eau potable",
+                "location": "Puits villageois"
+            },
+            "9": {
+                "category": "events",
+                "title": "Gala de charité",
+                "location": "Hôtel Radisson"
+            }
+        }
+    },
+    "about": {
+        "hero": {
+            "title": "Paix, Solidarité, Développement",
+            "desc": "Organisation à but non lucratif, laïque et apolitique. Fondée en 2023, l’Association Actions Pour Tous œuvre pour la solidarité humaine, la justice sociale et le développement durable.",
+            "cta": "Rejoindre notre cause"
+        },
+        "pillars": {
+            "label": "Nos Fondations",
+            "title": "Nos Piliers d'Action",
+            "desc": "L'AAPT s'engage quotidiennement à travers des actions concrètes pour soutenir les populations et bâtir une société plus juste."
+        },
+        "mission": {
+            "title": "Notre Mission",
+            "desc": "Contribuer activement à l’amélioration des conditions de vie des personnes vulnérables à travers des actions concrètes dans les domaines de la solidarité sociale, de la santé, de l’éducation, de la formation, de la protection de l’enfance et du développement communautaire."
+        },
+        "vision": {
+            "title": "Notre Vision",
+            "desc": "Construire une société tchadienne plus juste, inclusive et solidaire où chaque personne, en particulier les plus défavorisées, peut vivre dignement, accéder à l’éducation, à la santé et participer activement au développement de sa communauté."
+        },
+        "values": {
+            "label": "Notre ADN",
+            "title": "Nos Valeurs Fondamentales",
+            "items": {
+                "solidarity": {
+                    "title": "Solidarité",
+                    "desc": "Le cœur de notre action."
+                },
+                "dignity": {
+                    "title": "Dignité",
+                    "desc": "Respect inconditionnel."
+                },
+                "engagement": {
+                    "title": "Engagement",
+                    "desc": "Action citoyenne."
+                },
+                "equality": {
+                    "title": "Égalité",
+                    "desc": "Chances pour tous."
+                },
+                "peace": {
+                    "title": "Paix",
+                    "desc": "Cohésion sociale."
+                },
+                "transparency": {
+                    "title": "Transparence",
+                    "desc": "Responsabilité totale."
+                }
+            }
+        },
+        "beneficiaries": {
+            "title": "Nos Bénéficiaires Prioritaires",
+            "items": [
+                "Enfants orphelins",
+                "Femmes veuves",
+                "Personnes vivant avec un handicap",
+                "Personnes aveugles",
+                "Malades hospitalisés",
+                "Femmes en situation de précarité",
+                "Communautés sinistrées",
+                "Personnes défavorisées"
+            ]
+        },
+        "quote": "Agir ensemble pour que <0>personne</0> ne soit oublié.",
+        "team": {
+            "label": "Notre Force",
+            "title": "Notre Équipe",
+            "desc": "Des passionnés engagés pour bâtir un avenir meilleur au Tchad.",
+            "president": {
+                "role": "Président",
+                "bio": "Visionnaire et engagé, il guide l'AAPT avec la conviction que chaque action compte pour un Tchad uni et solidaire."
+            },
+            "roles": {
+                "VP": "Vice-président",
+                "2VP": "2ème Vice-présidente",
+                "SG": "Secrétaire Général",
+                "SGA": "Secrétaire Générale Adjointe",
+                "Comms": "Chargé de Communication",
+                "Treas": "Trésorier Général",
+                "TreasA": "Trésorière Générale Adjointe",
+                "ExtRel": "Chargé Relations Extérieures"
+            }
+        },
+        "history": {
+            "title": "Notre Histoire",
+            "desc": "Les étapes clés qui ont façonné l'AAPT.",
+            "items": {
+                "1": {
+                    "title": "Création Officielle",
+                    "desc": "Lancement de l'Association Actions Pour Tous (AAPT) à N'Djamena avec pour mission principale de promouvoir la cohésion sociale et le vivre-ensemble."
+                },
+                "2": {
+                    "title": "Actions de Terrain",
+                    "desc": "Multiplication des initiatives : dîners communautaires pour la fraternité, campagnes d'assainissement (SOS N'Djari) et aide aux personnes vulnérables."
+                }
+            }
+        }
+    },
+    "hero": {
+        "location": "Pays / Ndjamena / Tchad",
+        "subtitle": "Association Humanitaire à But Non Lucratif.",
+        "cta_engage": "S'engager",
+        "cta_learn_more": "En savoir plus"
+    },
+    "stats": {
+        "years": "Années d'action",
+        "beneficiaries": "Femmes & Jeunes aidés",
+        "volunteers": "Bénévoles engagés",
+        "countries": "Pays impacté"
+    },
+    "missions": {
+        "title": "Nos Missions Prioritaires",
+        "subtitle": "Nous nous engageons sur le terrain pour promouvoir l'égalité, protéger les plus vulnérables et former les leaders de demain.",
+        "women": {
+            "title": "Droits des Femmes",
+            "desc": "Lutte active contre les violences basées sur le genre et promotion de l'autonomisation des femmes tchadiennes."
+        },
+        "youth": {
+            "title": "Jeunesse & Formation",
+            "desc": "Organisation de formations et d'échanges avec des partenaires comme le 'Centre Horizon' pour l'avenir de la jeunesse."
+        },
+        "solidarity": {
+            "title": "Solidarité",
+            "desc": "Actions humanitaires concrètes : distributions de vivres, campagnes de santé et soutien aux orphelins."
+        },
+        "learn_more": "En savoir plus"
+    },
+    "homeNews": {
+        "label": "Actualités",
+        "title": "Dernières Actions",
+        "view_all": "Voir toutes les actualités",
+        "read_article": "Lire l'article",
+        "items": {
+            "1": {
+                "title": "1 An au service de l'action humanitaire",
+                "date": "Mars 2024",
+                "desc": "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions et en actions concrètes."
+            },
+            "2": {
+                "title": "Partage du Dîner Communautaire",
+                "date": "Février 2024",
+                "desc": "Retour en images sur notre grand dîner de charité. Plus de 200 repas distribués dans une ambiance de fraternité."
+            },
+            "3": {
+                "title": "Assainissement Centre de Santé",
+                "date": "Novembre 2023",
+                "desc": "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection au centre de santé SOS N'Djari."
+            }
+        }
+    },
+    "partners": {
+        "label": "Confiance",
+        "title": "Ils nous soutiennent"
+    },
+    "cta": {
+        "title": "Rejoignez le mouvement solidaire",
+        "subtitle": "Sous le leadership d'Abakar Saleh Mahamat, nous bâtissons un avenir plus juste. Votre soutien fait la différence pour les femmes et les jeunes du Tchad.",
+        "donate": "Faire un don maintenant",
+        "newsletter": "S'inscrire à la newsletter"
+    },
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "actions": "Nos actions",
+        "news": "Actualités",
+        "gallery": "Galerie",
+        "contact": "Contact",
+        "donate": "Faire un don"
+    },
+    "footer": {
+        "description": "Paix, Solidarité, Développement",
+        "auth": "Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024",
+        "quickLinks": "Navigation",
+        "contact": "Nous Contacter",
+        "headquarters": "Siège National",
+        "address": "Quartier N’djari / ECRB,\nN'Djamena, Tchad",
+        "representative": "Représentant",
+        "newsletterTitle": "Restez informés",
+        "newsletterDesc": "Recevez les dernières nouvelles de nos actions humanitaires.",
+        "emailPlaceholder": "Votre email",
+        "subscribe": "S'abonner",
+        "legal": "Mentions légales",
+        "privacy": "Confidentialité",
+        "rights": "Tous droits réservés."
+    }
+}

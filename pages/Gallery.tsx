@@ -3,103 +3,85 @@ import { PlayCircle, Image as ImageIcon, X, ZoomIn, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 type MediaType = 'image' | 'video';
 
-interface GalleryItem {
+interface GalleryItemData {
   id: number;
   type: MediaType;
   category: string;
   src: string;
-  title: string;
-  location: string;
 }
 
-const galleryItems: GalleryItem[] = [
+const galleryItemsData: GalleryItemData[] = [
   {
     id: 1,
     type: 'image',
-    category: 'Sur le terrain',
+    category: 'field',
     src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop',
-    title: 'Distribution de vivres',
-    location: 'Quartier N\'Djari'
   },
   {
     id: 2,
     type: 'image',
-    category: 'Éducation',
+    category: 'education',
     src: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop',
-    title: 'Classe en plein air',
-    location: 'Zone Rurale'
   },
   {
     id: 3,
     type: 'image',
-    category: 'Santé',
+    category: 'health',
     src: 'https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=2070&auto=format&fit=crop',
-    title: 'Consultation pédiatrique',
-    location: 'Dispensaire Mobile'
   },
   {
     id: 4,
     type: 'image',
-    category: 'Sur le terrain',
+    category: 'field',
     src: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop',
-    title: 'Rencontre communautaire',
-    location: 'Village de Gassi'
   },
   {
     id: 5,
     type: 'image',
-    category: 'Éducation',
+    category: 'education',
     src: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop',
-    title: 'Formation des jeunes filles',
-    location: 'Centre Horizon'
   },
   {
     id: 6,
     type: 'video',
-    category: 'Événements',
+    category: 'events',
     src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop', // Placeholder for video thumb
-    title: 'Conférence annuelle 2023',
-    location: 'N\'Djamena'
   },
   {
     id: 7,
     type: 'image',
-    category: 'Santé',
+    category: 'health',
     src: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2032&auto=format&fit=crop',
-    title: 'Campagne de vaccination',
-    location: 'Nord Tchad'
   },
   {
     id: 8,
     type: 'image',
-    category: 'Sur le terrain',
+    category: 'field',
     src: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=2080&auto=format&fit=crop',
-    title: 'Accès à l\'eau potable',
-    location: 'Puits villageois'
   },
   {
     id: 9,
     type: 'image',
-    category: 'Événements',
+    category: 'events',
     src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop',
-    title: 'Gala de charité',
-    location: 'Hôtel Radisson'
   }
 ];
 
-const categories = ["Tout", "Sur le terrain", "Éducation", "Santé", "Événements"];
+const categories = ["all", "field", "education", "health", "events"];
 
 const Gallery: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState("Tout");
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedImage, setSelectedImage] = useState<GalleryItemData | null>(null);
 
-  const filteredItems = activeFilter === "Tout" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeFilter);
+  const filteredItems = activeFilter === "all" 
+    ? galleryItemsData 
+    : galleryItemsData.filter(item => item.category === activeFilter);
 
   return (
     <div className="flex-grow bg-[#F8F9FA]">
@@ -121,13 +103,13 @@ const Gallery: React.FC = () => {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
           <AnimatedSection>
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-md">
-              Notre Médiathèque
+              {t('gallery.hero.badge')}
             </span>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-              Immersion au cœur de nos actions
+              {t('gallery.hero.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl mx-auto">
-              Explorez en images et en vidéos l'impact de nos projets sur le terrain. Des sourires, de l'espoir et du changement concret.
+              {t('gallery.hero.desc')}
             </p>
           </AnimatedSection>
         </div>
@@ -147,7 +129,7 @@ const Gallery: React.FC = () => {
                   : "text-gray-500 hover:text-gray-900"
                 }`}
               >
-                {cat}
+                {t(`gallery.filters.${cat}`)}
                 {activeFilter === cat && (
                   <motion.div
                     layoutId="activeFilter"
@@ -182,7 +164,7 @@ const Gallery: React.FC = () => {
                 <motion.img 
                   layoutId={`image-${item.id}`}
                   src={item.src} 
-                  alt={item.title} 
+                  alt={t(`gallery.items.${item.id}.title`)} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
@@ -191,7 +173,7 @@ const Gallery: React.FC = () => {
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     <div className="flex items-center justify-between mb-2">
                       <span className="bg-primary text-[#0d1b12] text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
-                        {item.category}
+                        {t(`gallery.filters.${item.category}`)}
                       </span>
                       {item.type === 'video' ? (
                         <PlayCircle className="text-white" size={24} />
@@ -199,10 +181,10 @@ const Gallery: React.FC = () => {
                         <ZoomIn className="text-white" size={20} />
                       )}
                     </div>
-                    <h3 className="text-white font-bold text-xl leading-tight mb-1">{item.title}</h3>
+                    <h3 className="text-white font-bold text-xl leading-tight mb-1">{t(`gallery.items.${item.id}.title`)}</h3>
                     <p className="text-gray-300 text-sm flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
-                      {item.location}
+                      {t(`gallery.items.${item.id}.location`)}
                     </p>
                   </div>
                 </div>
@@ -213,7 +195,7 @@ const Gallery: React.FC = () => {
 
         {filteredItems.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">Aucun élément trouvé dans cette catégorie.</p>
+            <p className="text-gray-500 text-lg">{t('gallery.empty')}</p>
           </div>
         )}
       </section>
@@ -224,9 +206,9 @@ const Gallery: React.FC = () => {
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
             <Heart size={32} className="fill-current" />
           </div>
-          <h2 className="text-3xl font-black text-[#0d1b12] mb-4">Ces images témoignent de votre impact</h2>
+          <h2 className="text-3xl font-black text-[#0d1b12] mb-4">{t('gallery.cta.title')}</h2>
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-            Chaque action menée est rendue possible grâce à la générosité de nos donateurs. Rejoignez-nous pour continuer à écrire cette histoire.
+            {t('gallery.cta.desc')}
           </p>
 
           <motion.button 
@@ -235,7 +217,7 @@ const Gallery: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-primary text-[#0d1b12] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all text-lg"
           >
-            Faire un don maintenant
+            {t('gallery.cta.button')}
           </motion.button>
         </AnimatedSection>
       </section>
@@ -268,13 +250,13 @@ const Gallery: React.FC = () => {
               <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl bg-black">
                   {selectedImage.type === 'video' ? (
                      <div className="aspect-video w-full bg-black flex items-center justify-center group cursor-pointer relative">
-                        <img src={selectedImage.src} className="w-full h-full object-cover opacity-60" alt={selectedImage.title} />
+                        <img src={selectedImage.src} className="w-full h-full object-cover opacity-60" alt={t(`gallery.items.${selectedImage.id}.title`)} />
                         <PlayCircle size={64} className="text-white absolute z-10" />
                      </div>
                   ) : (
                     <motion.img 
                       src={selectedImage.src} 
-                      alt={selectedImage.title} 
+                      alt={t(`gallery.items.${selectedImage.id}.title`)} 
                       className="w-full h-full object-contain max-h-[85vh]"
                     />
                   )}
@@ -286,9 +268,9 @@ const Gallery: React.FC = () => {
                 transition={{ delay: 0.3 }}
                 className="mt-6 text-center"
               >
-                <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">{selectedImage.category}</span>
-                <h2 className="text-white text-2xl font-bold mb-2">{selectedImage.title}</h2>
-                <p className="text-gray-400">{selectedImage.location}</p>
+                <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">{t(`gallery.filters.${selectedImage.category}`)}</span>
+                <h2 className="text-white text-2xl font-bold mb-2">{t(`gallery.items.${selectedImage.id}.title`)}</h2>
+                <p className="text-gray-400">{t(`gallery.items.${selectedImage.id}.location`)}</p>
               </motion.div>
             </motion.div>
           </motion.div>

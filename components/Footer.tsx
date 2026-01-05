@@ -2,7 +2,12 @@ import React from 'react';
 import { MapPin, Phone, Mail, User, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#0A2540] text-white pt-20 pb-10 border-t-4 border-primary relative overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -19,9 +24,9 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Paix, Solidarité, Développement
+              {t('footer.description')}
               <br/>
-              <span className="text-xs opacity-70 block mt-2">Autorisation : N°0109/PR/MATD/DGGCN'DJ/SG/2024</span>
+              <span className="text-xs opacity-70 block mt-2">{t('footer.auth')}</span>
             </p>
             <div className="flex gap-4 pt-2">
               <a href="https://www.facebook.com/profile.php?id=61556211401837" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-primary hover:text-[#0A2540] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(57,224,121,0.5)] transition-all duration-300 group">
@@ -43,25 +48,25 @@ const Footer: React.FC = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">Navigation</h4>
+            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Accueil</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">À propos de nous</Link></li>
-              <li><Link to="/actions" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Nos Actions</Link></li>
-              <li><Link to="/news" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Actualités</Link></li>
-              <li><Link to="/donate" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">Faire un don</Link></li>
+              <li><Link to="/" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">{t('nav.home')}</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">{t('nav.about')}</Link></li>
+              <li><Link to="/actions" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">{t('nav.actions')}</Link></li>
+              <li><Link to="/news" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">{t('nav.news')}</Link></li>
+              <li><Link to="/donate" className="text-gray-300 hover:text-primary hover:translate-x-2 transition-all duration-300 flex items-center gap-2">{t('nav.donate')}</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">Nous Contacter</h4>
+            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">{t('footer.contact')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="text-primary mt-1 shrink-0" size={18} />
                 <div>
-                  <h3 className="font-bold text-white text-lg mb-1">Siège National</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm">Quartier N’djari / ECRB,<br/>N'Djamena, Tchad</p>
+                  <h3 className="font-bold text-white text-lg mb-1">{t('footer.headquarters')}</h3>
+                  <p className="text-gray-300 leading-relaxed text-sm whitespace-pre-line">{t('footer.address')}</p>
                 </div>
               </li>
               <li className="flex items-center gap-3 group">
@@ -84,23 +89,23 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 group">
                 <User className="text-primary shrink-0" size={18} />
-                <span className="text-gray-300 text-sm">Représentant: Abakar Saleh Mahamat</span>
+                <span className="text-gray-300 text-sm">{t('footer.representative')}: Abakar Saleh Mahamat</span>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">Restez informés</h4>
-            <p className="text-gray-300 text-sm mb-4">Recevez les dernières nouvelles de nos actions humanitaires.</p>
+            <h4 className="text-lg font-bold mb-6 text-white border-b border-primary/30 pb-2 inline-block">{t('footer.newsletterTitle')}</h4>
+            <p className="text-gray-300 text-sm mb-4">{t('footer.newsletterDesc')}</p>
             <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-gray-500"
-                placeholder="Votre email"
+                placeholder={t('footer.emailPlaceholder')}
               />
               <button className="w-full bg-primary hover:bg-primary-hover text-[#0A2540] font-bold py-2 px-4 rounded text-sm transition-colors">
-                S'abonner
+                {t('footer.subscribe')}
               </button>
             </form>
           </div>
@@ -108,11 +113,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © 2024 Association Actions Pour Tous (AAPT). Tous droits réservés.
+            © {currentYear} Association Actions Pour Tous (AAPT). {t('footer.rights')}
           </p>
           <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-primary transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-primary transition-colors">Confidentialité</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('footer.legal')}</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
           </div>
         </div>
       </div>

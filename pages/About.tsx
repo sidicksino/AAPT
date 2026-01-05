@@ -1,8 +1,11 @@
 import React from 'react';
 import { Target, Scale, Users, Heart } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 import Image from '../components/Image';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="flex flex-col flex-1">
       {/* Hero */}
@@ -15,15 +18,15 @@ const About: React.FC = () => {
           >
             <div className="flex flex-col gap-4 max-w-[800px] z-10">
               <h1 className="text-white text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Paix, Solidarité, Développement
+                {t('about.hero.title')}
               </h1>
               <h2 className="text-gray-200 text-base font-normal leading-relaxed sm:text-lg">
-                Organisation à but non lucratif, laïque et apolitique. Fondée en 2023, l’Association Actions Pour Tous œuvre pour la solidarité humaine, la justice sociale et le développement durable.
+                {t('about.hero.desc')}
               </h2>
             </div>
             <div className="flex gap-4 z-10 pt-4">
               <button className="flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-[#0d1b12] transition hover:scale-105">
-                Rejoindre notre cause
+                {t('about.hero.cta')}
               </button>
             </div>
           </div>
@@ -36,13 +39,13 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4 text-center items-center">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-                Nos Fondations
+                {t('about.pillars.label')}
               </div>
               <h2 className="text-3xl font-bold leading-tight sm:text-4xl max-w-[720px]">
-                Nos Piliers d'Action
+                {t('about.pillars.title')}
               </h2>
               <p className="text-text-muted text-base max-w-[720px]">
-                L'AAPT s'engage quotidiennement à travers des actions concrètes pour soutenir les populations et bâtir une société plus juste.
+                {t('about.pillars.desc')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -51,9 +54,9 @@ const About: React.FC = () => {
                   <Heart size={32} />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="text-xl font-bold leading-tight">Notre Mission</h3>
+                  <h3 className="text-xl font-bold leading-tight">{t('about.mission.title')}</h3>
                   <p className="text-text-muted leading-relaxed">
-                    Contribuer activement à l’amélioration des conditions de vie des personnes vulnérables à travers des actions concrètes dans les domaines de la solidarité sociale, de la santé, de l’éducation, de la formation, de la protection de l’enfance et du développement communautaire.
+                    {t('about.mission.desc')}
                   </p>
                 </div>
               </div>
@@ -62,9 +65,9 @@ const About: React.FC = () => {
                   <Scale size={32} />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="text-xl font-bold leading-tight">Notre Vision</h3>
+                  <h3 className="text-xl font-bold leading-tight">{t('about.vision.title')}</h3>
                   <p className="text-text-muted leading-relaxed">
-                    Construire une société tchadienne plus juste, inclusive et solidaire où chaque personne, en particulier les plus défavorisées, peut vivre dignement, accéder à l’éducation, à la santé et participer activement au développement de sa communauté.
+                    {t('about.vision.desc')}
                   </p>
                 </div>
               </div>
@@ -82,19 +85,19 @@ const About: React.FC = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
                 <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-primary mb-4">
-                  Notre ADN
+                  {t('about.values.label')}
                 </span>
-                <h2 className="text-4xl font-black text-[#0d1b12] dark:text-white sm:text-5xl">Nos Valeurs Fondamentales</h2>
+                <h2 className="text-4xl font-black text-[#0d1b12] dark:text-white sm:text-5xl">{t('about.values.title')}</h2>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                 {[
-                    { title: "Solidarité", desc: "Le cœur de notre action." },
-                    { title: "Dignité", desc: "Respect inconditionnel." },
-                    { title: "Engagement", desc: "Action citoyenne." },
-                    { title: "Égalité", desc: "Chances pour tous." },
-                    { title: "Paix", desc: "Cohésion sociale." },
-                    { title: "Transparence", desc: "Responsabilité totale." }
+                    { title: t('about.values.items.solidarity.title'), desc: t('about.values.items.solidarity.desc') },
+                    { title: t('about.values.items.dignity.title'), desc: t('about.values.items.dignity.desc') },
+                    { title: t('about.values.items.engagement.title'), desc: t('about.values.items.engagement.desc') },
+                    { title: t('about.values.items.equality.title'), desc: t('about.values.items.equality.desc') },
+                    { title: t('about.values.items.peace.title'), desc: t('about.values.items.peace.desc') },
+                    { title: t('about.values.items.transparency.title'), desc: t('about.values.items.transparency.desc') }
                 ].map((val, idx) => (
                     <div key={idx} className="group relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                         <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
@@ -114,10 +117,10 @@ const About: React.FC = () => {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-black text-center mb-16 text-[#0d1b12]">Nos Bénéficiaires Prioritaires</h2>
+            <h2 className="text-4xl font-black text-center mb-16 text-[#0d1b12]">{t('about.beneficiaries.title')}</h2>
             
             <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
-                {["Enfants orphelins", "Femmes veuves", "Personnes vivant avec un handicap", "Personnes aveugles", "Malades hospitalisés", "Femmes en situation de précarité", "Communautés sinistrées", "Personnes défavorisées"].map((item, idx) => (
+                {(t('about.beneficiaries.items', { returnObjects: true }) as string[]).map((item, idx) => (
                     <span key={idx} className="px-8 py-4 bg-white rounded-full text-lg font-bold hover:text-[#0d1b12] border hover:border-gray-100 shadow-sm hover:shadow-lg border-primary/30 text-primary hover:scale-105 transition-all duration-300 cursor-default">
                         {item}
                     </span>
@@ -127,7 +130,10 @@ const About: React.FC = () => {
             <div className="mt-24 relative max-w-4xl mx-auto text-center">
                 <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-9xl text-primary/10 font-serif">"</div>
                 <blockquote className="text-3xl md:text-4xl font-black text-[#0d1b12] leading-tight relative z-10">
-                    Agir ensemble pour que <span className="text-primary italic">personne</span> ne soit oublié.
+                    <Trans 
+                        i18nKey="about.quote"
+                        components={[<span className="text-primary italic" key={0} />]}
+                    />
                 </blockquote>
                 <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
             </div>
@@ -141,13 +147,13 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-16">
             <div className="text-center space-y-4">
               <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-primary">
-                Notre Force
+                {t('about.team.label')}
               </span>
               <h2 className="text-4xl font-display font-bold text-[#0d1b12] dark:text-white">
-                Notre Équipe
+                {t('about.team.title')}
               </h2>
               <p className="text-text-muted dark:text-gray-400 max-w-2xl mx-auto text-lg">
-                Des passionnés engagés pour bâtir un avenir meilleur au Tchad.
+                {t('about.team.desc')}
               </p>
             </div>
 
@@ -164,10 +170,10 @@ const About: React.FC = () => {
                     />
                   </div>
                   <div className="pt-2 pb-12">
-                    <span className="text-primary font-bold tracking-uppercase uppercase mb-2 block">Président</span>
+                    <span className="text-primary font-bold tracking-uppercase uppercase mb-2 block">{t('about.team.president.role')}</span>
                     <h3 className="text-3xl font-display font-bold text-[#0d1b12] dark:text-white mb-3">Abakar Saleh Mahamat</h3>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
-                      Visionnaire et engagé, il guide l'AAPT avec la conviction que chaque action compte pour un Tchad uni et solidaire.
+                      {t('about.team.president.bio')}
                     </p>
                     <div className="flex justify-center gap-4 text-gray-400">
                       <div className="w-10 h-10 rounded-full bg-white dark:bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
@@ -182,14 +188,14 @@ const About: React.FC = () => {
             {/* Board Members Grid */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 sm:gap-x-8 sm:gap-y-20 pt-12 border-t border-gray-100 dark:border-white/5">
               {[
-                { name: "Ali Kali Mahamat", role: "Vice-président", img: "/assets/images/facebook/VP.jpeg" },
-                { name: "Achta Saleh Atche", role: "2ème Vice-présidente", img: "/assets/images/facebook/2VP.jpeg" },
-                { name: "Idriss Bichara Hamid", role: "Secrétaire Général", img: "/assets/images/facebook/SG.jpeg" },
-                { name: "Maria Bechir Hassaballah", role: "Secrétaire Générale Adjointe", img: "/assets/images/facebook/SGA.jpeg" },
-                { name: "Fatime Chahad Ibrahim", role: "Chargé de Communication", img: "/assets/images/facebook/fatime.jpeg" },
-                { name: "Abakar Hassan Saleh", role: "Trésorier Général", img: "/assets/images/facebook/TS.jpeg" },
-                { name: "Talbey Ali Mahamat", role: "Trésorière Générale Adjointe", img: "/assets/images/facebook/TGA.jpeg" },
-                { name: "Mahamat Ousman Mahamat", role: "Chargé Relations Extérieures", img: "/assets/images/facebook/mahamat.jpeg" },
+                { name: "Ali Kali Mahamat", roleKey: "VP", img: "/assets/images/facebook/VP.jpeg" },
+                { name: "Achta Saleh Atche", roleKey: "2VP", img: "/assets/images/facebook/2VP.jpeg" },
+                { name: "Idriss Bichara Hamid", roleKey: "SG", img: "/assets/images/facebook/SG.jpeg" },
+                { name: "Maria Bechir Hassaballah", roleKey: "SGA", img: "/assets/images/facebook/SGA.jpeg" },
+                { name: "Fatime Chahad Ibrahim", roleKey: "Comms", img: "/assets/images/facebook/fatime.jpeg" },
+                { name: "Abakar Hassan Saleh", roleKey: "Treas", img: "/assets/images/facebook/TS.jpeg" },
+                { name: "Talbey Ali Mahamat", roleKey: "TreasA", img: "/assets/images/facebook/TGA.jpeg" },
+                { name: "Mahamat Ousman Mahamat", roleKey: "ExtRel", img: "/assets/images/facebook/mahamat.jpeg" },
               ].map((member, idx) => (
                 <div key={idx} className="flex flex-col relative group">
                   <div className="absolute top-0 left-0 w-full h-full bg-[#f8fcf9] dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl -z-10 translate-y-20 pb-20 transition-colors group-hover:border-primary/20"></div>
@@ -202,7 +208,7 @@ const About: React.FC = () => {
                       />
                     </div>
                     <div className="pt-2 pb-8">
-                      <span className="text-primary font-bold text-xs tracking-uppercase uppercase mb-2 block">{member.role}</span>
+                      <span className="text-primary font-bold text-xs tracking-uppercase uppercase mb-2 block">{t(`about.team.roles.${member.roleKey}`)}</span>
                       <h3 className="text-xl font-display font-bold text-[#0d1b12] dark:text-white mb-2">{member.name}</h3>
                       <div className="flex justify-center gap-4 text-gray-400 mt-0">
                         <div className="w-8 h-8 rounded-full bg-white dark:bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
@@ -223,8 +229,8 @@ const About: React.FC = () => {
         <div className="w-full max-w-[960px]">
           <div className="flex flex-col gap-8">
             <div className="px-4 pb-3">
-              <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em]">Notre Histoire</h2>
-              <p className="mt-2 text-text-muted">Les étapes clés qui ont façonné l'AAPT.</p>
+              <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em]">{t('about.history.title')}</h2>
+              <p className="mt-2 text-text-muted">{t('about.history.desc')}</p>
             </div>
             <div className="grid grid-cols-[40px_1fr] gap-x-4 px-4">
                {/* Timeline Item 1 */}
@@ -236,11 +242,11 @@ const About: React.FC = () => {
               </div>
               <div className="flex flex-1 flex-col pb-8 pt-2">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Création Officielle</p>
+                  <p className="text-lg font-bold">{t('about.history.items.1.title')}</p>
                   <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2023</span>
                 </div>
                 <p className="text-text-muted text-base">
-                  Lancement de l'Association Actions Pour Tous (AAPT) à N'Djamena avec pour mission principale de promouvoir la cohésion sociale et le vivre-ensemble.
+                  {t('about.history.items.1.desc')}
                 </p>
               </div>
 
@@ -253,11 +259,11 @@ const About: React.FC = () => {
               </div>
               <div className="flex flex-1 flex-col pt-1">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="text-lg font-bold">Actions de Terrain</p>
+                  <p className="text-lg font-bold">{t('about.history.items.2.title')}</p>
                   <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">2024</span>
                 </div>
                 <p className="text-text-muted text-base">
-                  Multiplication des initiatives : dîners communautaires pour la fraternité, campagnes d'assainissement (SOS N'Djari) et aide aux personnes vulnérables.
+                  {t('about.history.items.2.desc')}
                 </p>
               </div>
             </div>

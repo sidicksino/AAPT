@@ -1,162 +1,76 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calendar, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Mail, FileText, Download } from 'lucide-react';
 
-const categories = ["Tout", "COHÉSION SOCIALE", "SANTÉ", "SOCIÉTÉ", "SOLIDARITÉ", "ÉVÉNEMENT"];
-
-const articles = [
-  {
-    id: 1,
-    title: "1 An au service de l'action humanitaire",
-    category: "ÉVÉNEMENT",
-    date: "Mars 2024",
-    type: "article",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "L'Association Actions Pour Tous célèbre sa première année d'existence. Une année riche en émotions, en solidarité et en actions concrètes pour le Tchad.",
-    linkText: "Voir le bilan"
-  },
-  {
-    id: 2,
-    title: "Moments Forts : Partage du Dîner Communautaire",
-    category: "SOLIDARITÉ",
-    date: "Février 2024",
-    type: "video",
-    image: "/assets/images/facebook/dinner.png",
-    excerpt: "Retour en images sur notre grand dîner de charité. Plus de 200 repas distribués dans une ambiance de fraternité et de partage.",
-    linkText: "Voir la vidéo"
-  },
-  {
-    id: 3,
-    title: "Assainissement au Centre de Santé SOS N'Djari",
-    category: "SANTÉ",
-    date: "Novembre 2023",
-    type: "article",
-    image: "/assets/images/facebook/sanitation.png",
-    excerpt: "Nos bénévoles se sont mobilisés pour une journée de nettoyage et de désinfection au centre de santé, garantissant un environnement sain pour les patients.",
-    linkText: "Lire l'article"
-  },
-  {
-    id: 4,
-    title: "Campagne de Sensibilisation pour la Paix",
-    category: "COHÉSION SOCIALE",
-    date: "Octobre 2023",
-    type: "article",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop",
-    excerpt: "Une série d'ateliers et de rencontres pour promouvoir le dialogue et la cohésion sociale dans les quartiers de N'Djamena.",
-    linkText: "En savoir plus"
-  },
-  {
-    id: 5,
-    title: "Soutien aux orphelins : Distribution de vivres",
-    category: "SOLIDARITÉ",
-    date: "Septembre 2023",
-    type: "article",
-    image: "/assets/images/facebook/dinner.png",
-    excerpt: "Distribution de kits alimentaires et de fournitures scolaires pour soutenir la rentrée des orphelins parrainés par l'association.",
-    linkText: "Voir les actions"
-  },
-  {
-    id: 6,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 7,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 8,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 9,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 10,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 11,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 12,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 13,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
-  {
-    id: 14,
-    title: "Rapport d'Activités - Lancement",
-    category: "SOCIÉTÉ",
-    date: "Juin 2023",
-    type: "document",
-    image: "/assets/images/facebook/anniversary.png",
-    excerpt: "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
-    linkText: "Télécharger le PDF"
-  },
+const articlesData = [
+    {
+      id: 1,
+      image: "/assets/images/facebook/anniversary.png",
+      key: "report"
+    },
+    {
+      id: 2,
+      image: "/assets/images/facebook/dinner.png",
+      key: "video"
+    },
+    {
+      id: 3,
+      image: "/assets/images/facebook/sanitation.png",
+      key: "article"
+    },
+    {
+      id: 4,
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop",
+      key: "more"
+    },
+    {
+      id: 5,
+      image: "/assets/images/facebook/dinner.png",
+      key: "actions"
+    },
+    {
+      id: 6,
+      image: "/assets/images/facebook/anniversary.png",
+      key: "download"
+    }
 ];
 
 const News: React.FC = () => {
-    const [activeCategory, setActiveCategory] = useState("Tout");
+    const { t } = useTranslation();
+    const [activeCategory, setActiveCategory] = useState("all");
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
 
-    const filteredArticles = activeCategory === "Tout" 
-        ? articles 
-        : articles.filter(a => {
-            if (activeCategory === "Tout") return true;
-            return a.category.includes(activeCategory);
-        });
+    const categories = [
+        { key: "all", label: t('news.categories.all') },
+        { key: "social_cohesion", label: t('news.categories.social_cohesion') },
+        { key: "health", label: t('news.categories.health') },
+        { key: "society", label: t('news.categories.society') },
+        { key: "solidarity", label: t('news.categories.solidarity') },
+        { key: "event", label: t('news.categories.event') }
+    ];
+
+    const translatedArticles = (t('news.articles', { returnObjects: true }) as any[]).map((article, index) => {
+        const data = articlesData.find(d => d.id === article.id) || articlesData[0]; // Fallback
+        return {
+            ...article,
+            image: data?.image,
+            linkText: t(`news.links.${article.linkKey}`) 
+        };
+    });
+    
+    // Duplicate for demo purposes if needed, or just use what we have. 
+    // The original had 14 items (some dupes). I will replicate item 6 a few times to fill the grid if desired, 
+    // or just stick to the 6 unique ones. The user had duplicated ID 6 multiple times.
+    // I'll stick to the 6 unique ones for now to be cleaner, or replicate if pagination needs to be shown.
+    // Let's replicate the last one to simulate pagination if needed, but 6 items fits on one page.
+    // I'll just use the 6 items for now. 
+    
+    // Actually, let's just use the 6 items. If the user wants more they can add more in json.
+
+    const filteredArticles = activeCategory === "all" 
+        ? translatedArticles 
+        : translatedArticles.filter(a => a.category === activeCategory);
 
     const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
     const paginatedArticles = filteredArticles.slice(
@@ -187,9 +101,9 @@ const News: React.FC = () => {
                     <div className="absolute inset-0 bg-[#0d1b12]/70"></div>
                 </div>
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
-                    <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">Actualités & Événements</h1>
+                    <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">{t('news.hero.title')}</h1>
                     <p className="text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl mx-auto">
-                        Découvrez nos actions pour l'égalité, nos formations pour la jeunesse et nos initiatives solidaires au Tchad et en Afrique.
+                        {t('news.hero.desc')}
                     </p>
                 </div>
             </section>
@@ -202,24 +116,24 @@ const News: React.FC = () => {
                          <div className="flex flex-wrap gap-2 justify-center md:justify-start w-full md:w-auto">
                             {categories.map(cat => (
                                 <button 
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat)}
+                                    key={cat.key}
+                                    onClick={() => setActiveCategory(cat.key)}
                                     className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
-                                        activeCategory === cat 
+                                        activeCategory === cat.key 
                                         ? "bg-primary text-white shadow-md transform scale-105" 
                                         : "bg-[#F3F4F6] text-gray-600 hover:bg-gray-200"
                                     }`}
                                 >
-                                    {cat}
+                                    {cat.label}
                                 </button>
                             ))}
                          </div>
 
                          {/* Sort */}
                          <div className="flex items-center gap-2 text-sm text-gray-500 cursor-pointer hover:text-text-main transition-colors">
-                            <span className="font-medium">Trier par:</span>
+                            <span className="font-medium">{t('news.filter.sort_by')}</span>
                             <span className="font-bold text-text-main flex items-center gap-1">
-                                Plus récent <ChevronDown size={14} />
+                                {t('news.filter.newest')} <ChevronDown size={14} />
                             </span>
                          </div>
                     </div>
@@ -227,15 +141,15 @@ const News: React.FC = () => {
             </div>
 
             {/* Articles Grid */}
-            <section ref={articlesSectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {paginatedArticles.map(article => (
                         <article key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-gray-100/50 hover:-translate-y-1">
-                            {article.type === 'report' ? (
+                            {article.type === 'document' ? ( // Changed 'report' to 'document' based on data
                                 <div className="aspect-[16/10] bg-[#F3F8F5] flex items-center justify-center relative group-hover:bg-[#E6F4EA] transition-colors">
                                      <div className="absolute top-4 left-4">
                                         <span className="bg-white text-primary text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-sm border border-gray-100">
-                                            {article.category}
+                                            {t(`news.categories.${article.category}`)}
                                         </span>
                                     </div>
                                     <FileText size={64} className="text-primary opacity-50 group-hover:scale-110 transition-transform duration-300" />
@@ -249,7 +163,7 @@ const News: React.FC = () => {
                                     />
                                     <div className="absolute top-4 left-4">
                                         <span className="bg-white text-primary text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-sm">
-                                            {article.category}
+                                            {t(`news.categories.${article.category}`)}
                                         </span>
                                     </div>
                                 </div>
@@ -321,22 +235,22 @@ const News: React.FC = () => {
                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm text-primary animate-bounce-subtle">
                         <Mail size={32} />
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-black text-[#0d1b12] mb-6">Restez informé de nos actions</h2>
+                    <h2 className="text-3xl sm:text-4xl font-black text-[#0d1b12] mb-6">{t('news.newsletter.title')}</h2>
                     <p className="text-gray-600 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
-                        Inscrivez-vous à notre newsletter pour recevoir les dernières nouvelles sur nos projets humanitaires et les événements à venir directement dans votre boîte mail.
+                        {t('news.newsletter.desc')}
                     </p>
                     <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
                         <input 
                             type="email" 
-                            placeholder="Votre adresse email" 
+                            placeholder={t('news.newsletter.placeholder')} 
                             className="flex-1 px-6 py-4 rounded-lg border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm text-base outline-none transition-all placeholder-gray-400"
                         />
                         <button className="px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 whitespace-nowrap">
-                            S'inscrire
+                            {t('news.newsletter.subscribe')}
                         </button>
                     </form>
                     <p className="text-xs text-gray-500 mt-8">
-                        Nous respectons votre vie privée. Désabonnement à tout moment.
+                        {t('news.newsletter.privacy')}
                     </p>
                 </div>
             </section>

@@ -1,0 +1,538 @@
+{
+    "actions": {
+        "hero": {
+            "title": "Our Areas of Intervention",
+            "desc": "At the heart of N'Djamena and beyond, AAPT works for Peace, Solidarity, Development, and improving the living conditions of the most destitute.",
+            "cta": "Support Our Projects"
+        },
+        "stats": {
+            "families": {
+                "val": "500+",
+                "label": "Families Helping",
+                "sub": "Families Helping"
+            },
+            "youth": {
+                "val": "Youth",
+                "label": "Training & Horizon Center",
+                "sub": "Training & Horizon Center"
+            },
+            "equality": {
+                "val": "Equality",
+                "label": "Promoting Women's Rights",
+                "sub": "Promoting Women's Rights"
+            }
+        },
+        "card_cta": "Learn More",
+        "categories": {
+            "all": "All",
+            "humanitarian": "Humanitarian Aid",
+            "education": "Education",
+            "health": "Health",
+            "training": "Training",
+            "awareness": "Awareness",
+            "environment": "Environment"
+        },
+        "cards": {
+            "humanitarian": {
+                "title": "Humanitarian and Social Aid",
+                "desc": "Distribution of food kits, clothing, hygiene products, material support for vulnerable families and individuals."
+            },
+            "education": {
+                "title": "Education and Youth Support",
+                "desc": "Distribution of school supplies, awareness in schools, supporting vulnerable children in education."
+            },
+            "health": {
+                "title": "Health and Nutrition",
+                "desc": "Awareness campaigns, hospital support, infant nutrition, community hygiene."
+            },
+            "training": {
+                "title": "Training",
+                "desc": "Capacity building workshops for youth, women, and local communities."
+            },
+            "awareness": {
+                "title": "Awareness and Mobilization",
+                "desc": "Organization of conferences, debates, community engagement days."
+            },
+            "environment": {
+                "title": "Environment and Community Dev.",
+                "desc": "Reforestation, sanitation, cleanliness actions, and environmental preservation."
+            }
+        },
+        "activities": {
+            "label": "Direct Impact",
+            "title": "Realized Activities",
+            "items": [
+                "Food kit donations to vulnerable families",
+                "Visits and donations to orphanages (food, games)",
+                "Material support to hospitals (neonatology)",
+                "Distribution of school supplies (primary/secondary)",
+                "Reforestation and sanitation campaigns",
+                "Emergency assistance to disaster victims (floods)"
+            ]
+        }
+    },
+    "news": {
+        "hero": {
+            "title": "News & Events",
+            "desc": "Discover our actions for equality, our training for youth, and our solidarity initiatives in Chad and Africa."
+        },
+        "filter": {
+            "sort_by": "Sort by:",
+            "newest": "Newest"
+        },
+        "categories": {
+            "all": "All",
+            "event": "EVENT",
+            "solidarity": "SOLIDARITY",
+            "health": "HEALTH",
+            "social_cohesion": "SOCIAL COHESION",
+            "society": "SOCIETY"
+        },
+        "links": {
+            "report": "View Report",
+            "video": "Watch Video",
+            "article": "Read Article",
+            "more": "Learn More",
+            "actions": "View Actions",
+            "download": "Download PDF"
+        },
+        "newsletter": {
+            "title": "Stay Informed of Our Actions",
+            "desc": "Subscribe to our newsletter to receive the latest news on our humanitarian projects and upcoming events directly in your inbox.",
+            "placeholder": "Your email address",
+            "subscribe": "Subscribe",
+            "privacy": "We respect your privacy. Unsubscribe at any time."
+        },
+        "articles": [
+            {
+                "id": 1,
+                "title": "1 Year Serving Humanitarian Action",
+                "category": "event",
+                "date": "March 2024",
+                "type": "article",
+                "excerpt": "Association Actions Pour Tous celebrates its first year of existence. A year rich in emotions, solidarity, and concrete actions for Chad.",
+                "linkKey": "report"
+            },
+            {
+                "id": 2,
+                "title": "Highlights: Community Dinner Sharing",
+                "category": "solidarity",
+                "date": "February 2024",
+                "type": "video",
+                "excerpt": "Looking back at our grand charity dinner. More than 200 meals distributed in an atmosphere of fraternity and sharing.",
+                "linkKey": "video"
+            },
+            {
+                "id": 3,
+                "title": "Sanitation at SOS N'Djari Health Center",
+                "category": "health",
+                "date": "November 2023",
+                "type": "article",
+                "excerpt": "Our volunteers mobilized for a day of cleaning and disinfection at the health center, ensuring a healthy environment for patients.",
+                "linkKey": "article"
+            },
+            {
+                "id": 4,
+                "title": "Awareness Campaign for Peace",
+                "category": "social_cohesion",
+                "date": "October 2023",
+                "type": "article",
+                "excerpt": "A series of workshops and meetings to promote dialogue and social cohesion in the neighborhoods of N'Djamena.",
+                "linkKey": "more"
+            },
+            {
+                "id": 5,
+                "title": "Support for Orphans: Food Distribution",
+                "category": "solidarity",
+                "date": "September 2023",
+                "type": "article",
+                "excerpt": "Distribution of food kits and school supplies to support the return to school for orphans sponsored by the association.",
+                "linkKey": "actions"
+            },
+            {
+                "id": 6,
+                "title": "Activity Report - Launch",
+                "category": "society",
+                "date": "June 2023",
+                "type": "document",
+                "excerpt": "Publication of our first quarterly activity report. Transparency and commitment are at the heart of our actions.",
+                "linkKey": "download"
+            }
+        ]
+    },
+    "testimonials": {
+        "title": "Testimonials",
+        "subtitle": "They share their experience and hope.",
+        "items": [
+            {
+                "name": "Khadja Daniella",
+                "role": "Partner",
+                "content": "The transparency and efficiency of AAPT are remarkable. It is a trusted partner for community development in Chad."
+            },
+            {
+                "name": "Amina Y.",
+                "role": "Beneficiary",
+                "content": "Thanks to AAPT, I was able to follow a sewing training and launch my small business. Today, I am independent and can support my family."
+            },
+            {
+                "name": "Moussa K.",
+                "role": "Volunteer",
+                "content": "Being a volunteer at AAPT allowed me to see the impact of our actions directly. The smiles of children during distributions are my greatest reward."
+            }
+        ]
+    },
+    "contact": {
+        "hero": {
+            "title": "Contact AAPT",
+            "desc": "We are here to answer any questions, discuss partnerships, or provide assistance. Together, let's act for everyone."
+        },
+        "info": {
+            "title": "Contact Information",
+            "address": {
+                "title": "Headquarters",
+                "value": "Ndjari/ECRB,\nN'Djamena, Chad"
+            },
+            "phone": {
+                "title": "Phone"
+            },
+            "email": {
+                "title": "Email"
+            }
+        },
+        "socials": {
+            "title": "Follow Us",
+            "facebook": "Facebook Page"
+        },
+        "form": {
+            "title": "Send Us a Message",
+            "desc": "Fill out the form below and our team will get back to you as soon as possible.",
+            "name": "Your Name",
+            "name_placeholder": "Full Name",
+            "email": "Your Email",
+            "email_placeholder": "example@email.com",
+            "subject": {
+                "label": "Subject",
+                "options": {
+                    "info": "Information Request",
+                    "volunteer": "Become a Volunteer",
+                    "partnership": "Partnership",
+                    "press": "Press"
+                }
+            },
+            "message": "Message",
+            "message_placeholder": "How can we help you?",
+            "submit": "Send Message"
+        },
+        "map": {
+            "title": "Find Us",
+            "desc": "Our office is located at Ndjari/ECRB, accessible to everyone.",
+            "open": "Open in Google Maps"
+        }
+    },
+    "donate": {
+        "hero": {
+            "badge": "Donate",
+            "title": "Your generosity is <0>their future.</0>",
+            "desc": "Every donation counts. By supporting AAPT, you directly contribute to children's education, medical care for families, and women's empowerment in Chad.",
+            "checks": [
+                "100% Secure Payment",
+                "Tax Deductible",
+                "Bi-annual Impact Report",
+                "Financial Transparency"
+            ]
+        },
+        "form": {
+            "title": "I Support AAPT",
+            "subtitle": "Choose your impact amount",
+            "frequency": {
+                "unique": "One-time",
+                "monthly": "Monthly"
+            },
+            "other": "Other",
+            "methods": {
+                "mobile": "Mobile Money",
+                "card": "Credit Card"
+            },
+            "submit": "Donate {{amount}} FCFA",
+            "security": "Encrypted and Secure Transaction"
+        },
+        "impact": {
+            "title": "What will your donation do?",
+            "desc": "We ensure that every franc donated is used optimally for our projects on the ground.",
+            "cards": [
+                {
+                    "amount": "5,000 FCFA",
+                    "title": "Complete School Kit",
+                    "desc": "Provides a bag, notebooks, pens, and textbooks to a child for the entire school year."
+                },
+                {
+                    "amount": "15,000 FCFA",
+                    "title": "Medical Care",
+                    "desc": "Covers consultation fees and basic medicines for a mother and her child."
+                },
+                {
+                    "amount": "50,000 FCFA",
+                    "title": "Youth Training",
+                    "desc": "Funds a complete professional training module at the Horizon Center for a young person."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Join the Movement",
+            "desc": "Every gesture counts. Whether through a donation, volunteering, or simply sharing our message, you help Chad move forward.",
+            "donate": "Donate Now",
+            "newsletter": "Subscribe to Newsletter"
+        }
+    },
+    "gallery": {
+        "hero": {
+            "badge": "Our Media Library",
+            "title": "Immersion in our actions",
+            "desc": "Explore the impact of our projects on the ground through images and videos. Smiles, hope, and real change."
+        },
+        "filters": {
+            "all": "All",
+            "field": "On the Field",
+            "education": "Education",
+            "health": "Health",
+            "events": "Events"
+        },
+        "empty": "No items found in this category.",
+        "cta": {
+            "title": "These images testify to your impact",
+            "desc": "Every action taken is made possible thanks to the generosity of our donors. Join us to continue writing this story.",
+            "button": "Donate Now"
+        },
+        "items": {
+            "1": {
+                "category": "field",
+                "title": "Food Distribution",
+                "location": "N'Djari District"
+            },
+            "2": {
+                "category": "education",
+                "title": "Outdoor Class",
+                "location": "Rural Area"
+            },
+            "3": {
+                "category": "health",
+                "title": "Pediatric Consultation",
+                "location": "Mobile Clinic"
+            },
+            "4": {
+                "category": "field",
+                "title": "Community Meeting",
+                "location": "Gassi Village"
+            },
+            "5": {
+                "category": "education",
+                "title": "Young Girls Training",
+                "location": "Horizon Center"
+            },
+            "6": {
+                "category": "events",
+                "title": "Annual Conference 2023",
+                "location": "N'Djamena"
+            },
+            "7": {
+                "category": "health",
+                "title": "Vaccination Campaign",
+                "location": "North Chad"
+            },
+            "8": {
+                "category": "field",
+                "title": "Clean Water Access",
+                "location": "Village Well"
+            },
+            "9": {
+                "category": "events",
+                "title": "Charity Gala",
+                "location": "Radisson Hotel"
+            }
+        }
+    },
+    "about": {
+        "hero": {
+            "title": "Peace, Solidarity, Development",
+            "desc": "Non-profit, secular, and apolitical organization. Founded in 2023, Association Actions Pour Tous works for human solidarity, social justice, and sustainable development.",
+            "cta": "Join Our Cause"
+        },
+        "pillars": {
+            "label": "Our Foundations",
+            "title": "Our Pillars of Action",
+            "desc": "AAPT is committed daily through concrete actions to support populations and build a fairer society."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "desc": "Actively contributing to improving the living conditions of vulnerable people through concrete actions in social solidarity, health, education, training, child protection, and community development."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "desc": "Building a fairer, more inclusive, and supportive Chadian society where every person, especially the most disadvantaged, can live with dignity, access education and health, and actively participate in their community development."
+        },
+        "values": {
+            "label": "Our DNA",
+            "title": "Our Core Values",
+            "items": {
+                "solidarity": {
+                    "title": "Solidarity",
+                    "desc": "The heart of our action."
+                },
+                "dignity": {
+                    "title": "Dignity",
+                    "desc": "Unconditional respect."
+                },
+                "engagement": {
+                    "title": "Engagement",
+                    "desc": "Citizen action."
+                },
+                "equality": {
+                    "title": "Equality",
+                    "desc": "Opportunities for all."
+                },
+                "peace": {
+                    "title": "Peace",
+                    "desc": "Social cohesion."
+                },
+                "transparency": {
+                    "title": "Transparency",
+                    "desc": "Total responsibility."
+                }
+            }
+        },
+        "beneficiaries": {
+            "title": "Our Priority Beneficiaries",
+            "items": [
+                "Orphaned children",
+                "Widowed women",
+                "People living with disabilities",
+                "Blind people",
+                "Hospitalized patients",
+                "Women in precarious situations",
+                "Disaster-stricken communities",
+                "Disadvantaged people"
+            ]
+        },
+        "quote": "Acting together so that <0>no one</0> is left behind.",
+        "team": {
+            "label": "Our Strength",
+            "title": "Our Team",
+            "desc": "Passionate individuals committed to building a better future in Chad.",
+            "president": {
+                "role": "President",
+                "bio": "Visionary and committed, he guides AAPT with the conviction that every action counts for a united and supportive Chad."
+            },
+            "roles": {
+                "VP": "Vice President",
+                "2VP": "2nd Vice President",
+                "SG": "General Secretary",
+                "SGA": "Deputy General Secretary",
+                "Comms": "Communication Officer",
+                "Treas": "General Treasurer",
+                "TreasA": "Deputy General Treasurer",
+                "ExtRel": "External Relations Officer"
+            }
+        },
+        "history": {
+            "title": "Our History",
+            "desc": "Key milestones that shaped AAPT.",
+            "items": {
+                "1": {
+                    "title": "Official Creation",
+                    "desc": "Launch of Association Actions Pour Tous (AAPT) in N'Djamena with the main mission to promote social cohesion and living together."
+                },
+                "2": {
+                    "title": "Field Actions",
+                    "desc": "Multiplication of initiatives: community dinners for brotherhood, sanitation campaigns (SOS N'Djari), and help for vulnerable people."
+                }
+            }
+        }
+    },
+    "hero": {
+        "location": "Country / Ndjamena / Chad",
+        "subtitle": "Non-Profit Humanitarian Association.",
+        "cta_engage": "Get Involved",
+        "cta_learn_more": "Learn More"
+    },
+    "stats": {
+        "years": "Years of Action",
+        "beneficiaries": "Women & Youth Helped",
+        "volunteers": "Volunteers Engaged",
+        "countries": "Impacted Country"
+    },
+    "missions": {
+        "title": "Our Priority Missions",
+        "subtitle": "We are committed on the ground to promoting equality, protecting the most vulnerable, and training tomorrow's leaders.",
+        "women": {
+            "title": "Women's Rights",
+            "desc": "Active fight against gender-based violence and promotion of Chadian women's empowerment."
+        },
+        "youth": {
+            "title": "Youth & Training",
+            "desc": "Organizing training and exchanges with partners like 'Centre Horizon' for the future of youth."
+        },
+        "solidarity": {
+            "title": "Solidarity",
+            "desc": "Concrete humanitarian actions: food distribution, health campaigns, and support for orphans."
+        },
+        "learn_more": "Learn More"
+    },
+    "homeNews": {
+        "label": "News",
+        "title": "Latest Actions",
+        "view_all": "View All News",
+        "read_article": "Read Article",
+        "items": {
+            "1": {
+                "title": "1 Year of Humanitarian Action",
+                "date": "March 2024",
+                "desc": "Association Actions Pour Tous celebrates its first year. A year rich in emotions and concrete actions."
+            },
+            "2": {
+                "title": "Community Dinner Sharing",
+                "date": "February 2024",
+                "desc": "Looking back at our charity dinner. Over 200 meals distributed in an atmosphere of brotherhood."
+            },
+            "3": {
+                "title": "Health Center Sanitation",
+                "date": "November 2023",
+                "desc": "Our volunteers mobilized for a day of cleaning and disinfection at the SOS N'Djari health center."
+            }
+        }
+    },
+    "partners": {
+        "label": "Trust",
+        "title": "They Support Us"
+    },
+    "cta": {
+        "title": "Join the Solidarity Movement",
+        "subtitle": "Under the leadership of Abakar Saleh Mahamat, we are building a fairer future. Your support makes a difference for the women and youth of Chad.",
+        "donate": "Donate Now",
+        "newsletter": "Subscribe to Newsletter"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "actions": "Our Actions",
+        "news": "News",
+        "gallery": "Gallery",
+        "contact": "Contact",
+        "donate": "Donate"
+    },
+    "footer": {
+        "description": "Peace, Solidarity, Development",
+        "auth": "Authorization: N°0109/PR/MATD/DGGCN'DJ/SG/2024",
+        "quickLinks": "Navigation",
+        "contact": "Contact Us",
+        "headquarters": "National Headquarters",
+        "address": "N’djari District / ECRB,\nN'Djamena, Chad",
+        "representative": "Representative",
+        "newsletterTitle": "Stay Informed",
+        "newsletterDesc": "Receive the latest news about our humanitarian actions.",
+        "emailPlaceholder": "Your email",
+        "subscribe": "Subscribe",
+        "legal": "Legal Notice",
+        "privacy": "Privacy Policy",
+        "rights": "All rights reserved."
+    }
+}

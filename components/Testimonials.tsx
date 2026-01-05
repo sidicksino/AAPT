@@ -1,44 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const testimonials = [
-    {
-    id: 1,
-    name: "Khadja Daniella",
-    role: "Partenaire",
-    content: "La transparence et l'efficacité de l'AAPT sont remarquables. C'est un partenaire de confiance pour le développement communautaire au Tchad.",
-    image: "/assets/images/facebook/partenair.jpeg"
-  },
-  {
-    id: 2,
-    name: "Amina Y.",
-    role: "Bénéficiaire",
-    content: "Grâce à l'AAPT, j'ai pu suivre une formation en couture et lancer ma petite entreprise. Aujourd'hui, je suis autonome et je peux soutenir ma famille.",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2148&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    name: "Moussa K.",
-    role: "Bénévole",
-    content: "Être bénévole à l'AAPT m'a permis de voir directement l'impact de nos actions. Le sourire des enfants lors des distributions est ma plus belle récompense.",
-    image: "https://images.unsplash.com/photo-1549488497-29532d56a02f?q=80&w=2069&auto=format&fit=crop"
-  }
-];
+const images = {
+  1: "/assets/images/facebook/partenair.jpeg",
+  2: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2148&auto=format&fit=crop",
+  3: "https://images.unsplash.com/photo-1549488497-29532d56a02f?q=80&w=2069&auto=format&fit=crop"
+}
 
 const Testimonials: React.FC = () => {
+  const { t } = useTranslation();
+
+  const testimonials = t('testimonials.items', { returnObjects: true }) as any[];
+
   return (
     <section className="py-20 bg-background-light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-text-main mb-4">Témoignages</h2>
-          <p className="text-text-muted text-lg max-w-2xl mx-auto">Ils partagent leur expérience et leur espoir.</p>
+          <h2 className="text-4xl font-black text-text-main mb-4">{t('testimonials.title')}</h2>
+          <p className="text-text-muted text-lg max-w-2xl mx-auto">{t('testimonials.subtitle')}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, idx) => (
             <motion.div
-              key={testimonial.id}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -49,7 +36,7 @@ const Testimonials: React.FC = () => {
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                  <img src={images[idx + 1 as keyof typeof images]} alt={testimonial.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-text-main">{testimonial.name}</h4>
