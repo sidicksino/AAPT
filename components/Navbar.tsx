@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X, HeartHandshake } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -19,21 +19,108 @@ const Navbar: React.FC = () => {
     { label: t('nav.contact'), path: '/contact' },
   ];
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    // Initial reveal
+    controls.start("visible");
+
+    // Periodic animation loop
+    const interval = setInterval(async () => {
+      await controls.start("pulse");
+      controls.start("visible");
+    }, 2000); // Runs every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [controls]);
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[#e7f3eb] bg-[#f8fcf9]/95 backdrop-blur-md transition-all">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <motion.div 
-          className="flex items-center gap-3 cursor-pointer" 
+          className="flex items-center gap-3 cursor-pointer group" 
           onClick={() => navigate('/')}
-          whileHover={{ scale: 1.05, rotate: -2 }}
+          initial="hidden"
+          animate={controls}
+          whileHover="hover"
           whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="flex items-center justify-center size-10 rounded-full bg-primary/20 text-primary">
+          <motion.div 
+            className="flex items-center justify-center size-10 rounded-full bg-primary/20 text-primary relative overflow-hidden"
+            variants={{
+              hidden: { scale: 0, rotate: -180 },
+              visible: { 
+                scale: 1, 
+                rotate: 0,
+                transition: { type: "spring", stiffness: 260, damping: 20 } 
+              },
+              pulse: {
+                scale: [1, 1.1, 1],
+                rotate: [0, -5, 5, 0],
+                transition: { duration: 0.5 }
+              },
+              hover: { 
+                rotate: [0, -10, 10, -5, 5, 0],
+                transition: { duration: 0.5 }
+              }
+            }}
+          >
             <HeartHandshake size={24} />
-          </div>
-          <h2 className="text-xl font-black tracking-tight text-text-main">AAPT</h2>
+            {/* Shine effect on icon */}
+            <motion.div
+              className="absolute inset-0 bg-white/40 skew-x-12"
+              variants={{
+                hidden: { x: '-150%' },
+                visible: { x: '-150%' },
+                pulse: { x: ['-150%', '150%'], transition: { duration: 1, ease: "easeInOut" } },
+                hover: { x: '150%', transition: { duration: 0.6, ease: "easeInOut" } }
+              }}
+            />
+          </motion.div>
+          
+          <motion.h2 
+            className="text-xl font-black tracking-tight text-text-main flex"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1, 
+                transition: { staggerChildren: 0.2, delayChildren: 0.2 } 
+              },
+              pulse: {
+                transition: { staggerChildren: 0.09 } 
+              },
+              hover: { 
+                transition: { staggerChildren: 0.09 } 
+              }
+            }}
+          >
+            {['A', 'A', 'P', 'T'].map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: { 
+                    y: 0, 
+                    opacity: 1,
+                    transition: { type: "spring", stiffness: 400, damping: 10 } 
+                  },
+                  pulse: {
+                    y: [0, -3, 0],
+                    color: ["#0d1b12", "#0fd451", "#0d1b12"],
+                    transition: { duration: 0.4 } 
+                  },
+                  hover: { 
+                    y: [0, -4, 0],
+                    color: ["#0d1b12", "#0fd451", "#0d1b12"], // text-main to primary and back
+                    transition: { duration: 0.4 } 
+                  }
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h2>
         </motion.div>
 
         {/* Desktop Nav */}
