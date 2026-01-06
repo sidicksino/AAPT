@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Users, GraduationCap, Heart, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, GraduationCap, Heart, CheckCircle, FileText, Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { useNavigate } from 'react-router-dom';
@@ -127,6 +127,46 @@ const Actions: React.FC = () => {
         </div>
       </section>
 
+      {/* Reports Section */}
+      <section className="w-full px-4 sm:px-10 py-16 flex justify-center bg-white dark:bg-[#0d1b12]">
+        <div className="w-full max-w-5xl flex flex-col items-center">
+            <div className="text-center mb-10">
+                <span className="font-bold text-primary tracking-wider uppercase text-sm">{t('actions.reports.title')}</span>
+                <p className="text-gray-500 mt-2 max-w-xl text-center">{t('actions.reports.desc')}</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                {[
+                    { key: 1, file: "/assets/pdf/Rapport de AAPT-1.pdf" },
+                    { key: 0, file: "/assets/pdf/RA (1).pdf" }
+                ].map((item, idx) => {
+                    const reports = t('actions.reports.items', { returnObjects: true }) as any[];
+                    const report = reports[item.key];
+                    return (
+                        <a 
+                            key={idx}
+                            href={item.file}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 rounded-xl border border-gray-100 hover:border-primary/20 bg-gray-50 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md group"
+                        >
+                            <div className="size-12 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <FileText size={24} />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="font-bold text-[#0d1b12] text-lg group-hover:text-primary transition-colors">{report.title}</h3>
+                                <p className="text-sm text-gray-500 mt-1 line-clamp-2">{report.desc}</p>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/5 px-4 py-2 rounded-lg group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors mt-4 sm:mt-0">
+                                <span>{report.link}</span>
+                                <Download size={16} />
+                            </div>
+                        </a>
+                    );
+                })}
+            </div>
+        </div>
+      </section>
       {/* Realized Activities List */}
       <section className="relative w-full px-4 sm:px-10 py-24 bg-gray-50 dark:bg-[#050a07] flex justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>

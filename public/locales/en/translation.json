@@ -69,6 +69,22 @@
                 "Reforestation and sanitation campaigns",
                 "Emergency assistance to disaster victims (floods)"
             ]
+        },
+        "reports": {
+            "title": "Activity Reports",
+            "desc": "Download our full reports to learn more about our actions and our impact.",
+            "items": [
+                {
+                    "title": "Activity Report 2024",
+                    "desc": "Discover the details of our actions on the ground, our impact, and our prospects.",
+                    "link": "Download PDF"
+                },
+                {
+                    "title": "AAPT Annual Report",
+                    "desc": "The full assessment of our humanitarian operations and financial results.",
+                    "link": "Download PDF"
+                }
+            ]
         }
     },
     "news": {
@@ -156,6 +172,24 @@
                 "date": "June 2023",
                 "type": "document",
                 "excerpt": "Publication of our first quarterly activity report. Transparency and commitment are at the heart of our actions.",
+                "linkKey": "download"
+            },
+            {
+                "id": 7,
+                "title": "Activity Report 2024",
+                "category": "society",
+                "date": "January 2024",
+                "type": "document",
+                "excerpt": "Discover the details of our actions on the ground, our impact, and our prospects for the coming year.",
+                "linkKey": "download"
+            },
+            {
+                "id": 8,
+                "title": "AAPT Annual Report",
+                "category": "society",
+                "date": "December 2023",
+                "type": "document",
+                "excerpt": "The full assessment of our humanitarian operations, awareness campaigns, and financial results.",
                 "linkKey": "download"
             }
         ]

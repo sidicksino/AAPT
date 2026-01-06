@@ -58,15 +58,6 @@ const News: React.FC = () => {
             linkText: t(`news.links.${article.linkKey}`) 
         };
     });
-    
-    // Duplicate for demo purposes if needed, or just use what we have. 
-    // The original had 14 items (some dupes). I will replicate item 6 a few times to fill the grid if desired, 
-    // or just stick to the 6 unique ones. The user had duplicated ID 6 multiple times.
-    // I'll stick to the 6 unique ones for now to be cleaner, or replicate if pagination needs to be shown.
-    // Let's replicate the last one to simulate pagination if needed, but 6 items fits on one page.
-    // I'll just use the 6 items for now. 
-    
-    // Actually, let's just use the 6 items. If the user wants more they can add more in json.
 
     const filteredArticles = activeCategory === "all" 
         ? translatedArticles 

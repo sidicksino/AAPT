@@ -69,6 +69,22 @@
                 "Campagnes de reboisement et salubrité",
                 "Assistance d'urgence aux sinistrés (inondations)"
             ]
+        },
+        "reports": {
+            "title": "Rapports d'Activités",
+            "desc": "Téléchargez nos rapports complets pour en savoir plus sur nos actions et notre impact.",
+            "items": [
+                {
+                    "title": "Rapport d'Activités 2024",
+                    "desc": "Découvrez le détail de nos actions menées sur le terrain, nos impacts et nos perspectives.",
+                    "link": "Télécharger le PDF"
+                },
+                {
+                    "title": "Rapport Annuel AAPT",
+                    "desc": "Le bilan complet de nos opérations humanitaires et de nos résultats financiers.",
+                    "link": "Télécharger le PDF"
+                }
+            ]
         }
     },
     "news": {
@@ -156,6 +172,24 @@
                 "date": "Juin 2023",
                 "type": "document",
                 "excerpt": "Publication de notre premier rapport d'activités trimestriel. Transparence et engagement sont au cœur de nos actions.",
+                "linkKey": "download"
+            },
+            {
+                "id": 7,
+                "title": "Rapport d'Activités 2024",
+                "category": "society",
+                "date": "Janvier 2024",
+                "type": "document",
+                "excerpt": "Découvrez le détail de nos actions menées sur le terrain, nos impacts et nos perspectives pour l'année à venir.",
+                "linkKey": "download"
+            },
+            {
+                "id": 8,
+                "title": "Rapport Annuel AAPT",
+                "category": "society",
+                "date": "Décembre 2023",
+                "type": "document",
+                "excerpt": "Le bilan complet de nos opérations humanitaires, de nos campagnes de sensibilisation et de nos résultats financiers.",
                 "linkKey": "download"
             }
         ]
