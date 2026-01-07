@@ -12,6 +12,11 @@ import News from './pages/News';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
+import { AuthProvider } from './context/AuthContext';
+import Login from './pages/admin/Login';
+import Signup from './pages/admin/Signup';
+import ProtectedRoute from './components/ProtectedRoute';
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   
@@ -23,8 +28,17 @@ const AnimatedRoutes = () => {
     { path: "/news", element: <PageTransition><News /></PageTransition> },
     { path: "/gallery", element: <PageTransition><Gallery /></PageTransition> },
     { path: "/contact", element: <PageTransition><Contact /></PageTransition> },
-    // Admin Route - Placeholder for now
-    { path: "/admin", element: <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">Admin Portal Coming Soon</div> },
+    
+    { path: "/admin/login", element: <Login /> },
+    { path: "/admin/signup", element: <Signup /> },
+    { path: "/admin", element: 
+      <ProtectedRoute>
+        <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">
+          Admin Dashboard (Protected)
+        </div>
+      </ProtectedRoute> 
+    },
+    
     { path: "*", element: <Navigate to="/" replace /> }
   ]);
   
@@ -79,13 +93,15 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="flex min-h-screen flex-col font-body bg-background-light text-text-main selection:bg-primary selection:text-white">
-        <Navbar />
-        <main className="flex-1 w-full overflow-x-hidden">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
+      <AuthProvider>
+        <div className="flex min-h-screen flex-col font-body bg-background-light text-text-main selection:bg-primary selection:text-white">
+          <Navbar />
+          <main className="flex-1 w-full overflow-x-hidden">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </div>
+      </AuthProvider>
     </Router>
   );
 };

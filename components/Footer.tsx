@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
             <a href="#" className="hover:text-primary transition-colors">{t('footer.legal')}</a>
             <Link to="/admin" className="hover:text-primary transition-colors flex items-center gap-1 group">
               <Lock size={12} className="opacity-50 group-hover:opacity-100 transition-opacity" />
-              <span>Admin</span>
+              <span>{t('footer.admin')}</span>
             </Link>
           </div>
         </div>
