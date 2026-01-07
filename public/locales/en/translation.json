@@ -559,7 +559,6 @@
         "description": "Peace, Solidarity, Development",
         "auth": "Authorization: N°0109/PR/MATD/DGGCN'DJ/SG/2024",
         "quickLinks": "Navigation",
-        "admin": "Administration",
         "contact": "Contact Us",
         "headquarters": "National Headquarters",
         "address": "N’djari District / ECRB,\nN'Djamena, Chad",
@@ -571,17 +570,5 @@
         "legal": "Legal Notice",
         "privacy": "Privacy Policy",
         "rights": "All rights reserved."
-    },
-    "admin": {
-        "login": {
-            "title": "Admin Portal",
-            "subtitle": "Sign in to manage your content",
-            "email_label": "Email address",
-            "email_placeholder": "Email address",
-            "password_label": "Password",
-            "password_placeholder": "Password",
-            "sign_in": "Sign In",
-            "signing_in": "Signing in..."
-        }
     }
 }
