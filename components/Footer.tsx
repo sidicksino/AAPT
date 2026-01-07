@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, User, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, User, Facebook, Linkedin, Instagram, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
@@ -117,7 +117,10 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex gap-6 text-sm text-gray-400">
             <a href="#" className="hover:text-primary transition-colors">{t('footer.legal')}</a>
-            <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
+            <Link to="/admin" className="hover:text-primary transition-colors flex items-center gap-1 group">
+              <Lock size={12} className="opacity-50 group-hover:opacity-100 transition-opacity" />
+              <span>Admin</span>
+            </Link>
           </div>
         </div>
       </div>

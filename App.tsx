@@ -23,6 +23,8 @@ const AnimatedRoutes = () => {
     { path: "/news", element: <PageTransition><News /></PageTransition> },
     { path: "/gallery", element: <PageTransition><Gallery /></PageTransition> },
     { path: "/contact", element: <PageTransition><Contact /></PageTransition> },
+    // Admin Route - Placeholder for now
+    { path: "/admin", element: <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">Admin Portal Coming Soon</div> },
     { path: "*", element: <Navigate to="/" replace /> }
   ]);
   
