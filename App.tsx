@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/admin/Login';
 import Signup from './pages/admin/Signup';
+import Dashboard from './pages/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const AnimatedRoutes = () => {
@@ -33,9 +34,7 @@ const AnimatedRoutes = () => {
     { path: "/admin/signup", element: <Signup /> },
     { path: "/admin", element: 
       <ProtectedRoute>
-        <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">
-          Admin Dashboard (Protected)
-        </div>
+        <Dashboard />
       </ProtectedRoute> 
     },
     
