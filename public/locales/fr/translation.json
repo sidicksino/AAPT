@@ -603,7 +603,44 @@
         "news": {
             "delete_confirm": "Êtes-vous sûr de vouloir supprimer cet article ? Cette action est irréversible.",
             "add_title": "Ajouter un Article",
-            "edit_title": "Modifier l'Article"
+            "edit_title": "Modifier l'Article",
+            "modal": {
+                "cover_image": "Image de Couverture",
+                "uploading": "Téléchargement...",
+                "change_image": "Changer l'Image",
+                "upload_placeholder": "Cliquez pour télécharger",
+                "upload_help": "SVG, PNG, JPG ou GIF (max 5 Mo)",
+                "title_label": "Titre",
+                "title_placeholder": "Titre de l'article",
+                "category_label": "Catégorie",
+                "type_label": "Type de Contenu",
+                "excerpt_label": "Extrait / Résumé",
+                "excerpt_placeholder": "Brève description de l'article...",
+                "cancel": "Annuler",
+                "save": "Enregistrer l'Article"
+            }
+        },
+        "gallery": {
+            "add_title": "Ajouter un Élément",
+            "edit_title": "Modifier l'Élément",
+            "modal": {
+                "media_file": "Fichier Média (Image ou Miniature Vidéo)",
+                "uploading": "Téléchargement...",
+                "change_image": "Changer l'Image",
+                "upload_placeholder": "Cliquez pour télécharger",
+                "upload_help": "SVG, PNG, JPG ou GIF (max 5 Mo)",
+                "title_label": "Titre",
+                "title_placeholder": "Titre de l'image",
+                "category_label": "Catégorie",
+                "type_label": "Type de Média",
+                "location_label": "Lieu",
+                "location_placeholder": "ex: N'Djamena, Tchad",
+                "cancel": "Annuler",
+                "save": "Enregistrer"
+            }
+        },
+        "common": {
+            "upload_error": "Échec du téléchargement. Veuillez réessayer."
         }
     }
 }

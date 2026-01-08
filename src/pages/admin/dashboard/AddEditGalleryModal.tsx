@@ -62,7 +62,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
             setFormData(prev => ({ ...prev, src: publicUrl }));
         } catch (error) {
             console.error('Error uploading file:', error);
-            alert('Failed to upload image. Please try again.');
+            alert(t('admin.common.upload_error'));
             setPreviewUrl(formData.src || null); // Revert to old image on failure
         } finally {
             setIsUploading(false);
@@ -74,7 +74,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
             <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
                 <div className="p-6 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white z-10">
                     <h2 className="text-xl font-bold text-gray-900">
-                        {item ? 'Edit Gallery Item' : 'Add Gallery Item'}
+                        {item ? t('admin.gallery.edit_title') : t('admin.gallery.add_title')}
                     </h2>
                     <button onClick={onClose} className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
                         <X size={24} />
@@ -85,7 +85,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                     {/* Media Upload */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Media File (Image or Video Thumbnail)
+                             {t('admin.gallery.modal.media_file')}
                         </label>
                         
                         <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 transition-colors hover:border-primary/50 hover:bg-primary/5 group text-center cursor-pointer relative">
@@ -100,14 +100,14 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                             {isUploading ? (
                                 <div className="flex flex-col items-center text-primary">
                                     <Loader2 className="animate-spin mb-2" size={32} />
-                                    <span className="font-medium">Uploading...</span>
+                                    <span className="font-medium">{t('admin.gallery.modal.uploading')}</span>
                                 </div>
                             ) : previewUrl ? (
                                 <div className="relative inline-block w-full max-w-[200px] aspect-video rounded-lg overflow-hidden shadow-sm">
                                     <img src={previewUrl} alt="Preview" className="w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                         <p className="text-white font-medium text-sm flex items-center gap-1">
-                                            <Upload size={16} /> Change Image
+                                            <Upload size={16} /> {t('admin.gallery.modal.change_image')}
                                         </p>
                                     </div>
                                 </div>
@@ -116,8 +116,8 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/10">
                                         <Upload size={24} />
                                     </div>
-                                    <p className="font-medium text-gray-900">Click to upload image</p>
-                                    <p className="text-xs mt-1">SVG, PNG, JPG or GIF (max 5MB)</p>
+                                    <p className="font-medium text-gray-900">{t('admin.gallery.modal.upload_placeholder')}</p>
+                                    <p className="text-xs mt-1">{t('admin.gallery.modal.upload_help')}</p>
                                 </div>
                             )}
                         </div>
@@ -128,7 +128,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Title
+                            {t('admin.gallery.modal.title_label')}
                         </label>
                         <input 
                             type="text" 
@@ -136,7 +136,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                             value={formData.title || ''}
                             onChange={e => setFormData({...formData, title: e.target.value})}
                             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                            placeholder="Image Title"
+                            placeholder={t('admin.gallery.modal.title_placeholder')}
                         />
                     </div>
 
@@ -144,25 +144,25 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                         {/* Category */}
                         <div>
                             <label className="block text-sm font-bold text-gray-700 mb-2">
-                                Category
+                                 {t('admin.gallery.modal.category_label')}
                             </label>
                             <select 
                                 value={formData.category}
                                 onChange={e => setFormData({...formData, category: e.target.value})}
                                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                             >
-                                <option value="field">Field</option>
-                                <option value="education">Education</option>
-                                <option value="health">Health</option>
-                                <option value="events">Events</option>
-                                <option value="all">All</option>
+                                <option value="field">{t('gallery.filters.field')}</option>
+                                <option value="education">{t('gallery.filters.education')}</option>
+                                <option value="health">{t('gallery.filters.health')}</option>
+                                <option value="events">{t('gallery.filters.events')}</option>
+                                <option value="all">{t('gallery.filters.all')}</option>
                             </select>
                         </div>
 
                          {/* Type */}
                          <div>
                             <label className="block text-sm font-bold text-gray-700 mb-2">
-                                Media Type
+                                {t('admin.gallery.modal.type_label')}
                             </label>
                             <select 
                                 value={formData.type}
@@ -178,14 +178,14 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                     {/* Location */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Location
+                            {t('admin.gallery.modal.location_label')}
                         </label>
                         <input 
                             type="text" 
                             value={formData.location || ''}
                             onChange={e => setFormData({...formData, location: e.target.value})}
                             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                            placeholder="e.g. N'Djamena, Chad"
+                            placeholder={t('admin.gallery.modal.location_placeholder')}
                         />
                     </div>
 
@@ -195,7 +195,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                             onClick={onClose}
                             className="px-6 py-2.5 rounded-lg font-bold text-gray-500 hover:bg-gray-100 transition-colors"
                         >
-                            Cancel
+                            {t('admin.gallery.modal.cancel')}
                         </button>
                         <button 
                             type="submit" 
@@ -208,7 +208,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                             `}
                         >
                             <Check size={18} />
-                            Save Item
+                            {t('admin.gallery.modal.save')}
                         </button>
                     </div>
                 </form>

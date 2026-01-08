@@ -66,7 +66,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
             setFormData(prev => ({ ...prev, image: publicUrl }));
         } catch (error) {
             console.error('Error uploading file:', error);
-            alert('Failed to upload image. Please try again.');
+            alert(t('admin.common.upload_error'));
             setPreviewUrl(formData.image || null); // Revert
         } finally {
             setIsUploading(false);
@@ -89,7 +89,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                     {/* Media Upload */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Cover Image
+                            {t('admin.news.modal.cover_image')}
                         </label>
                         
                         <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 transition-colors hover:border-primary/50 hover:bg-primary/5 group text-center cursor-pointer relative">
@@ -104,14 +104,14 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                             {isUploading ? (
                                 <div className="flex flex-col items-center text-primary">
                                     <Loader2 className="animate-spin mb-2" size={32} />
-                                    <span className="font-medium">Uploading...</span>
+                                    <span className="font-medium">{t('admin.news.modal.uploading')}</span>
                                 </div>
                             ) : previewUrl ? (
                                 <div className="relative inline-block w-full max-w-[200px] aspect-video rounded-lg overflow-hidden shadow-sm">
                                     <img src={previewUrl} alt="Preview" className="w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                         <p className="text-white font-medium text-sm flex items-center gap-1">
-                                            <Upload size={16} /> Change Image
+                                            <Upload size={16} /> {t('admin.news.modal.change_image')}
                                         </p>
                                     </div>
                                 </div>
@@ -120,20 +120,17 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/10">
                                         <Upload size={24} />
                                     </div>
-                                    <p className="font-medium text-gray-900">Click to upload cover image</p>
-                                    <p className="text-xs mt-1">SVG, PNG, JPG or GIF (max 5MB)</p>
+                                    <p className="font-medium text-gray-900">{t('admin.news.modal.upload_placeholder')}</p>
+                                    <p className="text-xs mt-1">{t('admin.news.modal.upload_help')}</p>
                                 </div>
                             )}
                         </div>
-                        {/* Hidden input */}
-                        // Make image optional to not block saving text-only news if needed, but form usually requires visuals
-                        // We'll keep it as simple hidden input management
                     </div>
 
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Title
+                             {t('admin.news.modal.title_label')}
                         </label>
                         <input 
                             type="text" 
@@ -141,7 +138,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                             value={formData.title}
                             onChange={e => setFormData({...formData, title: e.target.value})}
                             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                            placeholder="Article Title"
+                            placeholder={t('admin.news.modal.title_placeholder')}
                         />
                     </div>
 
@@ -149,25 +146,25 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                         {/* Category */}
                         <div>
                             <label className="block text-sm font-bold text-gray-700 mb-2">
-                                Category
+                                {t('admin.news.modal.category_label')}
                             </label>
                             <select 
                                 value={formData.category}
                                 onChange={e => setFormData({...formData, category: e.target.value})}
                                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                             >
-                                <option value="event">Event</option>
-                                <option value="solidarity">Solidarity</option>
-                                <option value="health">Health</option>
-                                <option value="social_cohesion">Social Cohesion</option>
-                                <option value="society">Society</option>
+                                <option value="event">{t('news.categories.event')}</option>
+                                <option value="solidarity">{t('news.categories.solidarity')}</option>
+                                <option value="health">{t('news.categories.health')}</option>
+                                <option value="social_cohesion">{t('news.categories.social_cohesion')}</option>
+                                <option value="society">{t('news.categories.society')}</option>
                             </select>
                         </div>
 
                          {/* Type */}
                          <div>
                             <label className="block text-sm font-bold text-gray-700 mb-2">
-                                Content Type
+                                {t('admin.news.modal.type_label')}
                             </label>
                             <select 
                                 value={formData.type}
@@ -184,7 +181,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                     {/* Excerpt */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Excerpt / Summary
+                            {t('admin.news.modal.excerpt_label')}
                         </label>
                         <textarea 
                             required
@@ -192,7 +189,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                             value={formData.excerpt}
                             onChange={e => setFormData({...formData, excerpt: e.target.value})}
                             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
-                            placeholder="Brief description of the article..."
+                            placeholder={t('admin.news.modal.excerpt_placeholder')}
                         />
                     </div>
 
@@ -202,7 +199,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                             onClick={onClose}
                             className="px-6 py-2.5 rounded-lg font-bold text-gray-500 hover:bg-gray-100 transition-colors"
                         >
-                            Cancel
+                             {t('admin.news.modal.cancel')}
                         </button>
                         <button 
                             type="submit" 
@@ -215,7 +212,7 @@ const AddEditNewsModal: React.FC<AddEditNewsModalProps> = ({ isOpen, onClose, ar
                             `}
                         >
                             <Check size={18} />
-                            Save Article
+                             {t('admin.news.modal.save')}
                         </button>
                     </div>
                 </form>
