@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, Search, Edit2, Trash2, Image as ImageIcon, Video, RefreshCw, ZoomIn, PlayCircle } from 'lucide-react';
 import { galleryService, GalleryItem } from '../../../services/galleryService';
-import AddEditGalleryModal from './AddEditGalleryModal';
+import AddEditGalleryModal from './AddEditGalleryModal.tsx';
 
 const GalleryManagement: React.FC = () => {
     const { t } = useTranslation();
@@ -38,13 +38,16 @@ const GalleryManagement: React.FC = () => {
     );
 
     const handleDelete = async (id: number) => {
-        if(confirm(t('admin.news.delete_confirm'))) { // Reuse delete confirm message
+        if(confirm(t('admin.gallery.delete_confirm'))) {
+            console.log(`Attempting to delete gallery item with ID: ${id} (type: ${typeof id})`);
             try {
                 await galleryService.delete(id);
-                fetchItems(); // Refresh list
-            } catch (err) {
+                // small delay to ensure propagation
+                await new Promise(resolve => setTimeout(resolve, 500));
+                await fetchItems(); // Refresh list
+            } catch (err: any) {
                 console.error('Error deleting gallery item:', err);
-                alert('Failed to delete item');
+                alert(`Failed to delete item: ${err.message || 'Unknown error'}`);
             }
         }
     };
@@ -167,6 +170,7 @@ const GalleryManagement: React.FC = () => {
                              {/* Actions Overlay */}
                              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 backdrop-blur-[1px]">
                                 <button 
+                                    type="button"
                                     onClick={() => handleEdit(item)}
                                     className="p-3 bg-white text-gray-700 hover:text-primary rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
                                     title="Edit"
@@ -174,6 +178,7 @@ const GalleryManagement: React.FC = () => {
                                     <Edit2 size={20} />
                                 </button>
                                 <button 
+                                    type="button"
                                     onClick={() => handleDelete(item.id)}
                                     className="p-3 bg-white text-gray-700 hover:text-red-500 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75"
                                     title="Delete"

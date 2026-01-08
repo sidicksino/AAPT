@@ -573,7 +573,17 @@
         "rights": "Tous droits réservés."
     },
     "admin": {
-        "dashboard": "Tableau de Bord",
+        "dashboard": {
+            "title": "Tableau de Bord",
+            "stats": {
+                "total_articles": "Total des Articles",
+                "total_views": "Vues Totales",
+                "active_users": "Admins Actifs"
+            },
+            "welcome": "Bon retour, Admin",
+            "desc": "Voici ce qui se passe sur votre site aujourd'hui.",
+            "recent_activity": "Activité Récente"
+        },
         "nav": {
             "dashboard": "Vue d'ensemble",
             "news": "Actualités & Articles",
@@ -582,14 +592,6 @@
             "settings": "Paramètres",
             "logout": "Déconnexion"
         },
-        "stats": {
-            "total_articles": "Total Articles",
-            "total_views": "Vues Totales",
-            "active_users": "Admins Actifs"
-        },
-        "welcome": "Bon retour, Admin",
-        "desc": "Voici ce qui se passe sur votre site aujourd'hui.",
-        "recent_activity": "Activité Récente",
         "login": {
             "title": "Portail Administration",
             "subtitle": "Connectez-vous pour gérer votre contenu",
@@ -621,6 +623,7 @@
             }
         },
         "gallery": {
+            "delete_confirm": "Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible.",
             "add_title": "Ajouter un Élément",
             "edit_title": "Modifier l'Élément",
             "modal": {

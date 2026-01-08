@@ -572,7 +572,17 @@
         "rights": "All rights reserved."
     },
     "admin": {
-        "dashboard": "Admin Dashboard",
+        "dashboard": {
+            "title": "Admin Dashboard",
+            "stats": {
+                "total_articles": "Total Articles",
+                "total_views": "Total Views",
+                "active_users": "Active Admins"
+            },
+            "welcome": "Welcome back, Admin",
+            "desc": "Here's what's happening with your website today.",
+            "recent_activity": "Recent Activity"
+        },
         "nav": {
             "dashboard": "Overview",
             "news": "News Management",
@@ -581,14 +591,6 @@
             "settings": "Settings",
             "logout": "Logout"
         },
-        "stats": {
-            "total_articles": "Total Articles",
-            "total_views": "Total Views",
-            "active_users": "Active Admins"
-        },
-        "welcome": "Welcome back, Admin",
-        "desc": "Here's what's happening with your website today.",
-        "recent_activity": "Recent Activity",
         "login": {
             "title": "Admin Portal",
             "subtitle": "Sign in to manage your content",
@@ -620,6 +622,7 @@
             }
         },
         "gallery": {
+            "delete_confirm": "Are you sure you want to delete this item? This action cannot be undone.",
             "add_title": "Add Gallery Item",
             "edit_title": "Edit Gallery Item",
             "modal": {

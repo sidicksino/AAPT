@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, Search, Edit2, Trash2, FileText, Image as ImageIcon, Video, RefreshCw } from 'lucide-react';
 import { NewsTranslation } from '../../../types';
-import AddEditNewsModal from './AddEditNewsModal';
+import AddEditNewsModal from './AddEditNewsModal.tsx';
 import { newsService, NewsArticle } from '../../../services/newsService';
 
 const NewsManagement: React.FC = () => {
@@ -39,12 +39,15 @@ const NewsManagement: React.FC = () => {
 
     const handleDelete = async (id: number) => {
         if(confirm(t('admin.news.delete_confirm'))) {
+            console.log(`Attempting to delete article with ID: ${id} (type: ${typeof id})`);
             try {
                 await newsService.delete(id);
-                fetchArticles(); // Refresh list
-            } catch (err) {
+                 // small delay to ensure propagation
+                await new Promise(resolve => setTimeout(resolve, 500));
+                await fetchArticles(); // Refresh list
+            } catch (err: any) {
                 console.error('Error deleting article:', err);
-                alert('Failed to delete article');
+                alert(`Failed to delete article: ${err.message || 'Unknown error'}`);
             }
         }
     };
@@ -178,6 +181,7 @@ const NewsManagement: React.FC = () => {
                                     <td className="py-4 px-6 text-right">
                                         <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                             <button 
+                                                type="button"
                                                 onClick={() => handleEdit(article)}
                                                 className="p-2 text-gray-500 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                                                 title="Edit"
@@ -185,6 +189,7 @@ const NewsManagement: React.FC = () => {
                                                 <Edit2 size={16} />
                                             </button>
                                             <button 
+                                                type="button"
                                                 onClick={() => handleDelete(article.id)}
                                                 className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                                                 title="Delete"
