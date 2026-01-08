@@ -15,7 +15,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 
 const AdminLayout: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { signOut } = useAuth();
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -130,7 +130,7 @@ const AdminLayout: React.FC = () => {
                      <p className="text-sm font-bold text-white truncate">Admin User</p>
                      <p className="text-xs text-green-400 flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                        Online
+                        {t('admin.dashboard.online')}
                      </p>
                  </div>
             </div>
@@ -159,12 +159,27 @@ const AdminLayout: React.FC = () => {
               </button>
               <h1 className="text-xl font-bold text-gray-800 hidden lg:block">
                   {/* Dynamic Title Idea: {navItems.find(i => i.path === location.pathname)?.label} */}
-                  Dashboard
+                  {t('admin.dashboard.title')}
               </h1>
           </div>
 
           <div className="flex items-center gap-4">
-             {/* We can add notifications or lang switcher here later */}
+             {/* Language Switcher */}
+             <div className="flex items-center bg-gray-100 rounded-lg p-1">
+                <button 
+                    onClick={() => i18n.changeLanguage('fr')} 
+                    className={`px-3 py-1.5 rounded-md text-sm font-bold transition-all ${i18n.language === 'fr' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                >
+                    FR
+                </button>
+                <button 
+                    onClick={() => i18n.changeLanguage('en')} 
+                    className={`px-3 py-1.5 rounded-md text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                >
+                    EN
+                </button>
+             </div>
+
              <div className="h-8 w-px bg-gray-200 mx-2 hidden sm:block"></div>
              <span className="text-xs font-mono text-gray-400 bg-gray-50 px-2 py-1 rounded">v1.0.0</span>
           </div>

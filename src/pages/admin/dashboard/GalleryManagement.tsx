@@ -88,14 +88,14 @@ const GalleryManagement: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">{t('admin.nav.gallery')}</h1>
-                    <p className="text-gray-500 mt-1">Manage your photo and video gallery</p>
+                    <p className="text-gray-500 mt-1">{t('admin.gallery.subtitle', 'Manage your photo and video gallery')}</p>
                 </div>
                 <button 
                     onClick={handleCreate}
                     className="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg hover:bg-primary-hover transition-colors font-medium"
                 >
                     <Plus size={20} />
-                    <span>Add Item</span>
+                    <span>{t('admin.gallery.add_title')}</span>
                 </button>
             </div>
 

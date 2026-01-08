@@ -582,7 +582,12 @@
             },
             "welcome": "Bon retour, Admin",
             "desc": "Voici ce qui se passe sur votre site aujourd'hui.",
-            "recent_activity": "Activité Récente"
+            "recent_activity": "Activité Récente",
+            "online": "En ligne",
+            "manage_content": "Gérer le contenu",
+            "view_all": "Voir tout",
+            "no_activity": "Aucune activité récente détectée.",
+            "activity_desc": "Les mises à jour apparaîtront ici lorsque vous modifierez le contenu."
         },
         "nav": {
             "dashboard": "Vue d'ensemble",

@@ -82,14 +82,14 @@ const NewsManagement: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">{t('admin.nav.news')}</h1>
-                    <p className="text-gray-500 mt-1">Manage your articles and publications</p>
+                    <p className="text-gray-500 mt-1">{t('admin.news.subtitle', 'Manage your articles and publications')}</p>
                 </div>
                 <button 
                     onClick={handleCreate}
                     className="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg hover:bg-primary-hover transition-colors font-medium"
                 >
                     <Plus size={20} />
-                    <span>Create New</span>
+                    <span>{t('admin.news.add_title')}</span>
                 </button>
             </div>
 

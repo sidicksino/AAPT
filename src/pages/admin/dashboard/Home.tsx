@@ -93,7 +93,7 @@ const DashboardHome: React.FC = () => {
         </motion.div>
         
         <Link to="/admin/news" className="hidden sm:flex items-center gap-2 text-primary font-bold hover:translate-x-1 transition-transform">
-             Manage Content <ArrowRight size={16} />
+             {t('admin.dashboard.manage_content')} <ArrowRight size={16} />
         </Link>
       </div>
 
@@ -115,15 +115,15 @@ const DashboardHome: React.FC = () => {
                 <Activity className="text-primary" size={20} />
                 {t('admin.dashboard.recent_activity')}
             </h2>
-             <button className="text-gray-400 hover:text-gray-600 text-sm font-medium">View All</button>
+             <button className="text-gray-400 hover:text-gray-600 text-sm font-medium">{t('admin.dashboard.view_all')}</button>
         </div>
         
         <div className="text-center py-12 relative z-10">
            <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-300">
                <Activity size={24} />
            </div>
-           <p className="text-gray-500 font-medium">No recent activity detected.</p>
-           <p className="text-gray-400 text-sm mt-1">Updates will appear here when you modify content.</p>
+           <p className="text-gray-500 font-medium">{t('admin.dashboard.no_activity')}</p>
+           <p className="text-gray-400 text-sm mt-1">{t('admin.dashboard.activity_desc')}</p>
         </div>
         
         {/* Decor */}
