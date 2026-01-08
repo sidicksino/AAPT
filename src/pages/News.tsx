@@ -2,38 +2,8 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calendar, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Mail, FileText, Download } from 'lucide-react';
 
-const articlesData = [
-    {
-      id: 1,
-      image: "/assets/images/facebook/anniversary.png",
-      key: "report"
-    },
-    {
-      id: 2,
-      image: "/assets/images/facebook/dinner.png",
-      key: "video"
-    },
-    {
-      id: 3,
-      image: "/assets/images/facebook/sanitation.png",
-      key: "article"
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop",
-      key: "more"
-    },
-    {
-      id: 5,
-      image: "/assets/images/facebook/dinner.png",
-      key: "actions"
-    },
-    {
-      id: 6,
-      image: "/assets/images/facebook/anniversary.png",
-      key: "download"
-    }
-];
+import { articlesData } from '../data/newsData';
+import { NewsTranslation } from '../types';
 
 const News: React.FC = () => {
     const { t } = useTranslation();
@@ -50,7 +20,7 @@ const News: React.FC = () => {
         { key: "event", label: t('news.categories.event') }
     ];
 
-    const translatedArticles = (t('news.articles', { returnObjects: true }) as any[]).map((article, index) => {
+    const translatedArticles = (t('news.articles', { returnObjects: true }) as NewsTranslation[]).map((article) => {
         const data = articlesData.find(d => d.id === article.id) || articlesData[0]; // Fallback
         return {
             ...article,

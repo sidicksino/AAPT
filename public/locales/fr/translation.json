@@ -573,6 +573,7 @@
         "rights": "Tous droits réservés."
     },
     "admin": {
+        "dashboard": "Tableau de Bord Admin (Protégé)",
         "login": {
             "title": "Portail Administration",
             "subtitle": "Connectez-vous pour gérer votre contenu",

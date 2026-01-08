@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, useRoutes, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -26,18 +27,23 @@ const AppRoutes = () => {
     
     { path: "/admin/login", element: <Login /> },
     { path: "/admin/signup", element: <Signup /> },
-    { path: "/admin", element: 
-      <ProtectedRoute>
-        <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">
-          Admin Dashboard (Protected)
-        </div>
-      </ProtectedRoute> 
-    },
+    { path: "/admin", element: <AdminDashboard /> },
     
     { path: "*", element: <Navigate to="/" replace /> }
   ]);
   
   return element;
+};
+
+const AdminDashboard = () => {
+  const { t } = useTranslation();
+  return (
+      <ProtectedRoute>
+        <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">
+          {t('admin.dashboard')}
+        </div>
+      </ProtectedRoute> 
+  );
 };
 
 const App: React.FC = () => {

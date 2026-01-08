@@ -32,3 +32,13 @@ export interface GalleryItemProps {
   description: string;
   type?: 'image' | 'video';
 }
+
+export interface NewsTranslation {
+  id: number;
+  linkKey: string;
+  category: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  type?: string;
+}
