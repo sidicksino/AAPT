@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calendar, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Mail, FileText, Download } from 'lucide-react';
 
-import { articlesData } from '../data/newsData';
-import { NewsTranslation } from '../types';
+import { NewsArticle, newsService } from '../services/newsService';
 
 const News: React.FC = () => {
     const { t } = useTranslation();
-    const [activeCategory, setActiveCategory] = useState("all");
+    const [articles, setArticles] = useState<NewsArticle[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [activeCategoryKey, setActiveCategory] = useState("all");
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
 
@@ -20,18 +21,31 @@ const News: React.FC = () => {
         { key: "event", label: t('news.categories.event') }
     ];
 
-    const translatedArticles = (t('news.articles', { returnObjects: true }) as NewsTranslation[]).map((article) => {
-        const data = articlesData.find(d => d.id === article.id) || articlesData[0]; // Fallback
-        return {
-            ...article,
-            image: data?.image,
-            linkText: t(`news.links.${article.linkKey}`) 
+    useEffect(() => {
+        const loadArticles = async () => {
+            setIsLoading(true);
+            try {
+                const data = await newsService.getAll();
+                // Map DB fields to UI expected fields if necessary, 
+                // but NewsArticle should match fairly well.
+                // We might need to handle 'linkText' which was computed from translation.
+                const enrichedData = data.map(item => ({
+                    ...item,
+                    linkText: t(`news.links.${item.linkKey || 'more'}`)
+                }));
+                setArticles(enrichedData);
+            } catch (error) {
+                console.error("Failed to load news", error);
+            } finally {
+                setIsLoading(false);
+            }
         };
-    });
+        loadArticles();
+    }, [t]);
 
-    const filteredArticles = activeCategory === "all" 
-        ? translatedArticles 
-        : translatedArticles.filter(a => a.category === activeCategory);
+    const filteredArticles = activeCategoryKey === "all" 
+        ? articles 
+        : articles.filter(a => a.category === activeCategoryKey);
 
     const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
     const paginatedArticles = filteredArticles.slice(
@@ -80,7 +94,7 @@ const News: React.FC = () => {
                                     key={cat.key}
                                     onClick={() => setActiveCategory(cat.key)}
                                     className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
-                                        activeCategory === cat.key 
+                                        activeCategoryKey === cat.key 
                                         ? "bg-primary text-white shadow-md transform scale-105" 
                                         : "bg-[#F3F4F6] text-gray-600 hover:bg-gray-200"
                                     }`}

@@ -570,5 +570,39 @@
         "legal": "Legal Notice",
         "privacy": "Privacy Policy",
         "rights": "All rights reserved."
+    },
+    "admin": {
+        "dashboard": "Admin Dashboard",
+        "nav": {
+            "dashboard": "Overview",
+            "news": "News & Articles",
+            "gallery": "Gallery",
+            "users": "Users",
+            "settings": "Settings",
+            "logout": "Log Out"
+        },
+        "stats": {
+            "total_articles": "Total Articles",
+            "total_views": "Total Views",
+            "active_users": "Active Admins"
+        },
+        "welcome": "Welcome back, Admin",
+        "desc": "Here's what's happening with your website today.",
+        "recent_activity": "Recent Activity",
+        "login": {
+            "title": "Admin Portal",
+            "subtitle": "Sign in to manage your content",
+            "email_label": "Email Address",
+            "email_placeholder": "Email Address",
+            "password_label": "Password",
+            "password_placeholder": "Password",
+            "sign_in": "Sign In",
+            "signing_in": "Signing in..."
+        },
+        "news": {
+            "delete_confirm": "Are you sure you want to delete this article? This action cannot be undone.",
+            "add_title": "Add New Article",
+            "edit_title": "Edit Article"
+        }
     }
 }

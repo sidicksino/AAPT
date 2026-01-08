@@ -13,6 +13,9 @@ import Contact from './pages/Contact';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/admin/Login';
 import Signup from './pages/admin/Signup';
+import AdminLayout from './components/admin/AdminLayout';
+import DashboardHome from './pages/admin/dashboard/Home';
+import NewsManagement from './pages/admin/dashboard/NewsManagement';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const AppRoutes = () => {
@@ -27,7 +30,15 @@ const AppRoutes = () => {
     
     { path: "/admin/login", element: <Login /> },
     { path: "/admin/signup", element: <Signup /> },
-    { path: "/admin", element: <AdminDashboard /> },
+    { 
+      path: "/admin", 
+      element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,
+      children: [
+        { index: true, element: <Navigate to="dashboard" replace /> },
+        { path: "dashboard", element: <DashboardHome /> },
+        { path: "news", element: <NewsManagement /> },
+      ]
+    },
     
     { path: "*", element: <Navigate to="/" replace /> }
   ]);
@@ -35,16 +46,7 @@ const AppRoutes = () => {
   return element;
 };
 
-const AdminDashboard = () => {
-  const { t } = useTranslation();
-  return (
-      <ProtectedRoute>
-        <div className="flex items-center justify-center min-h-[60vh] text-2xl font-bold text-[#0d1b12]">
-          {t('admin.dashboard')}
-        </div>
-      </ProtectedRoute> 
-  );
-};
+// Removed inline AdminDashboard component as it's replaced by the route above
 
 const App: React.FC = () => {
   React.useEffect(() => {

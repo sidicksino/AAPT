@@ -573,7 +573,23 @@
         "rights": "Tous droits réservés."
     },
     "admin": {
-        "dashboard": "Tableau de Bord Admin (Protégé)",
+        "dashboard": "Tableau de Bord",
+        "nav": {
+            "dashboard": "Vue d'ensemble",
+            "news": "Actualités & Articles",
+            "gallery": "Galerie",
+            "users": "Utilisateurs",
+            "settings": "Paramètres",
+            "logout": "Déconnexion"
+        },
+        "stats": {
+            "total_articles": "Total Articles",
+            "total_views": "Vues Totales",
+            "active_users": "Admins Actifs"
+        },
+        "welcome": "Bon retour, Admin",
+        "desc": "Voici ce qui se passe sur votre site aujourd'hui.",
+        "recent_activity": "Activité Récente",
         "login": {
             "title": "Portail Administration",
             "subtitle": "Connectez-vous pour gérer votre contenu",
@@ -583,6 +599,11 @@
             "password_placeholder": "Mot de passe",
             "sign_in": "Se connecter",
             "signing_in": "Connexion..."
+        },
+        "news": {
+            "delete_confirm": "Êtes-vous sûr de vouloir supprimer cet article ? Cette action est irréversible.",
+            "add_title": "Ajouter un Article",
+            "edit_title": "Modifier l'Article"
         }
     }
 }
