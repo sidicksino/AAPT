@@ -30,7 +30,8 @@ const Login = () => {
 
             if (error) throw error;
             
-            navigate('/admin', { replace: true });
+            const from = (location.state as any)?.from?.pathname || '/admin';
+            navigate(from, { replace: true });
         } catch (err: any) {
             setError(err.message || 'Error logging in');
         } finally {

@@ -1,9 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, useRoutes, Navigate, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import PageTransition from './components/PageTransition';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { HashRouter as Router, useRoutes, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Actions from './pages/Actions';
@@ -17,17 +14,15 @@ import Login from './pages/admin/Login';
 import Signup from './pages/admin/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
 
-const AnimatedRoutes = () => {
-  const location = useLocation();
-  
+const AppRoutes = () => {
   const element = useRoutes([
-    { path: "/", element: <PageTransition><Home /></PageTransition> },
-    { path: "/about", element: <PageTransition><About /></PageTransition> },
-    { path: "/actions", element: <PageTransition><Actions /></PageTransition> },
-    { path: "/donate", element: <PageTransition><Donate /></PageTransition> },
-    { path: "/news", element: <PageTransition><News /></PageTransition> },
-    { path: "/gallery", element: <PageTransition><Gallery /></PageTransition> },
-    { path: "/contact", element: <PageTransition><Contact /></PageTransition> },
+    { path: "/", element: <Layout><Home /></Layout> },
+    { path: "/about", element: <Layout><About /></Layout> },
+    { path: "/actions", element: <Layout><Actions /></Layout> },
+    { path: "/donate", element: <Layout><Donate /></Layout> },
+    { path: "/news", element: <Layout><News /></Layout> },
+    { path: "/gallery", element: <Layout><Gallery /></Layout> },
+    { path: "/contact", element: <Layout><Contact /></Layout> },
     
     { path: "/admin/login", element: <Login /> },
     { path: "/admin/signup", element: <Signup /> },
@@ -42,13 +37,7 @@ const AnimatedRoutes = () => {
     { path: "*", element: <Navigate to="/" replace /> }
   ]);
   
-  if (!element) return null;
-
-  return (
-    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
-      {React.cloneElement(element, { key: location.pathname })}
-    </AnimatePresence>
-  );
+  return element;
 };
 
 const App: React.FC = () => {
@@ -68,16 +57,11 @@ const App: React.FC = () => {
       const img = new Image();
       img.src = '/assets/images/facebook/logo.png';
       img.onload = () => {
-        // Draw white circle background (acts as border)
         ctx.beginPath();
         ctx.arc(32, 32, 32, 0, 2 * Math.PI);
         ctx.fillStyle = '#ffffff';
         ctx.fill();
 
-        // Draw slightly smaller white circle to ensure clean border (optional, but good for anti-aliasing)
-        // Actually, just drawing the image smaller on top of the white circle creates the border effect
-        
-        // Clip to circle for the image
         ctx.beginPath();
         ctx.arc(32, 32, 28, 0, 2 * Math.PI);
         ctx.clip();
@@ -94,13 +78,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <AuthProvider>
-        <div className="flex min-h-screen flex-col font-body bg-background-light text-text-main selection:bg-primary selection:text-white">
-          <Navbar />
-          <main className="flex-1 w-full overflow-x-hidden">
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-        </div>
+        <AppRoutes />
       </AuthProvider>
     </Router>
   );

@@ -1,83 +1,59 @@
-# AAPT - Association Actions Pour Tous 🇹🇩
+# AAPT - Association Actions Pour Tous
 
-Bienvenue sur le dépôt officiel du site web de l'**Association Actions Pour Tous (AAPT)**. Une organisation basée à N'Djamena, Tchad, œuvrant pour la cohésion sociale, l'égalité et l'avenir de la jeunesse.
+An interactive, responsive web application for the AAPT non-profit organization, built with modern web technologies.
 
-![AAPT Banner](/public/assets/images/facebook/logo.png)
+## 🛠 Tech Stack
+- **Framework**: React 18 + Vite
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4 + Vanilla CSS variables
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Backend/Auth**: Supabase
+- **Internationalization**: i18next
 
-## ✨ Fonctionnalités Clés
+## 📂 Project Structure
+After the 2026 Refactor, the project follows a standard `src/` directory structure:
 
-- **🎨 Design Moderne & Épuré** : Interface utilisateur soignée avec effets de "Glassmorphism" et typographie professionnelle.
-- **🌗 Mode Sombre & Clair** : Thème dynamique respectant les préférences système et utilisateur (persistant).
-- **📱 100% Responsive** : Expérience fluide sur mobile, tablette et desktop.
-- **⚡ Performance** : Chargement rapide, animations fluides (60fps) et optimisation des images.
-- **🔍 Contenu Dynamique** :
-  - **Notre Équipe** : Présentation interactive du bureau exécutif.
-  - **Nos Actions** : Système de filtrage pour explorer les projets par catégorie (Santé, Éducation, Social).
-  - **Statistiques** : Compteurs animés pour présenter l'impact de l'association.
-
-## 🛠 Stack Technique
-
-Ce projet utilise les dernières technologies du développement web :
-
-- **Framework** : [React 19](https://react.dev/)
-- **Build Tool** : [Vite](https://vitejs.dev/)
-- **Langage** : [TypeScript](https://www.typescriptlang.org/)
-- **Styling** : [Tailwind CSS](https://tailwindcss.com/)
-- **Animations** : [Framer Motion](https://www.framer.com/motion/)
-- **Icones** : [Lucide React](https://lucide.dev/)
-- **Routing** : [React Router v7](https://reactrouter.com/)
-
-## 🚀 Installation & Démarrage
-
-Suivez ces étapes pour lancer le projet localement :
-
-### Prérequis
-- Node.js (v18 ou supérieur)
-- npm ou yarn
-
-### 1. Cloner le projet
-```bash
-git clone https://github.com/votre-username/aapt-web.git
-cd aapt-web
+```
+src/
+├── components/     # Reusable UI components (Navbar, Footer, etc.)
+├── context/        # React Context (AuthContext)
+├── lib/            # Utilities & Clients (Supabase client)
+├── pages/          # Page views (Home, About, News, Admin...)
+├── App.tsx         # Main Application Component & Routing
+├── main.tsx        # Entry point
+└── index.css       # Global styles & Tailwind directives
 ```
 
-### 2. Installer les dépendances
-```bash
-npm install
-```
+## 🚀 Getting Started
 
-### 3. Lancer le serveur de développement
-```bash
-npm run dev
-```
-L'application sera accessible sur `http://localhost:5173`.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-### 4. Construire pour la production
-```bash
-npm run build
-```
-Les fichiers optimisés seront générés dans le dossier `dist`.
+2. **Environment Setup**
+   Ensure you have a `.env.local` file with:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_key
+   ```
 
-## 📂 Structure du Projet
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-/src
-├── /assets        # Images et polices locales
-├── /components    # Composants réutilisables (Navbar, Footer, UI...)
-├── /context       # Contexte global (Thème, État)
-├── /pages         # Pages de l'application (Accueil, À propos...)
-└── /styles        # Configuration Tailwind et CSS global
-```
+4. **Build for Production**
+   ```bash
+   npm run build
+   ```
 
-## 🌍 Déploiement
+## 🔐 Admin Access
+The admin section is protected via Supabase Auth.
+- Login Route: `/admin/login`
+- Protected Routes: Wrapped in `<ProtectedRoute>` component.
 
-Le projet est configuré pour être déployé facilement sur **Vercel** ou **Netlify**.
-
-1. Poussez votre code sur GitHub.
-2. Connectez votre dépôt à Vercel/Netlify.
-3. Les paramètres de build (`vite build`) sont détectés automatiquement.
-
----
-
-**Association Actions Pour Tous** - *Ensemble pour un avenir meilleur.*
-Contact : contact@aapt-tchad.org
+## 🌍 Internationalization
+Translations are stored in `public/locales/{lang}/translation.json`.
+The app uses `i18next-browser-languagedetector` to automatically detect user language.
