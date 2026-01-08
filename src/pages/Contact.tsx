@@ -1,9 +1,30 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Facebook, Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, Facebook, Send, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { emailService } from '../services/emailService';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      subject: 'Demande d\'information',
+      message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setStatus('loading');
+      try {
+          await emailService.sendContactEmail(formData);
+          setStatus('success');
+          setFormData({ name: '', email: '', subject: 'Demande d\'information', message: '' });
+      } catch (error) {
+          console.error(error);
+          setStatus('error');
+      }
+  };
 
   return (
     <div className="flex-grow bg-[#F8F9FA]">
@@ -99,55 +120,99 @@ const Contact: React.FC = () => {
               <h2 className="text-3xl font-bold text-[#0d1b12] mb-2">{t('contact.form.title')}</h2>
               <p className="text-gray-500 mb-8">{t('contact.form.desc')}</p>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.name')}</label>
-                    <input 
-                      type="text" 
-                      placeholder={t('contact.form.name_placeholder')} 
-                      className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
-                    />
+              {status === 'success' ? (
+                  <div className="bg-green-50 text-green-700 p-6 rounded-xl border border-green-200 text-center animate-fade-in">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Check size={24} />
+                      </div>
+                      <h3 className="font-bold text-lg mb-2">Message envoyé !</h3>
+                      <p>Nous vous répondrons dans les plus brefs délais.</p>
+                      <button 
+                          onClick={() => setStatus('idle')}
+                          className="mt-4 text-sm font-bold underline hover:text-green-800"
+                      >
+                          Envoyer un autre message
+                      </button>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.email')}</label>
-                    <input 
-                      type="email" 
-                      placeholder={t('contact.form.email_placeholder')} 
-                      className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.subject.label')}</label>
-                  <div className="relative">
-                    <select className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none text-gray-600">
-                      <option>{t('contact.form.subject.options.info')}</option>
-                      <option>{t('contact.form.subject.options.volunteer')}</option>
-                      <option>{t('contact.form.subject.options.partnership')}</option>
-                      <option>{t('contact.form.subject.options.press')}</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+              ) : (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.name')}</label>
+                      <input 
+                        type="text" 
+                        required
+                        value={formData.name}
+                        onChange={e => setFormData({...formData, name: e.target.value})}
+                        placeholder={t('contact.form.name_placeholder')} 
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.email')}</label>
+                      <input 
+                        type="email" 
+                        required
+                        value={formData.email}
+                        onChange={e => setFormData({...formData, email: e.target.value})}
+                        placeholder={t('contact.form.email_placeholder')} 
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400"
+                      />
                     </div>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.message')}</label>
-                  <textarea 
-                    rows={6}
-                    placeholder={t('contact.form.message_placeholder')}
-                    className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400 resize-none"
-                  ></textarea>
-                </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.subject.label')}</label>
+                    <div className="relative">
+                      <select 
+                        value={formData.subject}
+                        onChange={e => setFormData({...formData, subject: e.target.value})}
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none text-gray-600"
+                      >
+                        <option>{t('contact.form.subject.options.info')}</option>
+                        <option>{t('contact.form.subject.options.volunteer')}</option>
+                        <option>{t('contact.form.subject.options.partnership')}</option>
+                        <option>{t('contact.form.subject.options.press')}</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+                      </div>
+                    </div>
+                  </div>
 
-                <button className="w-full sm:w-auto px-8 py-4 bg-primary text-[#0d1b12] font-bold rounded-lg hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                  <Send size={18} />
-                  {t('contact.form.submit')}
-                </button>
-              </form>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-[#0d1b12]">{t('contact.form.message')}</label>
+                    <textarea 
+                      required
+                      rows={6}
+                      value={formData.message}
+                      onChange={e => setFormData({...formData, message: e.target.value})}
+                      placeholder={t('contact.form.message_placeholder')}
+                      className="w-full px-4 py-3 rounded-lg bg-[#F8F9FA] border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400 resize-none"
+                    ></textarea>
+                  </div>
+
+                  {status === 'error' && (
+                      <div className="text-red-500 text-sm bg-red-50 p-3 rounded-lg">
+                          Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+                      </div>
+                  )}
+
+                  <button 
+                    disabled={status === 'loading'}
+                    className="w-full sm:w-auto px-8 py-4 bg-primary text-[#0d1b12] font-bold rounded-lg hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === 'loading' ? (
+                        <>Envoi en cours...</>
+                    ) : (
+                        <>
+                            <Send size={18} />
+                            {t('contact.form.submit')}
+                        </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
