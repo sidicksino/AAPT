@@ -575,11 +575,11 @@
         "dashboard": "Admin Dashboard",
         "nav": {
             "dashboard": "Overview",
-            "news": "News & Articles",
+            "news": "News Management",
             "gallery": "Gallery",
             "users": "Users",
             "settings": "Settings",
-            "logout": "Log Out"
+            "logout": "Logout"
         },
         "stats": {
             "total_articles": "Total Articles",

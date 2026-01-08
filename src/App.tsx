@@ -16,6 +16,7 @@ import Signup from './pages/admin/Signup';
 import AdminLayout from './components/admin/AdminLayout';
 import DashboardHome from './pages/admin/dashboard/Home';
 import NewsManagement from './pages/admin/dashboard/NewsManagement';
+import GalleryManagement from './pages/admin/dashboard/GalleryManagement';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const AppRoutes = () => {
@@ -37,6 +38,7 @@ const AppRoutes = () => {
         { index: true, element: <Navigate to="dashboard" replace /> },
         { path: "dashboard", element: <DashboardHome /> },
         { path: "news", element: <NewsManagement /> },
+        { path: "gallery", element: <GalleryManagement /> },
       ]
     },
     

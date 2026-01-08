@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PlayCircle, Image as ImageIcon, X, ZoomIn, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
@@ -7,81 +7,39 @@ import { useTranslation } from 'react-i18next';
 
 type MediaType = 'image' | 'video';
 
-interface GalleryItemData {
-  id: number;
-  type: MediaType;
-  category: string;
-  src: string;
-}
+import { galleryService, GalleryItem } from '../services/galleryService'; // Import service
+// Removed hardcoded galleryItemsData
 
-const galleryItemsData: GalleryItemData[] = [
-  {
-    id: 1,
-    type: 'image',
-    category: 'field',
-    src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    id: 2,
-    type: 'image',
-    category: 'education',
-    src: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    type: 'image',
-    category: 'health',
-    src: 'https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    type: 'image',
-    category: 'field',
-    src: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop',
-  },
-  {
-    id: 5,
-    type: 'image',
-    category: 'education',
-    src: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop',
-  },
-  {
-    id: 6,
-    type: 'video',
-    category: 'events',
-    src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop', // Placeholder for video thumb
-  },
-  {
-    id: 7,
-    type: 'image',
-    category: 'health',
-    src: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2032&auto=format&fit=crop',
-  },
-  {
-    id: 8,
-    type: 'image',
-    category: 'field',
-    src: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=2080&auto=format&fit=crop',
-  },
-  {
-    id: 9,
-    type: 'image',
-    category: 'events',
-    src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop',
-  }
-];
+// ... (data removed)
 
 const categories = ["all", "field", "education", "health", "events"];
 
 const Gallery: React.FC = () => {
+
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
-  const [selectedImage, setSelectedImage] = useState<GalleryItemData | null>(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+        try {
+            const data = await galleryService.getAll();
+            setGalleryItems(data);
+        } catch (error) {
+            console.log("Error loading gallery", error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+    fetchGallery();
+  }, []);
 
   const filteredItems = activeFilter === "all" 
-    ? galleryItemsData 
-    : galleryItemsData.filter(item => item.category === activeFilter);
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeFilter);
 
   return (
     <div className="flex-grow bg-[#F8F9FA]">
@@ -164,7 +122,7 @@ const Gallery: React.FC = () => {
                 <motion.img 
                   layoutId={`image-${item.id}`}
                   src={item.src} 
-                  alt={t(`gallery.items.${item.id}.title`)} 
+                  alt={item.title || ''} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
@@ -173,7 +131,7 @@ const Gallery: React.FC = () => {
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     <div className="flex items-center justify-between mb-2">
                       <span className="bg-primary text-[#0d1b12] text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
-                        {t(`gallery.filters.${item.category}`)}
+                        {t(`gallery.filters.${item.category}`) || item.category}
                       </span>
                       {item.type === 'video' ? (
                         <PlayCircle className="text-white" size={24} />
@@ -181,10 +139,10 @@ const Gallery: React.FC = () => {
                         <ZoomIn className="text-white" size={20} />
                       )}
                     </div>
-                    <h3 className="text-white font-bold text-xl leading-tight mb-1">{t(`gallery.items.${item.id}.title`)}</h3>
+                    <h3 className="text-white font-bold text-xl leading-tight mb-1">{item.title}</h3>
                     <p className="text-gray-300 text-sm flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
-                      {t(`gallery.items.${item.id}.location`)}
+                      {item.location}
                     </p>
                   </div>
                 </div>
@@ -268,9 +226,9 @@ const Gallery: React.FC = () => {
                 transition={{ delay: 0.3 }}
                 className="mt-6 text-center"
               >
-                <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">{t(`gallery.filters.${selectedImage.category}`)}</span>
-                <h2 className="text-white text-2xl font-bold mb-2">{t(`gallery.items.${selectedImage.id}.title`)}</h2>
-                <p className="text-gray-400">{t(`gallery.items.${selectedImage.id}.location`)}</p>
+                <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">{t(`gallery.filters.${selectedImage.category}`) || selectedImage.category}</span>
+                <h2 className="text-white text-2xl font-bold mb-2">{selectedImage.title}</h2>
+                <p className="text-gray-400">{selectedImage.location}</p>
               </motion.div>
             </motion.div>
           </motion.div>
