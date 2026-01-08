@@ -42,3 +42,12 @@ export interface NewsTranslation {
   excerpt: string;
   type?: string;
 }
+
+export interface UserProfile {
+  id: string;
+  email: string | null;
+  full_name: string | null;
+  role: string;
+  avatar_url?: string | null;
+  updated_at?: string;
+}

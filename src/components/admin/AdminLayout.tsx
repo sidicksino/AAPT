@@ -29,7 +29,7 @@ const AdminLayout: React.FC = () => {
     { path: '/admin/news', icon: <Newspaper size={20} />, label: t('admin.nav.news') },
     { path: '/admin/gallery', icon: <ImageIcon size={20} />, label: t('admin.nav.gallery') },
     // Future items
-    // { path: '/admin/users', icon: <Users size={20} />, label: t('admin.nav.users') },
+    { path: '/admin/users', icon: <Users size={20} />, label: t('admin.nav.users') },
     // { path: '/admin/settings', icon: <Settings size={20} />, label: t('admin.nav.settings') },
   ];
 

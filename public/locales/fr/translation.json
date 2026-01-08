@@ -642,6 +642,20 @@
                 "save": "Enregistrer"
             }
         },
+        "users": {
+            "delete_confirm": "Êtes-vous sûr de vouloir supprimer cet utilisateur ? Cela effacera son profil.",
+            "edit_title": "Modifier l'Utilisateur",
+            "add_title": "Ajouter un Utilisateur",
+            "modal": {
+                "name_label": "Nom Complet",
+                "name_placeholder": "Jean Dupont",
+                "email_label": "Email",
+                "email_placeholder": "jean@exemple.com",
+                "role_label": "Rôle",
+                "cancel": "Annuler",
+                "save": "Enregistrer"
+            }
+        },
         "common": {
             "upload_error": "Échec du téléchargement. Veuillez réessayer."
         }
