@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { X, Upload, Check } from 'lucide-react';
+import { X, Upload, Check, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { GalleryItem } from '../../../services/galleryService';
+import { storageService } from '../../../services/storageService';
 
 interface AddEditGalleryModalProps {
     isOpen: boolean;
@@ -12,6 +13,8 @@ interface AddEditGalleryModalProps {
 
 const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClose, item, onSave }) => {
     const { t } = useTranslation();
+    const [isUploading, setIsUploading] = useState(false);
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [formData, setFormData] = useState<Partial<GalleryItem>>({
         title: '',
         location: '',
@@ -23,6 +26,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
     useEffect(() => {
         if (item) {
             setFormData(item);
+            setPreviewUrl(item.src || null);
         } else {
             setFormData({
                 title: '',
@@ -31,6 +35,7 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                 type: 'image',
                 src: ''
             });
+            setPreviewUrl(null);
         }
     }, [item, isOpen]);
 
@@ -40,6 +45,28 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
         e.preventDefault();
         onSave(formData);
         onClose();
+    };
+
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        setIsUploading(true);
+        try {
+            // Create a temporary preview
+            const objectUrl = URL.createObjectURL(file);
+            setPreviewUrl(objectUrl);
+
+            // Upload to Supabase
+            const publicUrl = await storageService.uploadFile(file, 'gallery');
+            setFormData(prev => ({ ...prev, src: publicUrl }));
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            alert('Failed to upload image. Please try again.');
+            setPreviewUrl(formData.src || null); // Revert to old image on failure
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     return (
@@ -55,6 +82,49 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                 </div>
 
                 <form onSubmit={handleSubmit} className="p-6 space-y-6">
+                    {/* Media Upload */}
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">
+                            Media File (Image or Video Thumbnail)
+                        </label>
+                        
+                        <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 transition-colors hover:border-primary/50 hover:bg-primary/5 group text-center cursor-pointer relative">
+                            <input 
+                                type="file" 
+                                accept="image/*"
+                                onChange={handleFileChange}
+                                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                                disabled={isUploading}
+                            />
+                            
+                            {isUploading ? (
+                                <div className="flex flex-col items-center text-primary">
+                                    <Loader2 className="animate-spin mb-2" size={32} />
+                                    <span className="font-medium">Uploading...</span>
+                                </div>
+                            ) : previewUrl ? (
+                                <div className="relative inline-block w-full max-w-[200px] aspect-video rounded-lg overflow-hidden shadow-sm">
+                                    <img src={previewUrl} alt="Preview" className="w-full h-full object-cover" />
+                                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <p className="text-white font-medium text-sm flex items-center gap-1">
+                                            <Upload size={16} /> Change Image
+                                        </p>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center text-gray-400 group-hover:text-primary transition-colors">
+                                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/10">
+                                        <Upload size={24} />
+                                    </div>
+                                    <p className="font-medium text-gray-900">Click to upload image</p>
+                                    <p className="text-xs mt-1">SVG, PNG, JPG or GIF (max 5MB)</p>
+                                </div>
+                            )}
+                        </div>
+                        {/* Hidden input to ensure logic still works if no file selected but URL exists */}
+                        <input type="hidden" required value={formData.src || ''} />
+                    </div>
+
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
@@ -118,22 +188,6 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                             placeholder="e.g. N'Djamena, Chad"
                         />
                     </div>
-                    
-                    {/* Media URL */}
-                    <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">
-                            Media URL (Image or Video Thumbnail)
-                        </label>
-                        <input 
-                            type="text" 
-                            required
-                            value={formData.src || ''}
-                            onChange={e => setFormData({...formData, src: e.target.value})}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                            placeholder="https://example.com/image.jpg"
-                        />
-                         <p className="text-xs text-gray-500 mt-1">Provide a direct link.</p>
-                    </div>
 
                     <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-100">
                         <button 
@@ -145,7 +199,13 @@ const AddEditGalleryModal: React.FC<AddEditGalleryModalProps> = ({ isOpen, onClo
                         </button>
                         <button 
                             type="submit" 
-                            className="flex items-center gap-2 px-6 py-2.5 rounded-lg font-bold bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all"
+                            disabled={isUploading}
+                            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg font-bold shadow-lg transition-all
+                                ${isUploading 
+                                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                                    : 'bg-primary text-white hover:bg-primary-hover shadow-primary/20'
+                                }
+                            `}
                         >
                             <Check size={18} />
                             Save Item
