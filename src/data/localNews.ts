@@ -166,5 +166,71 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-10T10:00:15Z",
         type: "Article"
+    },
+    {
+        id: -16,
+        title: "Rencontre avec le Coordonnateur de l’ONG Konoum Toullo Toullo",
+        excerpt: "Le 27 février 2025, l’Association Actions Pour Tous (AAPT) a rencontré le Coordonnateur de l’ONG Konoum Toullo Toullo dans le cadre d’une prise de contact et de présentation mutuelle des deux organisations. Cette rencontre a permis de poser les bases d’échanges futurs et d’explorer des opportunités de collaboration autour de projets communs au service des communautés.",
+        date: "27 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/16.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:16Z",
+        type: "Article"
+    },
+    {
+        id: -17,
+        title: "Formation sur la gestion des projets WASH en situation d’urgence",
+        excerpt: "Le samedi 23 août 2025, l’Association Actions Pour Tous (AAPT) a organisé une formation sur la gestion des projets WASH (Eau, Hygiène et Assainissement) en situation d’urgence. Cette session a permis aux participants de renforcer leurs compétences, d’échanger sur les bonnes pratiques d’intervention sur le terrain et d’améliorer leur capacité de réponse face aux situations d’urgence. La formation s’est clôturée par la remise des attestations, marquant une expérience enrichissante pour l’ensemble des participants.",
+        date: "23 août 2025",
+        category: "health",
+        image: "/assets/local_images/17.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:17Z",
+        type: "Article"
+    },
+    {
+        id: -18,
+        title: "Rencontre avec le Représentant de l’UNICEF au Tchad",
+        excerpt: "Le 07 mai 2025, le Président de l’Association Actions Pour Tous (AAPT), Monsieur Abakar Saleh Mahamat, a rencontré le Représentant de l’UNICEF au Tchad. Cette rencontre a permis d’aborder plusieurs questions liées à l’intérêt et au bien-être des enfants, ouvrant la voie à des perspectives de collaboration en faveur de la protection et du développement de l’enfance.",
+        date: "07 mai 2025",
+        category: "society",
+        image: "/assets/local_images/18.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:18Z",
+        type: "Article"
+    },
+    {
+        id: -19,
+        title: "Audience avec le Ministre du Développement Touristique, de la Culture et de l’Artisanat",
+        excerpt: "Le 28 août 2025, l’Association Actions Pour Tous (AAPT) a été reçue en audience par Monsieur le Ministre du Développement Touristique, de la Culture et de l’Artisanat. Cette rencontre a permis de présenter les activités de l’association depuis sa création, de soumettre un projet culturel d’envergure et d’échanger sur les perspectives de collaboration future. Le Ministre a salué l’engagement de la jeunesse de l’association et assuré son soutien pour le rayonnement de la culture et le bien-être des communautés, renforçant la motivation des membres à poursuivre leurs initiatives humanitaires et culturelles.",
+        date: "28 août 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/19.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:19Z",
+        type: "Article"
+    },
+    {
+        id: -20,
+        title: "Rencontre avec le Directeur Général de l’Office National de Sécurité Alimentaire",
+        excerpt: "Le 22 août 2024, l’Association Actions Pour Tous (AAPT) a rencontré Monsieur Ahmat Mahamat Kousseï, Directeur Général de l’Office National de Sécurité Alimentaire (ONSA). Cette rencontre a permis de présenter les projets en cours de l’association et de bénéficier de conseils précieux pour renforcer l’action en faveur des populations les plus vulnérables. La collaboration envisagée promet de soutenir efficacement les initiatives humanitaires de l’association et d’améliorer les conditions de vie des communautés défavorisées.",
+        date: "22 août 2024",
+        category: "solidarity",
+        image: "/assets/local_images/20.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:20Z",
+        type: "Article"
+    },
+    {
+        id: -21,
+        title: "Audience avec le Directeur Général Adjoint de la CNRT",
+        excerpt: "Le 04 juillet 2024, les membres du bureau exécutif de l’Association Actions Pour Tous (AAPT) ont rencontré le Général Béchir Korom Okora, Directeur Général Adjoint de la Caisse Nationale des Retraités du Tchad (CNRT). Cette audience a permis d’échanger sur le bien-être des retraités et des personnes vulnérables, et le Directeur a encouragé l’association dans ses initiatives humanitaires. La rencontre s’est conclue par une séance photo de famille, symbolisant la collaboration et l’engagement mutuel pour améliorer la vie des populations les plus vulnérables.",
+        date: "04 juillet 2024",
+        category: "solidarity",
+        image: "/assets/local_images/21.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:21Z",
+        type: "Article"
     }
 ];
