@@ -6,10 +6,26 @@ import { useTranslation } from 'react-i18next';
 import AnimatedSection from '../components/AnimatedSection';
 import Counter from '../components/Counter';
 import Testimonials from '../components/Testimonials';
+import { newsService } from '../services/newsService';
+import { NewsArticle } from '../types';
+import { useState, useEffect } from 'react';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [latestNews, setLatestNews] = useState<NewsArticle[]>([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const stories = await newsService.getAll();
+        setLatestNews(stories.slice(0, 3));
+      } catch (err) {
+        console.error("Failed to fetch news for home page", err);
+      }
+    };
+    fetchNews();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -201,34 +217,21 @@ const Home: React.FC = () => {
           </AnimatedSection>
           
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { 
-                title: t('homeNews.items.1.title'), 
-                date: t('homeNews.items.1.date'), 
-                img: "/assets/images/facebook/anniversary.png",
-                desc: t('homeNews.items.1.desc')
-              },
-              { 
-                title: t('homeNews.items.2.title'), 
-                date: t('homeNews.items.2.date'), 
-                img: "/assets/images/facebook/dinner.png",
-                desc: t('homeNews.items.2.desc')
-              },
-              { 
-                title: t('homeNews.items.3.title'), 
-                date: t('homeNews.items.3.date'), 
-                img: "/assets/images/facebook/sanitation.png",
-                desc: t('homeNews.items.3.desc')
-              }
-            ].map((news, idx) => (
-              <AnimatedSection key={idx} delay={idx * 0.15}>
+            {latestNews.map((news, idx) => (
+              <AnimatedSection key={news.id} delay={idx * 0.15}>
                 <article className="group h-full flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 border border-transparent hover:border-primary/10">
                   <div className="relative overflow-hidden aspect-video w-full">
-                    <img 
-                      src={news.img}
-                      alt={news.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                    />
+                    {news.type === 'document' ? (
+                       <div className="w-full h-full bg-[#F3F8F5] flex items-center justify-center relative group-hover:bg-[#E6F4EA] transition-colors">
+                            <span className="text-primary opacity-50 font-bold text-4xl">FILE</span>
+                        </div>
+                    ) : (   
+                        <img 
+                        src={news.image || "/assets/images/placeholder.jpg"}
+                        alt={news.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   
@@ -240,7 +243,7 @@ const Home: React.FC = () => {
                       </div>
                       <h3 className="text-xl font-bold text-text-main leading-tight group-hover:text-primary transition-colors">{news.title}</h3>
                       <p className="mt-3 text-sm text-text-muted leading-relaxed line-clamp-3">
-                        {news.desc}
+                        {news.excerpt}
                       </p>
                     </div>
                     <div className="mt-6 pt-6 border-t border-gray-100">
