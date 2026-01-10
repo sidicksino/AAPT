@@ -232,5 +232,181 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-10T10:00:21Z",
         type: "Article"
+    },
+    {
+        id: -22,
+        title: "Activité solidaire « Un pas vers Eux » à Gawi",
+        excerpt: "Le 05 juillet 2025, l’Association Actions Pour Tous (AAPT) a mené l’activité « Un pas vers Eux » à Gawi, en apportant un peu de réconfort aux populations locales. Des kits composés de savons, sucres, thé et sucreries pour les enfants ont été distribués selon les moyens disponibles. Cette initiative témoigne de l’engagement constant de l’association envers les plus démunis, et un appel est lancé à tous les partenaires et donateurs pour soutenir davantage cette cause noble.",
+        date: "05 juillet 2025",
+        category: "solidarity",
+        image: "/assets/local_images/22.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:22Z",
+        type: "Article"
+    },
+    {
+        id: -23,
+        title: "Audience avec l’Émissaire Spécial du Président de la République",
+        excerpt: "Le 27 juillet 2024, l’équipe de l’Association Actions Pour Tous (AAPT) a reçu Dr Ali Abderamane Hagar, Émissaire Spécial du Président de la République. Lors de cette audience, l’équipe a présenté les objectifs et missions de l’association, abordé la question de l’éducation et du soutien aux personnes démunies, ainsi que la solidarité nationale en période de crise humanitaire. Dr Ali Abderamane Hagar a offert une bourse d’étude pour les personnes démunies et a assuré son soutien à l’association dans plusieurs domaines d’activités.",
+        date: "27 juillet 2024",
+        category: "solidarity",
+        image: "/assets/local_images/23.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:23Z",
+        type: "Article"
+    },
+    {
+        id: -24,
+        title: "Lancement de la Bourse de Formation Intensive « Un jeune Tchadien, un métier »",
+        excerpt: "Le 01 février 2025, l’Association Actions Pour Tous (AAPT), en partenariat avec Amina-Security Informatique, a lancé officiellement la Bourse de Formation Intensive « Un jeune Tchadien, un métier » à l’hôtel Radisson Blu, N’Djamena. Cette initiative vise à offrir aux jeunes Tchadiens des formations certifiantes dans des domaines clés tels que : Aide humanitaire & Logistique humanitaire Entrepreneuriat & Mont  age de projets Informatique bureautique Cybersécurité junior Marketing digital & Montage vidéo Enquêtes socio-économiques avec Kobo Toolbox L’objectif est de renforcer les compétences des jeunes et de leur offrir des opportunités professionnelles concrètes",
+        date: "01 février 2025",
+        category: "event",
+        image: "/assets/local_images/24.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:24Z",
+        type: "Article"
+    },
+    {
+        id: -25,
+        title: "Formation en E-COMMERCE : Maîtrise de la plateforme ALI BABA",
+        excerpt: "Le 24 mai 2025, l’Association Actions Pour Tous (AAPT), en collaboration avec la Fondation Malika Tchad, a organisé une formation en E-COMMERCE centrée sur la maîtrise de la plateforme ALI BABA. Les participants ont acquis des compétences pratiques sur : Les techniques d’importation La recherche de fournisseurs fiables La gestion des transactions en ligne Cette initiative vise à renforcer les compétences professionnelles des jeunes et à leur offrir de nouvelles opportunités dans le commerce numérique.",
+        date: "24 mai 2025",
+        category: "event",
+        image: "/assets/local_images/25.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:25Z",
+        type: "Article"
+    },
+    {
+        id: -26,
+        title: "Participation à l’atelier national sur la protection contre l’exploitation et les abus sexuels (PSEA)",
+        excerpt: "Le 07 août 2025, l’Association Actions Pour Tous (AAPT) a participé à un atelier national sur la protection contre l’exploitation et les abus sexuels (PSEA) à l’hôtel La Tchadienne. Cette rencontre a été un moment fort, riche en échanges et en engagement, en collaboration avec : Les agences des Nations Unies Le Ministère de la Femme et de la Petite Enfance Divers partenaires humanitaires L’atelier a permis de promouvoir des espaces sûrs, inclusifs et respectueux, et de renforcer la lutte contre l’exploitation et les abus sexuels.",
+        date: "07 août 2025",
+        category: "health",
+        image: "/assets/local_images/26.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:26Z",
+        type: "Article"
+    },
+    {
+        id: -27,
+        title: "Signature d’un partenariat avec l’Association Al Tchad – Association des Leaders pour un Tchad Prospère",
+        excerpt: "Le 17 mai 2025, l’Association Actions Pour Tous (AAPT) a signé officiellement une convention de partenariat avec l’Association Al Tchad – Association des Leaders pour un Tchad Prospère, à la Maison de la Femme. Cet accord s’inscrit dans le cadre de la 2ᵉ édition du Concours National d’Éloquence (CNE) et vise à : Renforcer la collaboration entre les deux associations Promouvoir l’art oratoire et l’engagement citoyen Soutenir la jeunesse tchadienne et le développement communautaire Cette initiative marque une étape importante pour un Tchad plus inclusif et porteur d’espoir.",
+        date: "17 mai 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/27.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:27Z",
+        type: "Article"
+    },
+    {
+        id: -28,
+        title: "Distribution des kits scolaires à l’École Centre Étoile de N’djari",
+        excerpt: "Le 13 octobre 2025, l’Association Actions Pour Tous (AAPT) a organisé la distribution des kits scolaires aux élèves du CP1 au CM2 de l’École Centre Étoile de N’djari. Cette action, dans le cadre de la 2ᵉ édition de la Collecte des Kits Scolaires 2025-2026, a pour objectif de : Encourager la scolarisation des enfants Soutenir les élèves dans leur parcours éducatif L’association remercie tous les membres, donateurs et partenaires pour leur engagement et leur générosité. Ensemble, nous contribuons à construire l’avenir de nos enfants.",
+        date: "13 octobre 2025",
+        category: "solidarity",
+        image: "/assets/local_images/28.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:28Z",
+        type: "Article"
+    },
+    {
+        id: -29,
+        title: "Formation en Art Oratoire et Leadership en partenariat avec CHODEP",
+        excerpt: "Le 19 juillet 2025, l’Association Actions Pour Tous (AAPT), en partenariat avec CHODEP, a organisé une formation en Art Oratoire et Leadership. Cette initiative visait à : Renforcer les capacités et compétences des membres Promouvoir le leadership et la communication efficace L’AAPT remercie Chodep Horizon du Succès pour son soutien précieux et son engagement à accompagner le développement des jeunes et des membres de l’association.",
+        date: "19 juillet 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/29.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:29Z",
+        type: "Article"
+    },
+    {
+        id: -30,
+        title: "Mission Humanitaire à Kalambari pour les Réfugiés",
+        excerpt: "Le 20 septembre 2024, l'Association Actions Pour Tous (AAPT) a mené une mission à Kalambari pour la Commission Nationale d’Accueil et de Réinsertion des Réfugiés (CNARR). Avec l’autorisation du Secrétaire Permanent, M. Idriss Mahamat Ali Abdallah Nassour, l’équipe de l’association a été chaleureusement accueillie par M. Adam Ali, président des réfugiés, et le chef du bloc Ahmat Ousman. L’objectif principal était l’identification des besoins des réfugiés afin d’apporter une aide adaptée et efficace. Cette action témoigne de l’engagement et du dévouement de l’AAPT envers les populations les plus vulnérables.",
+        date: "20 septembre 2024",
+        category: "solidarity",
+        image: "/assets/local_images/30.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:30Z",
+        type: "Article"
+    },
+    {
+        id: -31,
+        title: "Rencontre avec Qatar Charity",
+        excerpt: "Le 31 octobre 2024, l'équipe de l'Association Actions Pour Tous (AAPT) a eu une rencontre fructueuse avec l’organisation Qatar Charity. Cette rencontre a été marquée par des échanges constructifs et une belle énergie collective, ouvrant la voie à une collaboration future pour soutenir les populations vulnérables et renforcer l’impact des actions humanitaires de l’association.",
+        date: "31 octobre 2024",
+        category: "social_cohesion",
+        image: "/assets/local_images/31.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:31Z",
+        type: "Article"
+    },
+    {
+        id: -32,
+        title: "Rencontre avec Care International",
+        excerpt: "Le 10 juillet 2025, l’Association Actions Pour Tous (AAPT) a eu une rencontre fructueuse avec l’ONG Care International. Cette rencontre a été marquée par des échanges constructifs et prometteurs, ouvrant la voie à de futures collaborations pour soutenir les communautés et renforcer l’impact des actions humanitaires de l’association.",
+        date: "10 juillet 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/32.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:32Z",
+        type: "Article"
+    },
+    {
+        id: -33,
+        title: "Rencontre avec OCHA",
+        excerpt: "Le 07 décembre 2024, l’Association Actions Pour Tous (AAPT) a participé à une rencontre fructueuse avec l’OCHA. Cet échange enrichissant a permis de renforcer notre engagement envers le bien-être des populations vulnérables et d’explorer des opportunités de collaboration pour maximiser l’impact de nos actions humanitaires. Ensemble, nous continuons à œuvrer pour un monde meilleur.",
+        date: "07 décembre 2024",
+        category: "social_cohesion",
+        image: "/assets/local_images/33.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:33Z",
+        type: "Article"
+    },
+    {
+        id: -34,
+        title: "Lancement de la Bourse de Formation Intensive 'Un jeune Tchadien, un métier'",
+        excerpt: "Le 15 mars 2025, l’Association Actions Pour Tous (AAPT) a officiellement lancé la Bourse de Formation Intensive 'Un jeune Tchadien, un métier', en collaboration avec Amina Security Informatique. Cette initiative vise à offrir aux jeunes Tchadiens des formations certifiantes et adaptées pour développer leurs compétences et renforcer leur employabilité, contribuant ainsi au développement socio-économique du pays.",
+        date: "15 mars 2025",
+        category: "event",
+        image: "/assets/local_images/34.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:34Z",
+        type: "Article"
+    },
+    {
+        id: -35,
+        title: "Plantation d’arbres à l’école primaire H ZARA AL MALLAM",
+        excerpt: "Le 24 avril 2024, l’Association Actions Pour Tous, en collaboration avec GREEN-CHAD et Mahamat Abdraman, a participé à une plantation d’arbres dans la cour de l’école primaire H ZARA AL MALLAM, à l’occasion de la Semaine Mondiale de la Terre. Cette initiative visait à sensibiliser les élèves à l’importance de protéger l’environnement et à créer un cadre plus vert et favorable à leur épanouissement. Les arbres plantés contribuent à purifier l’air, préserver la biodiversité et offrir un environnement propice à l’apprentissage. L’Association remercie tous les participants pour leur soutien et encourage à continuer ces actions pour un avenir durable et solidaire.",
+        date: "24 avril 2024",
+        category: "society",
+        image: "/assets/local_images/35.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:35Z",
+        type: "Article"
+    },
+    {
+        id: -36,
+        title: "Formation sur le montage et la présentation de projets",
+        excerpt: "Le 28 décembre 2024, l’Association Actions Pour Tous, en collaboration avec le Centre Horizon du Développement Personnel, a organisé une formation sur le montage et la présentation de projets. Les participants ont acquis de nouvelles compétences et ont montré leur motivation à mettre en pratique leurs connaissances. Cette session constitue un tremplin pour leur développement personnel et professionnel, et l’association se réjouit de les accompagner dans leur parcours.",
+        date: "28 décembre 2024",
+        category: "event",
+        image: "/assets/local_images/36.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:36Z",
+        type: "Article"
+    },
+    {
+        id: -37,
+        title: "Clôture de la série de formations et remise d’attestations",
+        excerpt: "Le 10 mai 2025, l’Association Actions Pour Tous, en partenariat avec Amina Security Informatique, a clôturé une série de formations par une cérémonie de remise d’attestations. Les participants ont été félicités pour leur engagement et leurs efforts, et cette initiative célèbre leurs acquis et réussites dans le cadre des formations.",
+        date: "10 mai 2025",
+        category: "event",
+        image: "/assets/local_images/37.jpg",
+        linkKey: "more",
+        created_at: "2026-01-10T10:00:37Z",
+        type: "Article"
     }
 ];
