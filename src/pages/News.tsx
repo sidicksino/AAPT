@@ -168,39 +168,80 @@ const News: React.FC = () => {
                 </div>
                 
                 {filteredArticles.length > itemsPerPage && (
-                     <div className="mt-16 flex justify-center items-center gap-4">
+
+                    <div className="mt-16 flex justify-center items-center gap-2 sm:gap-4">
                         <button 
                             onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                             disabled={currentPage === 1}
-                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12]"
+                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12] hover:text-primary"
+                            aria-label="Page précédente"
                         >
                             <ChevronLeft size={24} />
                         </button>
 
-                        <div className="flex items-center gap-2">
-                            {Array.from({ length: totalPages }).map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setCurrentPage(i + 1)}
-                                    className={`w-10 h-10 rounded-full font-bold flex items-center justify-center transition-all ${
-                                        currentPage === i + 1
-                                            ? "bg-[#4ADE80] text-white shadow-md scale-110" 
-                                            : "text-gray-500 hover:bg-gray-100 hover:text-[#0d1b12]"
-                                    }`}
-                                >
-                                    {i + 1}
-                                </button>
-                            ))}
+                        <div className="flex items-center gap-1 sm:gap-2">
+                           {(() => {
+                                const pages = [];
+                                // Always include first page and last page
+                                // Include current page +/- 2
+                                const range = 2;
+                                
+                                for (let i = 1; i <= totalPages; i++) {
+                                    // Always show first, last, or pages within range of current
+                                    if (
+                                        i === 1 || 
+                                        i === totalPages || 
+                                        (i >= currentPage - range && i <= currentPage + range)
+                                    ) {
+                                        pages.push(i);
+                                    }
+                                }
+
+                                // Add ellipses where there are gaps
+                                const pagesWithEllipsis: (number | string)[] = [];
+                                pages.forEach((page, index) => {
+                                    if (index > 0) {
+                                        const prevPage = pages[index - 1];
+                                        if (typeof prevPage === 'number' && page - prevPage > 1) {
+                                            pagesWithEllipsis.push('...');
+                                        }
+                                    }
+                                    pagesWithEllipsis.push(page);
+                                });
+
+                                return pagesWithEllipsis.map((page, index) => (
+                                    <React.Fragment key={index}>
+                                        {page === '...' ? (
+                                            <span className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 font-medium">
+                                                ...
+                                            </span>
+                                        ) : (
+                                            <button
+                                                onClick={() => setCurrentPage(page as number)}
+                                                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full font-bold flex items-center justify-center transition-all duration-200 text-sm sm:text-base ${
+                                                    currentPage === page
+                                                        ? "bg-[#4ADE80] text-white shadow-lg shadow-green-200/50 scale-110" 
+                                                        : "text-gray-500 hover:bg-gray-100 hover:text-[#0d1b12]"
+                                                }`}
+                                            >
+                                                {page}
+                                            </button>
+                                        )}
+                                    </React.Fragment>
+                                ));
+                           })()}
                         </div>
 
                         <button 
                             onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                             disabled={currentPage === totalPages}
-                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12]"
+                            className="p-3 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[#0d1b12] hover:text-primary"
+                            aria-label="Page suivante"
                         >
                             <ChevronRight size={24} />
                         </button>
                     </div>
+
                 )}
             </section>
 
