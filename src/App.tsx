@@ -12,7 +12,6 @@ import Contact from './pages/Contact';
 
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/admin/Login';
-import Signup from './pages/admin/Signup';
 import AdminLayout from './components/admin/AdminLayout';
 import DashboardHome from './pages/admin/dashboard/Home';
 import NewsManagement from './pages/admin/dashboard/NewsManagement';
@@ -31,7 +30,7 @@ const AppRoutes = () => {
     { path: "/contact", element: <Layout><Contact /></Layout> },
     
     { path: "/admin/login", element: <Login /> },
-    { path: "/admin/signup", element: <Signup /> },
+    { path: "/admin/signup", element: <Navigate to="/admin/login" replace /> },
     { 
       path: "/admin", 
       element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,

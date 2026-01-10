@@ -43,6 +43,12 @@ export interface NewsTranslation {
   type?: string;
 }
 
+export interface NewsArticle extends NewsTranslation {
+  id: number;
+  image?: string;
+  created_at?: string;
+}
+
 export interface UserProfile {
   id: string;
   email: string | null;

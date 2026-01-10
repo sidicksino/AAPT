@@ -1,26 +1,37 @@
 import { supabase } from '../lib/supabase';
-import { NewsTranslation } from '../types';
+import { NewsTranslation, NewsArticle } from '../types';
 
-export interface NewsArticle extends NewsTranslation {
-    id: number;
-    image?: string;
-    created_at?: string;
-}
+import { localNews } from '../data/localNews';
 
 export const newsService = {
-    // Fetch all news articles
+    // Fetch all news articles (merged local + remote)
     async getAll() {
-        const { data, error } = await supabase
+        const { data: remoteData, error } = await supabase
             .from('news')
             .select('*')
             .order('created_at', { ascending: false });
 
         if (error) throw error;
-        return data as NewsArticle[];
+
+        // Merge and sort by created_at descending
+        const allNews = [...(remoteData as NewsArticle[]), ...localNews].sort((a, b) => {
+            const dateA = new Date(a.created_at || a.date).getTime();
+            const dateB = new Date(b.created_at || b.date).getTime();
+            return dateB - dateA;
+        });
+
+        return allNews;
     },
 
     // Get single article by ID
     async getById(id: number) {
+        // If ID is negative, look in local storage
+        if (id < 0) {
+            const article = localNews.find(a => a.id === id);
+            if (!article) throw new Error('Article not found locally');
+            return article;
+        }
+
         const { data, error } = await supabase
             .from('news')
             .select('*')

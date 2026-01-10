@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calendar, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Mail, FileText, Download } from 'lucide-react';
 
-import { NewsArticle, newsService } from '../services/newsService';
+import { newsService } from '../services/newsService';
+import { NewsArticle } from '../types';
 
 const News: React.FC = () => {
     const { t } = useTranslation();
