@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, Search, Edit2, Trash2, FileText, Image as ImageIcon, Video, RefreshCw } from 'lucide-react';
-import { NewsTranslation } from '../../../types';
+import { NewsTranslation, NewsArticle } from '../../../types';
 import AddEditNewsModal from './AddEditNewsModal.tsx';
-import { newsService, NewsArticle } from '../../../services/newsService';
+import { newsService } from '../../../services/newsService';
 
 const NewsManagement: React.FC = () => {
     const { t } = useTranslation();
