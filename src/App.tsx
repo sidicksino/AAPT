@@ -7,6 +7,7 @@ import About from './pages/About';
 import Actions from './pages/Actions';
 import Donate from './pages/Donate';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
@@ -26,6 +27,7 @@ const AppRoutes = () => {
     { path: "/actions", element: <Layout><Actions /></Layout> },
     { path: "/donate", element: <Layout><Donate /></Layout> },
     { path: "/news", element: <Layout><News /></Layout> },
+    { path: "/news/:id", element: <Layout><NewsDetail /></Layout> },
     { path: "/gallery", element: <Layout><Gallery /></Layout> },
     { path: "/contact", element: <Layout><Contact /></Layout> },
     

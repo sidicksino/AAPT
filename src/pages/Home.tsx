@@ -247,7 +247,7 @@ const Home: React.FC = () => {
                       </p>
                     </div>
                     <div className="mt-6 pt-6 border-t border-gray-100">
-                      <button onClick={() => navigate('/news')} className="inline-flex items-center text-sm font-bold text-text-main group-hover:text-primary transition-colors">
+                      <button onClick={() => navigate(`/news/${news.id}`)} className="inline-flex items-center text-sm font-bold text-text-main group-hover:text-primary transition-colors">
                         {t('homeNews.read_article')} <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>

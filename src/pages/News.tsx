@@ -157,7 +157,10 @@ const News: React.FC = () => {
                                     {article.excerpt}
                                 </p>
                                 <div className="mt-auto pt-4 border-t border-gray-50">
-                                    <button className="flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all">
+                                    <button 
+                                        onClick={() => window.location.hash = `/news/${article.id}`}
+                                        className="flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
+                                    >
                                         {article.linkText}
                                         {article.linkText.includes('PDF') ? <Download size={16} /> : <ArrowRight size={16} />}
                                     </button>
