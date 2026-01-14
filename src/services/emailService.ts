@@ -15,7 +15,7 @@ export const emailService = {
 
         if (!serviceId || !templateId || !publicKey) {
             console.warn('EmailJS environment variables are missing');
-            throw new Error('Email service not configured');
+            throw { type: 'CONFIG_ERROR', message: 'Email service not configured' };
         }
 
         try {

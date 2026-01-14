@@ -5,7 +5,7 @@ import { emailService } from '../services/emailService';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'config_error'>('idle');
   const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -20,9 +20,13 @@ const Contact: React.FC = () => {
           await emailService.sendContactEmail(formData);
           setStatus('success');
           setFormData({ name: '', email: '', subject: 'Demande d\'information', message: '' });
-      } catch (error) {
+      } catch (error: any) {
           console.error(error);
-          setStatus('error');
+          if (error?.type === 'CONFIG_ERROR') {
+              setStatus('config_error');
+          } else {
+              setStatus('error');
+          }
       }
   };
 
@@ -195,6 +199,12 @@ const Contact: React.FC = () => {
                   {status === 'error' && (
                       <div className="text-red-500 text-sm bg-red-50 p-3 rounded-lg">
                           Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+                      </div>
+                  )}
+
+                  {status === 'config_error' && (
+                      <div className="text-amber-600 text-sm bg-amber-50 p-3 rounded-lg border border-amber-200">
+                          <strong>Configuration requise :</strong> Le service d'envoi d'email n'est pas configuré. Veuillez définir les variables d'environnement EmailJS.
                       </div>
                   )}
 
