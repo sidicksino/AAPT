@@ -9,27 +9,39 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
       name: '',
       email: '',
-      subject: 'Demande d\'information',
+      subject: t('contact.form.subject.options.info'),
       message: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setStatus('loading');
+      
       try {
-          await emailService.sendContactEmail({
-            ...formData,
-            time: new Date().toLocaleString('fr-FR')
-          });
+          // Préparation des données pour EmailJS
+          const templateParams = {
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              message: formData.message,
+              time: new Date().toLocaleString('fr-FR', { 
+                  dateStyle: 'long', 
+                  timeStyle: 'short' 
+              })
+          };
+
+          await emailService.sendContactEmail(templateParams);
+          
           setStatus('success');
-          setFormData({ name: '', email: '', subject: 'Demande d\'information', message: '' });
+          setFormData({ 
+              name: '', 
+              email: '', 
+              subject: t('contact.form.subject.options.info'), 
+              message: '' 
+          });
       } catch (error: any) {
-          console.error(error);
-          if (error?.type === 'CONFIG_ERROR') {
-              setStatus('config_error');
-          } else {
-              setStatus('error');
-          }
+          console.error("Erreur d'envoi:", error);
+          setStatus(error?.type === 'CONFIG_ERROR' ? 'config_error' : 'error');
       }
   };
 
@@ -213,7 +225,7 @@ const Contact: React.FC = () => {
 
                   <button 
                     disabled={status === 'loading'}
-                    className="w-full sm:w-auto px-8 py-4 bg-primary text-[#0d1b12] font-bold rounded-lg hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto px-8 py-4 bg-[#0d1b12] text-white font-bold rounded-lg hover:bg-opacity-90 shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status === 'loading' ? (
                         <>Envoi en cours...</>
