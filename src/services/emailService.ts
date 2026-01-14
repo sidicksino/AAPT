@@ -5,6 +5,7 @@ interface ContactParams {
     email: string;
     subject: string;
     message: string;
+    time: string;
 }
 
 export const emailService = {
@@ -27,6 +28,7 @@ export const emailService = {
                     reply_to: params.email,
                     subject: params.subject,
                     message: params.message,
+                    time: params.time,
                 },
                 publicKey
             );

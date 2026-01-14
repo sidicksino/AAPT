@@ -17,7 +17,10 @@ const Contact: React.FC = () => {
       e.preventDefault();
       setStatus('loading');
       try {
-          await emailService.sendContactEmail(formData);
+          await emailService.sendContactEmail({
+            ...formData,
+            time: new Date().toLocaleString('fr-FR')
+          });
           setStatus('success');
           setFormData({ name: '', email: '', subject: 'Demande d\'information', message: '' });
       } catch (error: any) {
