@@ -20,6 +20,7 @@ const Home: React.FC = () => {
       category: "Cohésion sociale",
       excerpt: "Un seul cadre, mais de nombreux sourires. Cette photo de famille symbolise l’unité, la fraternité et l’amour partagé entre les enfants, les responsables du Centre Orphelinat APSOA, les invités et les membres de l’Association Actions Pour Tous. Un souvenir précieux qui témoigne que, pour un instant au moins, nous avons tous formé une seule et même famille.",
       date: "Récemment",
+      image: "/assets/images/facebook/1-HOME.jpeg",
       linkKey: "news_1",
       type: "news"
     },
@@ -29,6 +30,7 @@ const Home: React.FC = () => {
       category: "Solidarité",
       excerpt: "Autour d’un repas partagé, les sourires se sont multipliés et les cœurs se sont rapprochés. Ce dîner n’était pas seulement un moment pour manger, mais surtout un instant de convivialité, de fraternité et d’amour partagé. Enfants, membres de l’Association Actions Pour Tous et invités ont pris place ensemble, sans distinction, dans une ambiance chaleureuse et familiale. Chaque plat servi était un geste de solidarité, chaque regard échangé un message d’attention et de respect. Parce qu’un repas partagé avec le cœur nourrit bien plus que le corps.",
       date: "Récemment",
+      image: "/assets/images/facebook/2-HOME.jpeg",
       linkKey: "news_2",
       type: "news"
     },
@@ -38,6 +40,7 @@ const Home: React.FC = () => {
       category: "Solidarité",
       excerpt: "Le 31 août 2024, malgré la forte pluie, l'équipe de l'Association Actions Pour Tous a bravé les intempéries pour venir en aide aux personnes vulnérables touchées par les inondations. Cette initiative solidaire \"Donner pour une bonne cause\" avait pour objectif de distribuer des kits alimentaires et d’apporter un soutien moral aux sinistrés. L'Association Actions Pour Tous remercie sincèrement tous ses membres et toutes les personnes qui soutiennent et contribuent à ses actions humanitaires. Elle lance également un appel à toutes les autres associations pour se joindre à cette noble cause. Ensemble, donnons pour une bonne cause !",
       date: "31 août 2024",
+      image: "/assets/images/facebook/3-HOME.jpeg",
       linkKey: "news_3",
       type: "news"
     }
