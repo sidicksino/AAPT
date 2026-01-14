@@ -6,26 +6,42 @@ import { useTranslation } from 'react-i18next';
 import AnimatedSection from '../components/AnimatedSection';
 import Counter from '../components/Counter';
 import Testimonials from '../components/Testimonials';
-import { newsService } from '../services/newsService';
+
 import { NewsArticle } from '../types';
 import { useState, useEffect } from 'react';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [latestNews, setLatestNews] = useState<NewsArticle[]>([]);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const stories = await newsService.getAll();
-        setLatestNews(stories.slice(0, 3));
-      } catch (err) {
-        console.error("Failed to fetch news for home page", err);
-      }
-    };
-    fetchNews();
-  }, []);
+  const STATIC_NEWS: NewsArticle[] = [
+    {
+      id: 1,
+      title: "Photo de famille au Centre Orphelinat APSOA",
+      category: "Cohésion sociale",
+      excerpt: "Un seul cadre, mais de nombreux sourires. Cette photo de famille symbolise l’unité, la fraternité et l’amour partagé entre les enfants, les responsables du Centre Orphelinat APSOA, les invités et les membres de l’Association Actions Pour Tous. Un souvenir précieux qui témoigne que, pour un instant au moins, nous avons tous formé une seule et même famille.",
+      date: "Récemment",
+      linkKey: "news_1",
+      type: "news"
+    },
+    {
+      id: 2,
+      title: "Partage du dîner au Centre Orphelinat APSOA",
+      category: "Solidarité",
+      excerpt: "Autour d’un repas partagé, les sourires se sont multipliés et les cœurs se sont rapprochés. Ce dîner n’était pas seulement un moment pour manger, mais surtout un instant de convivialité, de fraternité et d’amour partagé. Enfants, membres de l’Association Actions Pour Tous et invités ont pris place ensemble, sans distinction, dans une ambiance chaleureuse et familiale. Chaque plat servi était un geste de solidarité, chaque regard échangé un message d’attention et de respect. Parce qu’un repas partagé avec le cœur nourrit bien plus que le corps.",
+      date: "Récemment",
+      linkKey: "news_2",
+      type: "news"
+    },
+    {
+      id: 3,
+      title: "Distribution de kits alimentaires aux sinistrés",
+      category: "Solidarité",
+      excerpt: "Le 31 août 2024, malgré la forte pluie, l'équipe de l'Association Actions Pour Tous a bravé les intempéries pour venir en aide aux personnes vulnérables touchées par les inondations. Cette initiative solidaire \"Donner pour une bonne cause\" avait pour objectif de distribuer des kits alimentaires et d’apporter un soutien moral aux sinistrés. L'Association Actions Pour Tous remercie sincèrement tous ses membres et toutes les personnes qui soutiennent et contribuent à ses actions humanitaires. Elle lance également un appel à toutes les autres associations pour se joindre à cette noble cause. Ensemble, donnons pour une bonne cause !",
+      date: "31 août 2024",
+      linkKey: "news_3",
+      type: "news"
+    }
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -217,7 +233,7 @@ const Home: React.FC = () => {
           </AnimatedSection>
           
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {latestNews.map((news, idx) => (
+            {STATIC_NEWS.map((news, idx) => (
               <AnimatedSection key={news.id} delay={idx * 0.15}>
                 <article className="group h-full flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 border border-transparent hover:border-primary/10">
                   <div className="relative overflow-hidden aspect-video w-full">
