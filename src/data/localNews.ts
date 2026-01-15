@@ -408,5 +408,115 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-10T10:00:37Z",
         type: "Article"
+    },
+    {
+        id: -38,
+        title: "Formation en E-commerce : Maîtrise de la plateforme Alibaba",
+        excerpt: "Le samedi 24 mai 2025, l’Association Actions Pour Tous, en partenariat avec la Fondation Malika Tchad, a organisé une formation en E-commerce dédiée à la maîtrise de la plateforme Alibaba.\n\nLes participants ont acquis des compétences pratiques en importation, recherche de fournisseurs fiables et gestion des transactions en ligne, renforçant ainsi leurs capacités entrepreneuriales.",
+        date: "Samedi 24 mai 2025",
+        category: "event",
+        image: "/assets/local_images/38.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:38Z",
+        type: "Article"
+    },
+    {
+        id: -39,
+        title: "Initiative « Un Enfant, Un Bol de Vie »",
+        excerpt: "Le 26 juillet 2026, dans le cadre de l’initiative « Un Enfant, Un Bol de Vie », soutenue par l’UNICEF Tchad, l’Association Actions Pour Tous a participé à la préparation et à la distribution de bouillie destinée aux enfants.\n\nAu-delà du repas, cette action symbolise un engagement collectif, fait de partage, de solidarité et d’attention envers les plus vulnérables. Un geste simple mais porteur d’espoir pour les enfants et les communautés bénéficiaires.",
+        date: "26 juillet 2026",
+        category: "solidarity",
+        image: "/assets/local_images/39.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:39Z",
+        type: "Article"
+    },
+    {
+        id: -40,
+        title: "Session communautaire de sensibilisation – Nutrition de l’enfant",
+        excerpt: "Le samedi 26 juillet 2025, l’Association Actions Pour Tous, avec l’appui de l’UNICEF, a organisé une session de sensibilisation communautaire à la Maison des Jeunes de N’djari, dans le cadre du projet « Un Enfant, Un Bol de Vie ».\n\nCette rencontre a réuni experts, parents, jeunes leaders et membres de la communauté autour de l’importance de la nutrition dans le développement de l’enfant. Les échanges ont permis de partager des messages clés et des recommandations pratiques, renforçant l’idée que la nutrition infantile est une responsabilité collective.",
+        date: "Samedi 26 juillet 2025",
+        category: "health",
+        image: "/assets/local_images/40.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:40Z",
+        type: "Article"
+    },
+    {
+        id: -41,
+        title: "Distribution de bouillie – Initiative « Un Enfant, Un Bol de Vie »",
+        excerpt: "Le 26 juillet 2025, dans le cadre de l’initiative « Un Enfant, Un Bol de Vie », soutenue par l’UNICEF, l’Association Actions Pour Tous a procédé à la distribution de bols de bouillie aux enfants de la communauté.\n\nCette action simple mais essentielle a permis d’apporter un soutien nutritionnel aux enfants tout en renforçant les valeurs de solidarité, de dignité et de partage. Les sourires et la joie des bénéficiaires ont témoigné de l’impact humain de cette initiative.\n\nUn grand merci à tous les bénévoles et partenaires, ainsi qu’à l’UNICEF Tchad, pour leur engagement constant en faveur du bien-être des enfants.",
+        date: "26 juillet 2025",
+        category: "solidarity",
+        image: "/assets/local_images/41.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:41Z",
+        type: "Article"
+    },
+    {
+        id: -42,
+        title: "Conférence-débat : La jeunesse tchadienne face aux défis du développement",
+        excerpt: "Le mercredi 06 novembre 2024, l’Association Actions Pour Tous a organisé une conférence-débat autour du thème « La jeunesse tchadienne face aux défis du développement ».\n\nLa rencontre a été animée par trois écrivains tchadiens de renom : Brahim Ghini Dadi, Jean Bosco Manga et Sokoto Abakar Alifa.\nLes échanges ont été riches et interactifs, marqués par des réflexions profondes et des témoignages inspirants.\n\nCette initiative visait à encourager l’engagement citoyen et la participation active de la jeunesse dans le développement du pays.",
+        date: "Mercredi 06 novembre 2024",
+        category: "society",
+        image: "/assets/local_images/42.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:42Z",
+        type: "Article"
+    },
+    {
+        id: -43,
+        title: "Action solidaire en faveur des victimes des inondations",
+        excerpt: "Le 31 août 2024, malgré de fortes pluies, l’équipe de l’Association Actions Pour Tous s’est mobilisée pour venir en aide aux personnes vulnérables affectées par les inondations.\n\nÀ travers l’initiative « Donner pour une bonne cause », des kits alimentaires ont été distribués et un soutien moral apporté aux sinistrés.\nL’Association remercie chaleureusement tous les membres et personnes de bonne volonté ayant contribué à cette action, et appelle à une mobilisation collective en faveur des victimes.",
+        date: "31 août 2024",
+        category: "solidarity",
+        image: "/assets/local_images/43.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:43Z",
+        type: "Article"
+    },
+    {
+        id: -44,
+        title: "Visite solidaire aux femmes concasseuses",
+        excerpt: "Le mercredi 15 mai 2024, l’Association Actions Pour Tous a rendu une visite solidaire aux femmes concasseuses, marquée par des échanges conviviaux et un moment de partage.\n\nÀ cette occasion, des kits alimentaires ont été remis, selon les moyens de l’Association, afin de soutenir ces femmes en situation de vulnérabilité.\nCette initiative reflète l’engagement de l’Association en faveur des couches les plus fragiles et souligne l’importance d’une mobilisation collective impliquant associations, ONG et autorités publiques.",
+        date: "Mercredi 15 mai 2024",
+        category: "solidarity",
+        image: "/assets/local_images/44.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:44Z",
+        type: "Article"
+    },
+    {
+        id: -45,
+        title: "Nouvel An solidaire au Centre Orphelinat APSOA",
+        excerpt: "Le jeudi 01 janvier 2026, l’Association Actions Pour Tous a célébré le début de la nouvelle année par une activité de solidarité au Centre Orphelinat APSOA.\n\nCette journée a été marquée par des moments de partage et de convivialité avec les enfants, à travers des animations culturelles et un dîner collectif.\nCette initiative réaffirme l’engagement de l’Association en faveur du bien-être des enfants, de la dignité humaine et de la solidarité communautaire.",
+        date: "Jeudi 01 janvier 2026",
+        category: "solidarity",
+        image: "/assets/local_images/45.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:45Z",
+        type: "Article"
+    },
+    {
+        id: -46,
+        title: "Moments de joie et de partage avec les enfants",
+        excerpt: "Lors de l’activité du 01 janvier 2026 au Centre Orphelinat APSOA, l’Association Actions Pour Tous a offert aux enfants des moments de joie, de danse et de musique.\n\nCes instants festifs ont permis de partager rires, bonheur et complicité, renforçant la cohésion entre les enfants, les membres de l’association et les invités. La musique et la danse ont été de véritables vecteurs de partage et d’expression.",
+        date: "01 janvier 2026",
+        category: "social_cohesion",
+        image: "/assets/local_images/46.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:46Z",
+        type: "Article"
+    },
+    {
+        id: -47,
+        title: "Journée de solidarité et de partage au Centre Orphelinat APSOA",
+        excerpt: "Le 01 janvier 2026, l’Association Actions Pour Tous a marqué le début de la nouvelle année par une journée de solidarité au Centre Orphelinat APSOA.\n\nLes enfants ont vécu des moments de joie, de danse et de musique, accompagnés des membres de l’association et des invités. Ces instants ont favorisé le partage, la complicité et la convivialité.\n\nLa journée s’est poursuivie par un repas collectif, symbole de fraternité et de solidarité, où chacun a participé à un moment chaleureux et familial. Chaque geste et chaque sourire ont contribué à créer un environnement de soutien et d’amour partagé.\n\nCette initiative illustre parfaitement l’engagement de l’Association à offrir joie, dignité et espoir aux enfants.",
+        date: "01 janvier 2026",
+        category: "solidarity",
+        image: "/assets/local_images/47.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:47Z",
+        type: "Article"
     }
 ];
