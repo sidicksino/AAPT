@@ -628,5 +628,115 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-15T10:00:57Z",
         type: "Article"
+    },
+    {
+        id: -58,
+        title: "Participation à l’atelier d’information du PNUD sur l’Appel à Manifestation d’Intérêt (AMI)",
+        excerpt: "En date du 18 septembre 2025, l’Association Actions Pour Tous a pris part, sur invitation du PNUD Tchad, à l’atelier d’information des OSC et ONG locales sur l’Appel à Manifestation d’Intérêt (AMI), tenu à l’hôtel L’Amitié (Kimpeski).\n\nL’association était représentée par son président, M. Abakar Saleh Mahamat, accompagné de la Secrétaire de l’événement, Mme Oumkaltouma Mahamat Saleh. Cette participation a permis de mieux comprendre les opportunités offertes par l’AMI et de renforcer la collaboration avec le PNUD et les autres acteurs locaux.",
+        date: "18 septembre 2025",
+        category: "society",
+        image: "/assets/local_images/58.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:58Z",
+        type: "Article"
+    },
+    {
+        id: -59,
+        title: "Rencontre de coordination PNUD et ONG/OSC",
+        excerpt: "Une rencontre fructueuse a eu lieu entre l’Association Actions Pour Tous, le PNUD Tchad et plusieurs ONG/OSC, dédiée à la préparation et à la soumission de projets.\n\nCet échange a permis de renforcer les initiatives au service de la communauté et de favoriser la collaboration entre les acteurs locaux.\n\nL’Association Actions Pour Tous réaffirme son engagement constant à œuvrer pour l’inclusion, le développement durable et le bien-être de tous.",
+        date: "Date non spécifiée",
+        category: "society",
+        image: "/assets/local_images/59.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:59Z",
+        type: "Article"
+    },
+    {
+        id: -60,
+        title: "Rencontre préparatoire du Forum Santé & Climat",
+        excerpt: "En ce jour, l’Association Actions Pour Tous a participé à une rencontre fructueuse d’échange et de préparation autour du Forum de Rassemblement Planétaire sur la Santé et le Climat, prévu du 16 au 18 octobre 2025 à N’Djamena.\n\nCette rencontre a permis de renforcer la collaboration entre associations locales et partenaires, et de mettre en avant l’importance de l’action collective pour la santé planétaire et la résilience climatique. 🌍🌱",
+        date: "Date non spécifiée",
+        category: "health",
+        image: "/assets/local_images/60.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:00Z",
+        type: "Article"
+    },
+    {
+        id: -61,
+        title: "Clôture de l’atelier PSEA – Protection contre l’Exploitation et les Abus Sexuels",
+        excerpt: "L’Association Actions Pour Tous a eu l’honneur de participer à l’atelier national de renforcement des capacités en matière de Protection contre l’Exploitation et les Abus Sexuels (PSEA), qui s’est tenu du 6 au 8 août 2025 à l’hôtel La Tchadienne.\n\nLa clôture de l’atelier s’est faite vendredi par une cérémonie de remise des attestations aux participants, marquant le succès de ces trois journées riches en échanges et en apprentissages.\n\n🙏 Nos remerciements vont aux Nations-Unies, au Ministère de la Femme et de la Petite Enfance, ainsi qu’à tous les partenaires pour leur engagement et leur soutien dans cette initiative essentielle.\n\nEnsemble, renforçons la protection et la dignité de chacun. Agir aujourd’hui pour un avenir plus sûr demain.",
+        date: "08 août 2025",
+        category: "event",
+        image: "/assets/local_images/61.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:01Z",
+        type: "Article"
+    },
+    {
+        id: -62,
+        title: "Les enfants, priorité de nos missions",
+        excerpt: "Les enfants sont au cœur de chacune de nos missions. Leur sourire et leur bonheur sont la plus belle récompense de notre engagement et de nos actions solidaires.\n\n🙏 Grâce à eux, nous renouvelons chaque jour notre volonté de bâtir un avenir meilleur et plus solidaire.",
+        date: "Date non spécifiée",
+        category: "solidarity",
+        image: "/assets/local_images/62.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:02Z",
+        type: "Article"
+    },
+    {
+        id: -63,
+        title: "Participation à la Journée Africaine et au lancement de DIGICIVIC",
+        excerpt: "Le 31 mai 2025, l’Association Actions Pour Tous, en tant que partenaire de l’événement, a pris part à la célébration de la Journée Africaine, du 1er anniversaire du REJEUPARED, ainsi qu’au lancement de la plateforme DIGICIVIC, à la Bibliothèque Nationale de N’Djamena.\n\n🌍 Une journée riche en échanges et en engagement, promouvant une jeunesse africaine active et innovante.\n\n✊ L’Association Actions Pour Tous réaffirme son engagement à soutenir toute initiative favorisant la participation active des jeunes au développement et à la consolidation de la paix.",
+        date: "31 mai 2025",
+        category: "event",
+        image: "/assets/local_images/63.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:03Z",
+        type: "Article"
+    },
+    {
+        id: -64,
+        title: "Clôture du Concert Éducatif",
+        excerpt: "C’est ici que se termine notre magnifique Concert Éducatif.\n\nNous remercions tous ceux qui ont contribué à faire de cet événement un vrai succès.\n\nLa clôture s’est faite par une belle photo de famille remplie de sourires, symbole de l’engagement et de la participation de chacun.",
+        date: "Date non spécifiée",
+        category: "event",
+        image: "/assets/local_images/64.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:04Z",
+        type: "Article"
+    },
+    {
+        id: -65,
+        title: "Clôture de la Conférence-Débat",
+        excerpt: "La conférence-débat s'est clôturée en beauté par des photos de famille, capturant l'esprit de partage et de solidarité.",
+        date: "Date non spécifiée",
+        category: "social_cohesion",
+        image: "/assets/local_images/65.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:05Z",
+        type: "Article"
+    },
+    {
+        id: -66,
+        title: "Réunion de prise de contact avec l’ONG ASHAD",
+        excerpt: "Ce jeudi 27 février 2025, l'Association Actions Pour Tous a rencontré l'ONG ASHAD pour établir un premier contact et explorer les possibilités de collaboration future, marquant ainsi une étape importante dans le renforcement des liens entre les deux structures.",
+        date: "27 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/66.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:06Z",
+        type: "Article"
+    },
+    {
+        id: -67,
+        title: "Rencontre de présentation avec l’ONG Konoum Toullo Toullo",
+        excerpt: "Le 27 février 2025, l'Association Actions Pour Tous a eu l'honneur de rencontrer le Coordonnateur de l'ONG Konoum Toullo Toullo pour présenter les deux organisations et établir un premier contact. Cette rencontre a permis de poser des bases solides pour de futurs échanges et d'explorer des opportunités de collaboration pour des projets communs au service des communautés. L’Association Actions Pour Tous se réjouit de développer ces relations et de travailler ensemble à de belles initiatives.",
+        date: "27 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/67.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:07Z",
+        type: "Article"
     }
 ];
