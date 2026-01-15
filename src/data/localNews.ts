@@ -518,5 +518,115 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-15T10:00:47Z",
         type: "Article"
+    },
+    {
+        id: -48,
+        title: "Lancement officiel – Formation en Aide Humanitaire",
+        excerpt: "Le 06 janvier 2026, l’Association Actions Pour Tous, en partenariat avec le Centre Horizon du Développement Personnel (CHODEP), a lancé une formation en Aide Humanitaire.\n\nCette session a été marquée par des échanges enrichissants, de la sensibilisation, et un fort esprit d’engagement, renforçant les compétences des participants ainsi que les valeurs de solidarité, d’humanité et de service communautaire.",
+        date: "06 janvier 2026",
+        category: "event",
+        image: "/assets/local_images/48.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:48Z",
+        type: "Article"
+    },
+    {
+        id: -49,
+        title: "Participation à Youth Connekt Sahel – 2ᵉ édition",
+        excerpt: "L’Association Actions Pour Tous, représentée par Talbey Ali Mahamat, TGA, a pris part au lancement de la 2ᵉ édition de Youth Connekt Sahel.\n\nCet événement régional réunit la jeunesse autour du leadership, de l’innovation et du développement durable, renforçant l’engagement de l’association pour l’inclusion et l’épanouissement des jeunes tchadiens dans les initiatives de transformation positive du Sahel.",
+        date: "Date non spécifiée",
+        category: "event",
+        image: "/assets/local_images/49.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:49Z",
+        type: "Article"
+    },
+    {
+        id: -50,
+        title: "Participation au Forum Youth Connekt Sahel 2025",
+        excerpt: "L’Association Actions Pour Tous a pris part au Forum Youth Connekt Sahel 2025, réunissant des jeunes du Tchad, Niger, Mali, Burkina Faso et d’autres pays.\n\nUn moment d’échanges, de débats et d’innovations, mettant en avant la créativité, l’unité et l’engagement de la jeunesse sahélienne pour un avenir meilleur.",
+        date: "2025",
+        category: "event",
+        image: "/assets/local_images/50.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:50Z",
+        type: "Article"
+    },
+    {
+        id: -51,
+        title: "Reconnaissance reçue lors du Concours National d’Éloquence 2025",
+        excerpt: "Le 03 octobre 2025, l’Association Actions Pour Tous (AAPT) a reçu une attestation de reconnaissance de la part de AL-TCHAD pour sa participation à la 2ᵉ édition du Concours National d’Éloquence.\n\nUn geste qui souligne notre engagement et notre collaboration pour la promotion de la jeunesse tchadienne et le développement d’un Tchad prospère et dynamique. 🇹🇩✨",
+        date: "03 octobre 2025",
+        category: "society",
+        image: "/assets/local_images/51.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:51Z",
+        type: "Article"
+    },
+    {
+        id: -52,
+        title: "Reconnaissance pour le projet Au-revoir 2024",
+        excerpt: "Le 07 février 2025, l’Association Actions Pour Tous (AAPT) a participé à la cérémonie de remise des attestations du projet Au-revoir 2024.\nEn tant que partenaire, l’association a reçu une attestation de reconnaissance, soulignant son engagement en faveur du vivre ensemble et du partage.\n\n🙏 Merci à tous ceux qui ont rendu cette initiative possible.",
+        date: "07 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/52.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:52Z",
+        type: "Article"
+    },
+    {
+        id: -53,
+        title: "Visite de courtoisie et échanges inter-associatifs",
+        excerpt: "Ce mardi 28 mai 2024, l’Association Actions Pour Tous (AAPT) a eu le plaisir d’accueillir une visite de l’Association de la Jeunesse Consciente Pour la Paix au Tchad (AJCPT).\n\nCette rencontre a été marquée par des échanges enrichissants, favorisant le renforcement des liens, la collaboration inter-associative et la promotion des valeurs de paix, de solidarité et de partage au sein de la jeunesse tchadienne.\n\n🙏 Nous exprimons notre profonde gratitude à l’AJCPT pour cette visite fraternelle et pour les messages inspirants de paix et d’engagement partagés.\nCette initiative constitue une étape importante dans notre engagement commun pour un avenir meilleur et plus harmonieux.",
+        date: "Mardi 28 mai 2024",
+        category: "social_cohesion",
+        image: "/assets/local_images/53.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:53Z",
+        type: "Article"
+    },
+    {
+        id: -54,
+        title: "Passage médiatique – Présentation de l’Association Actions Pour Tous",
+        excerpt: "Ce matin, le Président de l’Association Actions Pour Tous (AAPT), Abakar Saleh Mahamat, a eu l’opportunité de présenter l’Association lors de l’émission Lalekou.\n\nCette intervention a permis de mettre en lumière la mission, les actions et les valeurs portées par l’Association au service des communautés.\n\n🙏 Nous remercions chaleureusement toute l’équipe de l’émission pour son accueil et son professionnalisme, ainsi que nos représentants à l’étranger dont le soutien et l’engagement contribuent activement au rayonnement de nos actions.",
+        date: "Date non spécifiée",
+        category: "society",
+        image: "/assets/local_images/54.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:54Z",
+        type: "Article"
+    },
+    {
+        id: -55,
+        title: "Visite solidaire et moments de partage au Centre d’Orphelinat APSOA",
+        excerpt: "C’est avec beaucoup d’émotion et d’admiration que les membres de l’Association Actions Pour Tous ont effectué une visite au Centre d’Orphelinat APSOA.\n\nCette rencontre a été marquée par des prises de parole touchantes des membres de l’Association autour des besoins essentiels des enfants orphelins. Les enfants, quant à eux, ont émerveillé l’assistance en exprimant leur talent à travers des chansons, des danses et des poèmes.\n\nUn moment riche en échanges, en partage et en humanité, qui a profondément marqué les cœurs de tous les participants et renforcé notre engagement en faveur du bien-être des enfants.",
+        date: "Date non spécifiée",
+        category: "solidarity",
+        image: "/assets/local_images/55.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:55Z",
+        type: "Article"
+    },
+    {
+        id: -56,
+        title: "Rencontre institutionnelle avec l’Agence Turque de Coopération et de Coordination (TIKA Tchad)",
+        excerpt: "Ce lundi 16 décembre 2024, l’équipe de l’Association Actions Pour Tous a eu l’opportunité de rencontrer l’Agence Turque de Coopération et de Coordination (TIKA Tchad).\n\nCette rencontre a permis de présenter l’Association, ses objectifs ainsi que ses différents projets. Les échanges ont été riches, constructifs et porteurs de perspectives positives pour de futures collaborations.\n\n Nous remercions sincèrement l’Agence Turque de Coopération et de Coordination TIKA Tchad pour son accueil chaleureux, son écoute attentive et sa disponibilité.",
+        date: "Lundi 16 décembre 2024",
+        category: "society",
+        image: "/assets/local_images/56.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:56Z",
+        type: "Article"
+    },
+    {
+        id: -57,
+        title: "Réunion de préparation et journée d’intégration des nouveaux membres",
+        excerpt: "Ce mercredi 12 novembre 2025, l’Association Actions Pour Tous a tenu une réunion de préparation suivie d’une journée d’intégration des nouveaux membres.\n\nCette rencontre a permis des échanges constructifs, du partage et de la fraternité, tout en renforçant les liens entre anciens et nouveaux adhérents. Elle a également été l’occasion de discuter des activités à venir et des prochaines actions à mettre en œuvre.\n\n Ensemble, construisons une communauté engagée, solidaire et tournée vers l’action.",
+        date: "Mercredi 12 novembre 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/57.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:00:57Z",
+        type: "Article"
     }
 ];
