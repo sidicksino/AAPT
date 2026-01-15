@@ -738,5 +738,104 @@ export const localNews: NewsArticle[] = [
         linkKey: "more",
         created_at: "2026-01-15T10:01:07Z",
         type: "Article"
+    },
+    {
+        id: -68,
+        title: "Prise de contact avec l’ONG APDS",
+        excerpt: "Le 26 février 2025, l'Association Actions Pour Tous a organisé une réunion de prise de contact avec l'ONG APDS. Cette rencontre a permis d’établir les bases d’une future collaboration entre les deux organisations et d’explorer des pistes de partenariat pour des projets communs au service des communautés.",
+        date: "26 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/68.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:08Z",
+        type: "Article"
+    },
+    {
+        id: -69,
+        title: "Cérémonie de remise d’attestations aux partenaires",
+        excerpt: "Le samedi 15 février 2025, l’Association Actions Pour Tous a organisé une cérémonie afin de reconnaître et remercier ses précieux partenaires, notamment Amina Security Informatique, CEFPAMS, CHODEP, Agence DAD Service, et d’autres. La remise des attestations de reconnaissance a souligné l’importance de leur soutien dans la réalisation des activités de l’association en 2024.",
+        date: "Samedi 15 février 2025",
+        category: "social_cohesion",
+        image: "/assets/local_images/69.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:09Z",
+        type: "Article"
+    },
+    {
+        id: -70,
+        title: "Remise d’attestations aux membres dévoués",
+        excerpt: "Après avoir dressé le bilan des activités réalisées en 2024, l’Association Actions Pour Tous a récompensé ses membres dévoués en leur remettant des attestations bien méritées.\n\nCette reconnaissance souligne l’engagement et la contribution active des bénévoles au sein de l’association. Ces attestations valorisent leur investissement dans la réalisation des activités et actions de l’association et encouragent la poursuite de leur implication au service de la communauté.\n\nFélicitations à tous les membres pour leur dévouement et leur engagement sans faille.",
+        date: "Date non spécifiée",
+        category: "social_cohesion",
+        image: "/assets/local_images/70.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:10Z",
+        type: "Article"
+    },
+    {
+        id: -71,
+        title: "Témoignages et partages d’expériences des membres et partenaires",
+        excerpt: "Après la remise des attestations aux partenaires et aux membres dévoués de l’Association Actions Pour Tous, une phase de témoignages a permis à chacun d’exprimer sa gratitude et sa fierté d’avoir contribué activement aux actions menées en 2024.\n\nPlusieurs participants ont également souligné l’importance de la vie associative et du travail en équipe pour générer un impact positif au sein de la communauté.\n\nCes échanges reflètent l’engagement, la solidarité et la motivation des membres de l’association envers leur cause.",
+        date: "Date non spécifiée",
+        category: "social_cohesion",
+        image: "/assets/local_images/71.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:11Z",
+        type: "Article"
+    },
+    {
+        id: -72,
+        title: "Célébration de l’anniversaire de l’Association Actions Pour Tous",
+        excerpt: "Quel bonheur de célébrer l’anniversaire de l’Association Actions Pour Tous ! Amis, bénévoles et partenaires se sont réunis pour partager un moment spécial. Après avoir chanté l’hymne d’anniversaire avec émotion, les participants ont soufflé les bougies et dégusté un gâteau.\n\nNous remercions chaleureusement tous ceux qui ont contribué à rendre cette journée mémorable. Ensemble, nous pouvons accomplir de grandes choses pour notre association et notre communauté.",
+        date: "Date non spécifiée",
+        category: "social_cohesion",
+        image: "/assets/local_images/72.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:12Z",
+        type: "Article"
+    },
+    {
+        id: -73,
+        title: "Cérémonie de remise des attestations aux lauréats de la Bourse de Formation",
+        excerpt: "L’Association Actions Pour Tous a organisé une cérémonie officielle pour récompenser les lauréats et lauréates de sa Bourse de Formation. Cet événement a marqué la fin d’un parcours intense de formation et a permis de remettre aux participants leurs attestations, reconnues pour leurs efforts et leur engagement.\n\nCette initiative vise à valoriser le mérite, renforcer les compétences des jeunes et encourager leur insertion professionnelle dans divers domaines tels que l’informatique, l’entrepreneuriat, l’aide humanitaire et le marketing digital.\n\nNous félicitons chaleureusement tous les lauréats et lauréates pour leur assiduité et leur motivation, et remercions tous les partenaires et formateurs qui ont contribué au succès de cette formation.",
+        date: "Date non spécifiée",
+        category: "event",
+        image: "/assets/local_images/73.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:13Z",
+        type: "Article"
+    },
+    {
+        id: -74,
+        title: "Accréditation pour l’observation des élections 2024",
+        excerpt: "Nous avons l’honneur d’annoncer que l’Association Actions Pour Tous a reçu l’accréditation de l’ANGE – Agence Nationale de Gestion des Élections – pour participer à l’observation des élections législatives, provinciales et communales prévues le 29 décembre 2024 à travers le pays.\n\nCette mission permettra à notre association de surveiller et d’évaluer l’intégralité du processus électoral, reflétant notre engagement constant pour la transparence, la démocratie et la participation citoyenne.",
+        date: "Date non spécifiée",
+        category: "society",
+        image: "/assets/local_images/74.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:14Z",
+        type: "Article"
+    },
+    {
+        id: -75,
+        title: "Cérémonie de remise d’attestations – 8ᵉ promotion du département Fondement et Pratique de l’Éducation",
+        excerpt: "L’Association Actions Pour Tous a eu l’honneur de participer à la cérémonie de sortie de la 8ᵉ promotion du département de Fondement et Pratique de l’Éducation, en collaboration avec notre partenaire Malika Tchad.\n\nCette occasion a permis de remettre des attestations de reconnaissance aux membres du comité d’organisation des lauréats et lauréates, tout en renforçant les liens avec nos confrères de l’Association Humanitaire Al-Moussa’Ada et de l’Association ALTCHAD.\n\nNous adressons nos remerciements à Malika Tchad, au Chef de Départements et à MC Ousman Thiam pour leur soutien précieux dans la réussite de cette initiative.",
+        date: "Date non spécifiée",
+        category: "event",
+        image: "/assets/local_images/75.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:15Z",
+        type: "Article"
+    },
+    {
+        id: -76,
+        title: "Participation au Salon de l’Orientation et de la Formation du Tchad (SOFT)",
+        excerpt: "Ce matin, le 27 novembre 2024, l’Association Actions Pour Tous, en tant que partenaire de SOFT, a pris part à un événement organisé par le Salon de l’Orientation et de la Formation du Tchad, en collaboration avec ASTOC.\n\nSous le haut patronage du Ministre de l’Éducation nationale, M. Mamadou Gana Boukar, cette rencontre a rassemblé de jeunes experts et professionnels afin d’offrir conseils et informations aux étudiants et élèves en quête d’orientation.",
+        date: "27 novembre 2024",
+        category: "event",
+        image: "/assets/local_images/76.jpg",
+        linkKey: "more",
+        created_at: "2026-01-15T10:01:16Z",
+        type: "Article"
     }
 ];
