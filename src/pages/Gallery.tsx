@@ -52,7 +52,7 @@ const Gallery: React.FC = () => {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="https://images.unsplash.com/photo-1559586616-361e18714958?q=80&w=2070&auto=format&fit=crop" 
+            src="/assets/images/facebook/galery.jpeg" 
             alt="Gallery Background" 
             className="w-full h-full object-cover"
           />
