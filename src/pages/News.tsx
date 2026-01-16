@@ -70,7 +70,7 @@ const News: React.FC = () => {
                 <div className="absolute inset-0 z-0">
                     {/* Using an illustration style image to match the 'faces' vibe from request */}
                     <img 
-                        src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070&auto=format&fit=crop" 
+                        src="/assets/local_images/1.jpg" 
                         alt="Background" 
                         className="w-full h-full object-cover"
                     />

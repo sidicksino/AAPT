@@ -11,7 +11,7 @@ const Actions: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const cards = [
-    { key: "humanitarian", img: "/assets/images/facebook/aide.jpeg" },
+    { key: "humanitarian", img: "/assets/images/facebook/3-HOME.jpeg" },
     { key: "education", img: "/assets/images/facebook/formation.jpeg" },
     { key: "health", img: "/assets/images/facebook/sante.jpeg" },
     { key: "training", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6nexX6Zzm2iY0fLJ7UADf3zBrgxCZvQSYCAvuJEieE-RUFcPTx-2yacXm6qYiaCN3-2uvYs_c6JRn8PhvstCsi0xLlgAC06qFDyhdvJjn5pXkpqgBiHJULtG0qHbC-LuFVYXeF7ObFUjY4JPjEimniU7CgjGcqg_tIQ5CfGy5FhfAbWFor1wMh9p6vtoomEeTBhPrWgXS5-F4zc-Gl36gK_J5mAsI0ZCHuHrwlCqiCERm8-BI-_rg959Pz1ZyeHQ0EX28cxl9o2Y" },
