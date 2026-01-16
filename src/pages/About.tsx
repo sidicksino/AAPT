@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <div className="w-full max-w-[1200px]">
           <div className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center relative overflow-hidden" 
             style={{
-              backgroundImage: `linear-gradient(rgba(13, 27, 18, 0.6) 0%, rgba(13, 27, 18, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUq0WyUgRnVzYEdFF6cBDh3R-3KQP4_dQoJPTTph0RcU7_0j9X-m7Ewu54z8_19LN9ddE2qRRQGxbgncUu3jz2HWDFshGr4DslTvY14SUgaotY4fQiPYm1eIyCXn1d2i8qtqtLguOvMipbN5SM91-ibGSCb-MsfSY6ivCDDg8IxV2TYley2FijxVeaJrLv1ObdBM4Y0J-e65zR0OY4TldNUSG2sCihodSVHcUkrFDzNRWG5shXuPCx7wk1qAW0FtbPMJg_8foHzlk")`
+              backgroundImage: `linear-gradient(rgba(13, 27, 18, 0.6) 0%, rgba(13, 27, 18, 0.8) 100%), url("/assets/images/facebook/about.jpeg")`
             }}
           >
             <div className="flex flex-col gap-4 max-w-[800px] z-10">
