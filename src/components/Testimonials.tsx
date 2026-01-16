@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 const images = {
   1: "/assets/images/facebook/partenair.jpeg",
-  2: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2148&auto=format&fit=crop",
-  3: "https://images.unsplash.com/photo-1549488497-29532d56a02f?q=80&w=2069&auto=format&fit=crop"
+  2: "/assets/images/facebook/apsoa.jpeg",
+  3: "/assets/images/facebook/temoi.jpeg"
 }
 
 const Testimonials: React.FC = () => {
